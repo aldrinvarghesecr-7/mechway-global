@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, { duration: 500, fill: "forwards" });
         });
 
-        const interactables = document.querySelectorAll('a, button, .product-card, input, textarea');
+        const interactables = document.querySelectorAll('a, button, .catalogue-card, input, textarea');
         interactables.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursorOutline.style.width = '60px';
@@ -140,14 +140,14 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     });
 
-    gsap.from(".product-card", {
+    gsap.from(".catalogue-card", {
         y: 60,
         opacity: 0,
         duration: 0.8,
         stagger: 0.1,
         ease: "power2.out",
         scrollTrigger: {
-            trigger: ".product-grid",
+            trigger: ".catalogue-grid",
             start: "top 80%"
         }
     });
