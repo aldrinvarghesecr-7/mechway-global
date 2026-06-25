@@ -33,7 +33,14 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <div class="logo-icon">M</div>
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100" style="width: 3.5rem; height: 3.5rem; flex-shrink: 0;">
+                        <path d="M 15,42 L 15,15 L 50,35 L 85,15 L 85,42" fill="none" stroke="var(--primary-red)" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <path d="M 15,58 L 15,85 L 50,65 L 85,85 L 85,58" fill="none" stroke="#666666" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <rect x="8" y="47.5" width="14" height="5" fill="#666666" />
+                        <rect x="78" y="47.5" width="14" height="5" fill="#666666" />
+                    </svg>
+                </div>
                 <div class="logo-text">
                     <span class="logo-mechway">MECHWAY</span>
                     <span class="logo-global">GLOBAL</span>
@@ -130,6 +137,9 @@
                     <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 1.5rem auto 0; font-weight: 400;">Browse our premium selection of industrial components engineered for maximum performance.</p>
                 </div>
 
+                <div class="swipe-indicator fade-up">
+                    <i data-lucide="move-horizontal"></i> Swipe left or right to explore
+                </div>
                 <div class="catalogue-grid">
                     <!-- Item 1 -->
                     <div class="catalogue-card fade-up">
@@ -322,9 +332,17 @@
     <footer class="footer">
         <div class="container">
             <div class="logo" style="justify-content: center; margin-bottom: 2rem;">
-                <div class="logo-icon" style="font-size: 1.5rem;">M</div>
-                <div class="logo-text" style="font-size: 0.8rem;">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;">
+                        <path d="M 15,42 L 15,15 L 50,35 L 85,15 L 85,42" fill="none" stroke="var(--primary-red)" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <path d="M 15,58 L 15,85 L 50,65 L 85,85 L 85,58" fill="none" stroke="#888888" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <rect x="8" y="47.5" width="14" height="5" fill="#888888" />
+                        <rect x="78" y="47.5" width="14" height="5" fill="#888888" />
+                    </svg>
+                </div>
+                <div class="logo-text" style="font-size: 0.8rem; text-align: left;">
                     <span class="logo-mechway" style="color: var(--bg-white);">MECHWAY</span>
+                    <span class="logo-global" style="color: #888888;">GLOBAL</span>
                 </div>
             </div>
             <p>&copy; 2026 Mechway Global. Excellence in Engineering. All rights reserved.</p>
