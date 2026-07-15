@@ -4,14 +4,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Mechway Global</title>
+    <meta name="description" content="Privacy Policy for Mechway Global.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP & Lenis for Advanced Scroll Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            padding: 12rem 0 6rem;
+            background: var(--text-main);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 40px 40px;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(200,16,46,0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .policy-content {
+            padding: 6rem 0;
+            background: transparent;
+            position: relative;
+            z-index: 5;
+        }
+        .policy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 4rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+        }
+        .policy-container h2 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin: 2.5rem 0 1rem;
+        }
+        .policy-container h2:first-child {
+            margin-top: 0;
+        }
+        .policy-container p, .policy-container ul {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .policy-container ul {
+            padding-left: 2rem;
+        }
+        .policy-container li {
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .policy-container { padding: 2rem; }
+        }
+    </style>
 </head>
-<body style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center; background: var(--bg-grey);">
-    <div class="container" style="max-width: 600px;">
-        <h1 class="section-title">Privacy Policy</h1>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">This page is a legally compliant placeholder. Please insert your official corporate privacy policy here.</p>
-        <a href="index.html" class="btn-primary-outline">Return Home</a>
-    </div>
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div class="bg-blob-3"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100" style="width: 3.5rem; height: 3.5rem; flex-shrink: 0;">
+                        <path d="M 15,42 L 15,15 L 50,35 L 85,15 L 85,42" fill="none" stroke="var(--primary-red)" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <path d="M 15,58 L 15,85 L 50,65 L 85,85 L 85,58" fill="none" stroke="#666666" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <rect x="8" y="47.5" width="14" height="5" fill="#666666" />
+                        <rect x="78" y="47.5" width="14" height="5" fill="#666666" />
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-mechway">MECHWAY</span>
+                    <span class="logo-global">GLOBAL</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="contact.html" class="btn-primary-outline" style="padding: 0.75rem 1.5rem; font-size: 0.8rem;">Initiate Project</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container">
+                <h1 class="fade-up">Privacy <span class="text-gradient">Policy</span></h1>
+                <p class="fade-up" style="color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-top: 1rem;">Last Updated: July 2026</p>
+            </div>
+        </header>
+
+        <section class="policy-content">
+            <div class="container fade-up">
+                <div class="policy-container">
+                    <h2>1. Introduction</h2>
+                    <p>Mechway Global ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This Privacy Policy outlines how we collect, use, process, and safeguard your information when you visit our website or engage with our services.</p>
+
+                    <h2>2. Information We Collect</h2>
+                    <p>We may collect and process the following types of data:</p>
+                    <ul>
+                        <li><strong>Contact Information:</strong> Name, email address, phone number, and organization details provided when submitting forms, such as Requests for Quote (RFQs).</li>
+                        <li><strong>Technical Data:</strong> IP address, browser type, operating system, and usage details collected automatically through cookies and analytics tools.</li>
+                        <li><strong>Project Data:</strong> Technical specifications, documents, and bill of quantities submitted for project consultations.</li>
+                    </ul>
+
+                    <h2>3. How We Use Your Information</h2>
+                    <p>Your information is used strictly for legitimate business purposes, including:</p>
+                    <ul>
+                        <li>To process inquiries and generate accurate quotations.</li>
+                        <li>To communicate directly regarding projects, logistics, and supply chain updates.</li>
+                        <li>To improve our website functionality, security, and user experience.</li>
+                        <li>To comply with legal and regulatory obligations within the UAE and GCC.</li>
+                    </ul>
+
+                    <h2>4. Data Sharing & Disclosure</h2>
+                    <p>We do not sell or rent your personal data to third parties. We may share your information only when necessary with:</p>
+                    <ul>
+                        <li>Trusted logistics and manufacturing partners required to fulfill your specific project requirements.</li>
+                        <li>Service providers who assist in operating our website or business (under strict confidentiality agreements).</li>
+                        <li>Legal or regulatory authorities if required by law.</li>
+                    </ul>
+
+                    <h2>5. Data Security</h2>
+                    <p>We implement robust technical and organizational measures to ensure your data is secure against unauthorized access, loss, or alteration. We utilize encryption and secure servers to protect sensitive business inquiries.</p>
+
+                    <h2 id="dnsmpi">6. Your Rights & Do Not Sell My Personal Information</h2>
+                    <p>Mechway Global operates primarily as a B2B service provider. You have the right to request access to, correction of, or deletion of your personal data held by us. Furthermore, we explicitly state that we do not sell your personal information to any third party for marketing or monetary purposes.</p>
+                    <p>To exercise any of your rights, please contact us at the email address provided below.</p>
+
+                    <h2>7. Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy periodically to reflect changes in our practices or relevant laws. We encourage you to review this page occasionally for the latest information.</p>
+
+                    <h2>8. Contact Us</h2>
+                    <p>If you have any questions or concerns regarding this Privacy Policy, please contact our administrative team at:<br>
+                    <strong>Email:</strong> executive@mechwayglobal.com<br>
+                    <strong>Address:</strong> The Apex Tower, Dubai, UAE</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="border-radius: 40px 40px 0 0; padding-top: 4rem;">
+        <div class="container">
+            <div class="logo" style="justify-content: center; margin-bottom: 2rem;">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;">
+                        <path d="M 15,42 L 15,15 L 50,35 L 85,15 L 85,42" fill="none" stroke="var(--primary-red)" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <path d="M 15,58 L 15,85 L 50,65 L 85,85 L 85,58" fill="none" stroke="#888888" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <rect x="8" y="47.5" width="14" height="5" fill="#888888" />
+                        <rect x="78" y="47.5" width="14" height="5" fill="#888888" />
+                    </svg>
+                </div>
+                <div class="logo-text" style="font-size: 0.8rem; text-align: left;">
+                    <span class="logo-mechway" style="color: var(--bg-white);">MECHWAY</span>
+                    <span class="logo-global" style="color: #888888;">GLOBAL</span>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                </div>
+                <p>&copy; 2026 Mechway Global. Excellence in Engineering. All rights reserved.</p>
+                <div style="display: flex; gap: 1.5rem; font-size: 0.8rem; flex-wrap: wrap; justify-content: center;">
+                    <a href="privacy.html" style="color: var(--primary-red); text-decoration: none;">Privacy Policy</a>
+                    <a href="terms.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
+                    <a href="privacy.html#dnsmpi" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-muted)'">Do Not Sell My Personal Information</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
 </body>
 </html>
