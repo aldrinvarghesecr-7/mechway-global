@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Mechway Global</title>
-    <meta name="description" content="Get in touch with Mechway Global for comprehensive MEP and Infrastructure solutions.">
-    
+    <meta name="description"
+        content="Get in touch with Mechway Global for comprehensive MEP and Infrastructure solutions.">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -30,13 +34,18 @@
             overflow: hidden;
             border-radius: 0 0 40px 40px;
         }
+
         .page-header::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, rgba(200,16,46,0.2) 0%, transparent 60%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(200, 16, 46, 0.2) 0%, transparent 60%);
             pointer-events: none;
         }
+
         .contact-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -45,12 +54,14 @@
             position: relative;
             z-index: 5;
         }
+
         .locations {
             display: flex;
             flex-direction: column;
             gap: 3rem;
             margin-bottom: 3rem;
         }
+
         .location-card {
             background: rgba(255, 255, 255, 0.65);
             backdrop-filter: blur(24px);
@@ -59,6 +70,7 @@
             padding: 2.5rem;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
         }
+
         .location-card h3 {
             font-size: 1.5rem;
             color: var(--text-main);
@@ -67,14 +79,17 @@
             align-items: center;
             gap: 1rem;
         }
+
         .location-card h3 i {
             color: var(--primary-red);
         }
+
         .location-card p {
             color: var(--text-muted);
             margin-bottom: 0.5rem;
             font-size: 1.05rem;
         }
+
         .map-placeholder {
             width: 100%;
             height: 250px;
@@ -88,12 +103,13 @@
             font-family: var(--font-heading);
             font-weight: 600;
         }
-        
+
         .direct-channels {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
         }
+
         .channel {
             display: flex;
             align-items: center;
@@ -103,10 +119,12 @@
             background: rgba(200, 16, 46, 0.05);
             transition: var(--transition-smooth);
         }
+
         .channel:hover {
             background: rgba(200, 16, 46, 0.1);
             transform: translateX(5px);
         }
+
         .channel-icon {
             width: 50px;
             height: 50px;
@@ -117,26 +135,30 @@
             align-items: center;
             justify-content: center;
         }
+
         .channel-info h4 {
             font-size: 1.1rem;
             margin-bottom: 0.2rem;
             color: var(--text-main);
         }
+
         .channel-info p {
             color: var(--text-muted);
             font-weight: 500;
         }
-        
+
         .contact-form form {
             background: rgba(255, 255, 255, 0.85);
             border-top: 4px solid var(--primary-red);
         }
+
         .file-upload {
             position: relative;
             overflow: hidden;
             display: inline-block;
             width: 100%;
         }
+
         .file-upload input[type=file] {
             font-size: 100px;
             position: absolute;
@@ -146,6 +168,7 @@
             cursor: pointer;
             height: 100%;
         }
+
         .file-upload-btn {
             display: flex;
             align-items: center;
@@ -160,6 +183,7 @@
             transition: var(--transition-smooth);
             cursor: pointer;
         }
+
         .file-upload:hover .file-upload-btn {
             border-color: var(--primary-red);
             background: rgba(200, 16, 46, 0.05);
@@ -167,10 +191,14 @@
         }
 
         @media (max-width: 1024px) {
-            .contact-layout { grid-template-columns: 1fr; gap: 4rem; }
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
         }
     </style>
 </head>
+
 <body class="contact-page">
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
@@ -182,8 +210,10 @@
             <a href="index.html" class="logo">
                 <div class="logo-icon">
                     <svg viewBox="0 0 100 100" style="width: 3.5rem; height: 3.5rem; flex-shrink: 0;">
-                        <path d="M 15,42 L 15,15 L 50,35 L 85,15 L 85,42" fill="none" stroke="var(--primary-red)" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
-                        <path d="M 15,58 L 15,85 L 50,65 L 85,85 L 85,58" fill="none" stroke="#666666" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <path d="M 15,42 L 15,15 L 50,35 L 85,15 L 85,42" fill="none" stroke="var(--primary-red)"
+                            stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <path d="M 15,58 L 15,85 L 50,65 L 85,85 L 85,58" fill="none" stroke="#666666" stroke-width="14"
+                            stroke-linejoin="miter" stroke-linecap="butt" />
                         <rect x="8" y="47.5" width="14" height="5" fill="#666666" />
                         <rect x="78" y="47.5" width="14" height="5" fill="#666666" />
                     </svg>
@@ -197,7 +227,9 @@
                 <a href="about.html" class="nav-link">About</a>
                 <a href="products.html" class="nav-link">Products</a>
                 <a href="brands.html" class="nav-link">Brands</a>
-                <a href="contact.html" class="btn-primary-outline" style="padding: 0.75rem 1.5rem; font-size: 0.8rem; background: rgba(200,16,46,0.1);">Initiate Project</a>
+                <a href="contact.html" class="btn-primary-outline"
+                    style="padding: 0.75rem 1.5rem; font-size: 0.8rem; background: rgba(200,16,46,0.1);">Initiate
+                    Project</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <i data-lucide="menu"></i>
@@ -210,8 +242,12 @@
         <section class="page-header">
             <div class="container">
                 <span class="section-kicker fade-up">Initiate Project</span>
-                <h1 class="fade-up" style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1.5rem; text-transform: uppercase;">Secure Your <span class="text-gradient">Supply Chain</span></h1>
-                <p class="fade-up" style="color: var(--text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto; font-weight: 400;">Engage our procurement specialists to solve your most complex mechanical sourcing challenges.</p>
+                <h1 class="fade-up"
+                    style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1.5rem; text-transform: uppercase;">
+                    Secure Your <span class="text-gradient">Supply Chain</span></h1>
+                <p class="fade-up"
+                    style="color: var(--text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto; font-weight: 400;">
+                    Engage our procurement specialists to solve your most complex mechanical sourcing challenges.</p>
             </div>
         </section>
 
@@ -251,8 +287,9 @@
                                 <p>+971 50 123 4567</p>
                             </div>
                         </a>
-                        <a href="https://wa.me/971501234567" target="_blank" class="channel">
-                            <div class="channel-icon" style="background: #25D366;"><i data-lucide="message-circle"></i></div>
+                        <a href="https://wa.me/000" target="_blank" class="channel">
+                            <div class="channel-icon" style="background: #25D366;"><i data-lucide="message-circle"></i>
+                            </div>
                             <div class="channel-info">
                                 <h4>WhatsApp Business</h4>
                                 <p>Rapid B2B Support</p>
@@ -263,37 +300,53 @@
 
                 <div class="contact-form fade-up">
                     <form>
-                        <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">Request for Quote (RFQ)</h3>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">Request for Quote
+                            (RFQ)</h3>
                         <div class="form-row">
                             <div class="form-group">
-                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Full Name</label>
+                                <label
+                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Full
+                                    Name</label>
                                 <input type="text" placeholder="John Doe" required>
                             </div>
                             <div class="form-group">
-                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Organization</label>
+                                <label
+                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Organization</label>
                                 <input type="text" placeholder="Company Ltd.">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
-                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Corporate Email</label>
+                                <label
+                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Corporate
+                                    Email</label>
                                 <input type="email" placeholder="john@company.com" required>
                             </div>
                             <div class="form-group">
-                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Direct Line</label>
+                                <label
+                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Direct
+                                    Line</label>
                                 <input type="tel" placeholder="+971 5X XXX XXXX">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Project / Requirement Scope</label>
+                            <label
+                                style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Project
+                                / Requirement Scope</label>
                             <input type="text" placeholder="e.g. HVAC Distribution for Commercial Tower">
                         </div>
                         <div class="form-group">
-                            <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Material Specs / Bill of Quantities</label>
-                            <textarea placeholder="Please provide detailed specifications, quantities, or paste your requirements here..." rows="5"></textarea>
+                            <label
+                                style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Material
+                                Specs / Bill of Quantities</label>
+                            <textarea
+                                placeholder="Please provide detailed specifications, quantities, or paste your requirements here..."
+                                rows="5"></textarea>
                         </div>
                         <div class="form-group">
-                            <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Attachments (Drawings / Schedules)</label>
+                            <label
+                                style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Attachments
+                                (Drawings / Schedules)</label>
                             <div class="file-upload">
                                 <div class="file-upload-btn">
                                     <i data-lucide="upload-cloud"></i> Click to browse or drag and drop files
@@ -301,10 +354,15 @@
                                 <input type="file" multiple>
                             </div>
                         </div>
-                        <div class="form-group" style="display: flex; align-items: flex-start; gap: 0.8rem; margin: 2rem 0;">
-                            <input type="checkbox" id="privacy-consent" required style="margin-top: 0.3rem; cursor: pointer; width: auto;">
-                            <label for="privacy-consent" style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; cursor: pointer;">
-                                I consent to having Mechway Global collect my details to respond to my inquiry. I have read and agree to the <a href="privacy.html" style="color: var(--primary-red); text-decoration: none;">Privacy Policy</a>.
+                        <div class="form-group"
+                            style="display: flex; align-items: flex-start; gap: 0.8rem; margin: 2rem 0;">
+                            <input type="checkbox" id="privacy-consent" required
+                                style="margin-top: 0.3rem; cursor: pointer; width: auto;">
+                            <label for="privacy-consent"
+                                style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; cursor: pointer;">
+                                I consent to having Mechway Global collect my details to respond to my inquiry. I have
+                                read and agree to the <a href="privacy.html"
+                                    style="color: var(--primary-red); text-decoration: none;">Privacy Policy</a>.
                             </label>
                         </div>
                         <button type="submit" class="btn-primary" style="width: 100%;">Submit RFQ</button>
@@ -319,8 +377,10 @@
             <div class="logo" style="justify-content: center; margin-bottom: 2rem;">
                 <div class="logo-icon">
                     <svg viewBox="0 0 100 100" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;">
-                        <path d="M 15,42 L 15,15 L 50,35 L 85,15 L 85,42" fill="none" stroke="var(--primary-red)" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
-                        <path d="M 15,58 L 15,85 L 50,65 L 85,85 L 85,58" fill="none" stroke="#888888" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <path d="M 15,42 L 15,15 L 50,35 L 85,15 L 85,42" fill="none" stroke="var(--primary-red)"
+                            stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <path d="M 15,58 L 15,85 L 50,65 L 85,85 L 85,58" fill="none" stroke="#888888" stroke-width="14"
+                            stroke-linejoin="miter" stroke-linecap="butt" />
                         <rect x="8" y="47.5" width="14" height="5" fill="#888888" />
                         <rect x="78" y="47.5" width="14" height="5" fill="#888888" />
                     </svg>
@@ -337,9 +397,18 @@
                 </div>
                 <p>&copy; 2026 Mechway Global. Excellence in Engineering. All rights reserved.</p>
                 <div style="display: flex; gap: 1.5rem; font-size: 0.8rem; flex-wrap: wrap; justify-content: center;">
-                    <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
-                    <a href="terms.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
-                    <a href="privacy.html#dnsmpi" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-muted)'">Do Not Sell My Personal Information</a>
+                    <a href="privacy.html"
+                        style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;"
+                        onmouseover="this.style.color='var(--primary-red)'"
+                        onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
+                    <a href="terms.html"
+                        style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;"
+                        onmouseover="this.style.color='var(--primary-red)'"
+                        onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
+                    <a href="privacy.html#dnsmpi"
+                        style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;"
+                        onmouseover="this.style.color='var(--primary-red)'"
+                        onmouseout="this.style.color='var(--text-muted)'">Do Not Sell My Personal Information</a>
                 </div>
             </div>
         </div>
@@ -347,7 +416,8 @@
 
     <script src="script.js"></script>
     <script>
-      lucide.createIcons();
+        lucide.createIcons();
     </script>
 </body>
+
 </html>
