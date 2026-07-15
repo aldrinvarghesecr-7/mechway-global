@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | Mechway Global</title>
-    <meta name="description" content="Explore Mechway Global's premium selection of MEP and Infrastructure components.">
+    <title>Brands & Partners | Mechway Global</title>
+    <meta name="description" content="Mechway Global's exclusive distribution portfolio and global manufacturing partners.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,37 +37,34 @@
             background: radial-gradient(circle at center, rgba(200,16,46,0.2) 0%, transparent 60%);
             pointer-events: none;
         }
-        .category-section {
-            padding: 5rem 0;
-            border-bottom: 1px solid var(--glass-border);
+        .brands-section {
+            padding: 6rem 0;
+            position: relative;
+            z-index: 5;
         }
-        .category-section:last-of-type {
-            border-bottom: none;
-        }
-        .category-title {
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            color: var(--text-main);
-            margin-bottom: 1rem;
-            display: flex;
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
             align-items: center;
-            gap: 1rem;
+            justify-items: center;
         }
-        .category-title i {
-            color: var(--primary-red);
-            width: 40px;
-            height: 40px;
+        .brand-logo {
+            width: 100%;
+            max-width: 200px;
+            height: 100px;
+            object-fit: contain;
+            filter: grayscale(100%) opacity(0.6);
+            transition: var(--transition-smooth);
         }
-        .category-desc {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 800px;
-            margin-bottom: 3rem;
-            line-height: 1.7;
+        .brand-logo:hover {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.05);
         }
     </style>
 </head>
-<body class="products-page">
+<body class="brands-page">
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
     <div class="bg-blob-3"></div>
@@ -91,8 +88,8 @@
             </a>
             <div class="nav-links">
                 <a href="about.html" class="nav-link">About</a>
-                <a href="products.html" class="nav-link" style="color: var(--primary-red);">Products</a>
-                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="brands.html" class="nav-link" style="color: var(--primary-red);">Brands</a>
                 <a href="contact.html" class="btn-primary-outline" style="padding: 0.75rem 1.5rem; font-size: 0.8rem;">Initiate Project</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -105,79 +102,36 @@
         <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <span class="section-kicker fade-up">Our Capabilities</span>
-                <h1 class="fade-up" style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1.5rem; text-transform: uppercase;">Products & <span class="text-gradient">Solutions</span></h1>
-                <p class="fade-up" style="color: var(--text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto; font-weight: 400;">Explore our core divisions of high-performance components tailored for the world's most demanding projects.</p>
+                <span class="section-kicker fade-up">Our Partners</span>
+                <h1 class="fade-up" style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1.5rem; text-transform: uppercase;">Exclusive Distribution <span class="text-gradient">Portfolio</span></h1>
+                <p class="fade-up" style="color: var(--text-muted); font-size: 1.15rem; max-width: 700px; margin: 0 auto; font-weight: 400;">Partnering with global manufacturers across Asia and the GCC to deliver unparalleled quality and reliability to the region's most demanding engineering projects.</p>
             </div>
         </section>
 
-        <!-- MEP Section -->
-        <section class="category-section">
+        <!-- Brands Grid -->
+        <section class="brands-section">
             <div class="container fade-up">
-                <h2 class="category-title"><i data-lucide="settings-2"></i> MEP (Mechanical, Electrical, Plumbing)</h2>
-                <p class="category-desc">Comprehensive MEP solutions designed for operational excellence in modern facilities. We supply top-tier HVAC systems, advanced plumbing networks, and premium electrical distribution components.</p>
-                <div class="catalogue-grid">
-                    <div class="catalogue-card">
-                        <div class="catalogue-image">
-                            <img src="https://images.unsplash.com/photo-1617882255776-880358897c8d?auto=format&fit=crop&w=500&q=80" alt="HVAC Systems">
-                        </div>
-                        <div class="catalogue-content">
-                            <h3>HVAC Systems</h3>
-                            <p>High-efficiency Heating, Ventilation, and Air Conditioning units for optimal climate control.</p>
-                        </div>
-                    </div>
-                    <div class="catalogue-card">
-                        <div class="catalogue-image">
-                            <img src="https://images.unsplash.com/photo-1585695026601-52ab53f7fdb0?auto=format&fit=crop&w=500&q=80" alt="Plumbing">
-                        </div>
-                        <div class="catalogue-content">
-                            <h3>Plumbing & Piping</h3>
-                            <p>Advanced pipes, fittings, and fluid control systems designed for reliability and seamless integration.</p>
-                        </div>
-                    </div>
-                    <div class="catalogue-card">
-                        <div class="catalogue-image">
-                            <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=500&q=80" alt="Electrical">
-                        </div>
-                        <div class="catalogue-content">
-                            <h3>Electrical Distribution</h3>
-                            <p>Premium electrical components and power distribution solutions ensuring uninterrupted performance.</p>
-                        </div>
-                    </div>
+                <div class="section-header text-center" style="margin-bottom: 2rem;">
+                    <h2 class="section-title">Global <span class="text-gradient">Manufacturers</span></h2>
                 </div>
-            </div>
-        </section>
-
-        <!-- Infrastructure Section -->
-        <section class="category-section">
-            <div class="container fade-up">
-                <h2 class="category-title"><i data-lucide="hard-hat"></i> Infrastructure</h2>
-                <p class="category-desc">Robust materials and components forming the backbone of major construction and development projects worldwide. Engineered for heavy-duty applications and strict industry standards.</p>
-                <div class="catalogue-grid">
-                    <div class="catalogue-card">
-                        <div class="catalogue-image">
-                            <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=500&q=80" alt="Heavy Piping">
-                        </div>
-                        <div class="catalogue-content">
-                            <h3>High-Pressure Piping</h3>
-                            <p>Process piping and utility networks engineered for fluid dynamics and safety.</p>
-                        </div>
-                    </div>
-                    <div class="catalogue-card">
-                        <div class="catalogue-image">
-                            <img src="https://images.unsplash.com/photo-1616781442999-52e6973e215e?auto=format&fit=crop&w=500&q=80" alt="Fire Fighting">
-                        </div>
-                        <div class="catalogue-content">
-                            <h3>Fire & Safety</h3>
-                            <p>State-of-the-art fire suppression and safety equipment protecting lives and critical assets.</p>
-                        </div>
-                    </div>
+                <div class="brands-grid">
+                    <!-- Brand Logotype Placeholders -->
+                    <img src="https://via.placeholder.com/200x100/f0f0f0/666666?text=BRAND+LOGO" alt="Partner Brand" class="brand-logo">
+                    <img src="https://via.placeholder.com/200x100/f0f0f0/666666?text=BRAND+LOGO" alt="Partner Brand" class="brand-logo">
+                    <img src="https://via.placeholder.com/200x100/f0f0f0/666666?text=BRAND+LOGO" alt="Partner Brand" class="brand-logo">
+                    <img src="https://via.placeholder.com/200x100/f0f0f0/666666?text=BRAND+LOGO" alt="Partner Brand" class="brand-logo">
+                    <img src="https://via.placeholder.com/200x100/f0f0f0/666666?text=BRAND+LOGO" alt="Partner Brand" class="brand-logo">
+                    <img src="https://via.placeholder.com/200x100/f0f0f0/666666?text=BRAND+LOGO" alt="Partner Brand" class="brand-logo">
+                    <img src="https://via.placeholder.com/200x100/f0f0f0/666666?text=BRAND+LOGO" alt="Partner Brand" class="brand-logo">
+                    <img src="https://via.placeholder.com/200x100/f0f0f0/666666?text=BRAND+LOGO" alt="Partner Brand" class="brand-logo">
+                    <img src="https://via.placeholder.com/200x100/f0f0f0/666666?text=BRAND+LOGO" alt="Partner Brand" class="brand-logo">
+                    <img src="https://via.placeholder.com/200x100/f0f0f0/666666?text=BRAND+LOGO" alt="Partner Brand" class="brand-logo">
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer" style="margin-top: 0; padding-top: 4rem;">
+    <footer class="footer" style="margin-top: 5rem; padding-top: 4rem;">
         <div class="container">
             <div class="logo" style="justify-content: center; margin-bottom: 2rem;">
                 <div class="logo-icon">

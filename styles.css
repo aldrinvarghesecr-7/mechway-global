@@ -670,6 +670,7 @@ body:hover .cursor-dot { opacity: 1; }
         max-width: calc(100% - 2rem);
     }
 }
+}
 @media (max-width: 768px) {
     .container { padding: 0 1.25rem; }
     .nav-links { display: none; }
@@ -694,4 +695,224 @@ body:hover .cursor-dot { opacity: 1; }
     .modal-image-wrapper { min-height: 250px; }
     .modal-details { padding: 2rem; }
     #modal-title { font-size: 2rem !important; }
+}
+
+/* --- NEW SECTIONS --- */
+
+/* Trust Bar (Scrolling Logos) */
+.trust-bar-section {
+    background: var(--text-main);
+    padding: 3rem 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.trust-bar-container {
+    display: flex;
+    align-items: center;
+    width: 200%;
+    animation: scrollLogos 30s linear infinite;
+}
+.trust-bar-container:hover {
+    animation-play-state: paused;
+}
+.trust-logo {
+    flex: 0 0 auto;
+    width: 150px;
+    margin: 0 3rem;
+    filter: grayscale(100%) brightness(200%);
+    opacity: 0.5;
+    transition: var(--transition-smooth);
+}
+.trust-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%) brightness(100%);
+}
+@keyframes scrollLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Core Pillars (Trio Layout) */
+.trio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    perspective: 1200px;
+}
+.trio-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    text-align: left;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+.trio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(200, 16, 46, 0.1);
+    border-color: rgba(200, 16, 46, 0.4);
+    background: rgba(255, 255, 255, 0.95);
+}
+.trio-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(200, 16, 46, 0.1);
+    color: var(--primary-red);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.trio-icon i {
+    width: 30px;
+    height: 30px;
+}
+.trio-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+.trio-card p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+.trio-link {
+    color: var(--primary-red);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.trio-link i {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+.trio-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Featured Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.project-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+    background: var(--text-main);
+}
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    opacity: 0.8;
+}
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 2rem 2rem;
+    background: linear-gradient(to top, rgba(15,23,42,0.95), transparent);
+    color: white;
+}
+.project-card:hover .project-image {
+    transform: scale(1.05);
+    opacity: 1;
+}
+.project-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+.project-desc {
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+}
+
+/* Pre-Footer Banner */
+.pre-footer {
+    background: var(--text-main);
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    border-radius: 40px 40px 0 0;
+    margin-top: 5rem;
+}
+.pre-footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, rgba(200,16,46,0.2) 0%, transparent 60%);
+    pointer-events: none;
+}
+.pre-footer h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+    color: white;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.3;
+}
+
+/* Adjust Footer for Pre-Footer */
+.footer {
+    margin-top: 0;
+    border-radius: 0;
+    padding-top: 2rem;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    color: var(--bg-white);
+    transition: var(--transition-smooth);
+}
+.social-links a i {
+    width: 20px;
+    height: 20px;
+}
+.social-links a:hover {
+    background: var(--primary-red);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1024px) {
+    .trio-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
 }
