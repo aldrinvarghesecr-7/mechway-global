@@ -234,120 +234,181 @@ document.addEventListener('DOMContentLoaded', () => {
     if (productsGrid) {
         // We are on products.html
         
-        const productsData = {
-            'infrastructure': {
-                title: 'Infrastructure',
-                desc: 'Robust materials and components forming the backbone of major construction and development projects worldwide.',
-                items: [
-                    { name: 'High-Tensile Rebar', desc: 'Grade 60 structural steel reinforcement bars.', specs: { 'Tensile Strength': '60,000 psi', 'Standard': 'ASTM A615' }, img: 'https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&w=500&q=80', badge: 'Core' },
-                    { name: 'Structural H-Beams', desc: 'Heavy-duty steel beams for large-scale framework.', specs: { 'Material': 'Carbon Steel', 'Yield Strength': '345 MPa' }, img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Precast Concrete Panels', desc: 'Accelerated construction panels with high durability.', specs: { 'Compressive Strength': '40 MPa', 'Fire Rating': '4 Hours' }, img: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Heavy-Duty Scaffold Tubes', desc: 'Galvanized steel scaffolding tubes for safety.', specs: { 'Thickness': '3.2mm', 'Standard': 'EN 39' }, img: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Geotextile Membranes', desc: 'Soil reinforcement and drainage solutions.', specs: { 'Type': 'Non-woven', 'Tensile': '15 kN/m' }, img: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Industrial Fasteners', desc: 'High-strength structural bolts and nuts.', specs: { 'Grade': '10.9', 'Coating': 'Hot Dip Galvanized' }, img: 'https://images.unsplash.com/photo-1530983821650-7c229c159813?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Expansion Joints', desc: 'Bridge and structural movement accommodation.', specs: { 'Movement': 'Up to 200mm', 'Material': 'Neoprene/Steel' }, img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Trench Drain Systems', desc: 'Heavy load capacity surface water drainage.', specs: { 'Load Class': 'F900', 'Material': 'Polymer Concrete' }, img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Steel Sheet Piles', desc: 'Retaining walls and earth support systems.', specs: { 'Section Modulus': '1600 cm³/m', 'Thickness': '10mm' }, img: 'https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Bridge Bearings', desc: 'Elastomeric pads for load distribution.', specs: { 'Load Capacity': '5000 kN', 'Lifespan': '50+ Years' }, img: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=500&q=80' }
-                ]
+        const productsData = [
+            // Brochure Products
+            { 
+                name: 'UPVC Drainage Pipes & Fittings', 
+                desc: 'Complete range of uPVC drainage pipes & fittings (32 mm – 1000 mm). Ideal for domestic and industrial drainage applications.', 
+                specs: { 'Material': 'uPVC', 'Standard': 'British-European standards', 'Joints': 'Solvent weld and rubber ring' }, 
+                img: 'https://images.unsplash.com/photo-1585695026601-52ab53f7fdb0?auto=format&fit=crop&w=500&q=80', 
+                badge: 'Premium',
+                industries: ['Commercial', 'Infrastructure', 'Industrial', 'Residential'],
+                brands: ['Hepworth']
             },
-            'plumbing': {
-                title: 'Plumbing',
-                desc: 'Advanced pipes, fittings, and fluid control systems designed for reliability and seamless integration.',
-                items: [
-                    { name: 'PPR Pipes', desc: 'High-temperature resistant plumbing pipes.', specs: { 'Pressure Rating': 'PN20', 'Material': 'Polypropylene' }, img: 'https://images.unsplash.com/photo-1585695026601-52ab53f7fdb0?auto=format&fit=crop&w=500&q=80', badge: 'Popular' },
-                    { name: 'Copper Tubing', desc: 'Premium copper tubes for water supply.', specs: { 'Type': 'L & K', 'Purity': '99.9%' }, img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Brass Gate Valves', desc: 'Heavy-duty shut-off valves for industrial use.', specs: { 'Pressure': 'PN16', 'Size': '1/2" to 4"' }, img: 'https://images.unsplash.com/photo-1584988775269-e0d00fbdcc94?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'UPVC Drainage Pipes', desc: 'Chemical resistant underground drainage.', specs: { 'Standard': 'BS EN 1401', 'Stiffness': 'SN4' }, img: 'https://images.unsplash.com/photo-1585695026601-52ab53f7fdb0?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Water Pressure Pumps', desc: 'Variable speed booster pump systems.', specs: { 'Flow': '10 m³/h', 'Head': '60m' }, img: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Stainless Steel Fittings', desc: 'Corrosion resistant threaded fittings.', specs: { 'Grade': '316L', 'Thread': 'NPT / BSPT' }, img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'PEX Tubing', desc: 'Flexible cross-linked polyethylene for radiant heat.', specs: { 'Temperature': 'Max 95°C', 'Size': '16mm - 32mm' }, img: 'https://images.unsplash.com/photo-1585695026601-52ab53f7fdb0?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Water Meters', desc: 'High precision multi-jet flow meters.', specs: { 'Accuracy': 'Class B', 'Max Temp': '50°C' }, img: 'https://images.unsplash.com/photo-1584988775269-e0d00fbdcc94?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Manifold Systems', desc: 'Distribution manifolds for complex plumbing.', specs: { 'Outlets': '2 to 12', 'Material': 'Brass' }, img: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Grease Interceptors', desc: 'Commercial kitchen wastewater filtration.', specs: { 'Capacity': '50 GPM', 'Material': 'Stainless Steel' }, img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80' }
-                ]
+            { 
+                name: 'Soundproof Pipes & Fittings', 
+                desc: 'Innovative mineral reinforced polypropylene (CPP) soil & waste system. Optimized 3-layer pipe structure & higher weight for reduced noise levels.', 
+                specs: { 'Material': 'Mineral reinforced PP', 'Standard': 'EN-1451-1, EN 13501 & DIN EN 14366' }, 
+                img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80', 
+                industries: ['Commercial', 'Residential'],
+                brands: ['Wavin', 'SiTech+', 'AS+']
             },
-            'mep': {
-                title: 'MEP',
-                desc: 'Comprehensive Mechanical, Electrical, and Plumbing solutions delivering operational excellence.',
-                items: [
-                    { name: 'Vibration Isolators', desc: 'Mounts for reducing noise and vibration in MEP setups.', specs: { 'Deflection': '25mm', 'Type': 'Spring / Rubber' }, img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80', badge: 'Essential' },
-                    { name: 'Unistrut Channels', desc: 'Metal framing systems for structural support.', specs: { 'Finish': 'Pre-Galvanized', 'Size': '41x41mm' }, img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Cable Trays', desc: 'Perforated and ladder trays for wire management.', specs: { 'Width': '100 - 600mm', 'Material': 'GI / Aluminum' }, img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Pipe Hangers', desc: 'Clevis hangers and supports for fluid pipes.', specs: { 'Load Rating': '1000 lbs', 'Standard': 'MSS SP-58' }, img: 'https://images.unsplash.com/photo-1585695026601-52ab53f7fdb0?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'BMS Controllers', desc: 'Building Management System intelligent control units.', specs: { 'Protocol': 'BACnet / Modbus', 'I/O': '32 Points' }, img: 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Motor Control Centers', desc: 'Low voltage MCCs for pump and fan control.', specs: { 'Voltage': '415V', 'Rating': 'Up to 3200A' }, img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Ductwork Accessories', desc: 'Volume control dampers and flexible ducts.', specs: { 'Leakage': 'Class C', 'Material': 'Galvanized' }, img: 'https://images.unsplash.com/photo-1617882255776-880358897c8d?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Thermal Insulation', desc: 'Elastomeric rubber for chilled water pipes.', specs: { 'Thickness': '13 - 50mm', 'Fire Rating': 'Class 0' }, img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Expansion Tanks', desc: 'Hydronic system pressure regulation.', specs: { 'Volume': '50 - 1000 L', 'Max Pressure': '10 Bar' }, img: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Variable Frequency Drives', desc: 'VFDs for energy efficient motor speed control.', specs: { 'Power': '0.75 - 250 kW', 'Harmonics': '< 5% THDi' }, img: 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=500&q=80' }
-                ]
+            { 
+                name: 'High Pressure Pipes & Fittings', 
+                desc: 'Distribution of cold water under pressure, air conditioning drain systems, piping networks for swimming pools, and transport of chemicals.', 
+                specs: { 'Material': 'PVC', 'Applications': 'High Pressure Fluids' }, 
+                img: 'https://images.unsplash.com/photo-1584988775269-e0d00fbdcc94?auto=format&fit=crop&w=500&q=80', 
+                industries: ['Industrial', 'Infrastructure'],
+                brands: ['Hepworth']
             },
-            'fire-fighting': {
-                title: 'Fire Fighting',
-                desc: 'State-of-the-art fire suppression and safety equipment protecting lives and critical assets.',
-                items: [
-                    { name: 'Fire Sprinkler Heads', desc: 'Pendent and upright automatic sprinklers.', specs: { 'K-Factor': '5.6', 'Response': 'Standard / Quick' }, img: 'https://images.unsplash.com/photo-1616781442999-52e6973e215e?auto=format&fit=crop&w=500&q=80', badge: 'UL Listed' },
-                    { name: 'Fire Pump Sets', desc: 'Diesel and electric driven UL/FM fire pumps.', specs: { 'Capacity': '500 - 1500 GPM', 'Pressure': '100 - 200 PSI' }, img: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Alarm Check Valves', desc: 'Wet pipe system alarm valves.', specs: { 'Size': '4" to 8"', 'Approval': 'UL / FM' }, img: 'https://images.unsplash.com/photo-1584988775269-e0d00fbdcc94?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Fire Extinguishers', desc: 'DCP and CO2 portable fire extinguishers.', specs: { 'Capacity': '4.5kg - 6kg', 'Rating': '21A 113B' }, img: 'https://images.unsplash.com/photo-1616781442999-52e6973e215e?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Fire Hydrants', desc: 'Pillar type hydrants for external protection.', specs: { 'Outlets': '2x 2.5"', 'Material': 'Cast Iron' }, img: 'https://images.unsplash.com/photo-1585695026601-52ab53f7fdb0?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Hose Reels', desc: 'Swinging manual and automatic fire hose reels.', specs: { 'Length': '30m', 'Diameter': '1"' }, img: 'https://images.unsplash.com/photo-1616781442999-52e6973e215e?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'FM200 Systems', desc: 'Clean agent fire suppression for server rooms.', specs: { 'Agent': 'HFC-227ea', 'Discharge Time': '10 seconds' }, img: 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Smoke Detectors', desc: 'Photoelectric smoke sensors for alarms.', specs: { 'Voltage': '24V DC', 'Coverage': '80m²' }, img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Fire Rated Cables', desc: 'LSZH cables for emergency systems.', specs: { 'Rating': 'CWZ', 'Survival': '3 Hours' }, img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Grooved Fittings', desc: 'Fast-installation pipe joining systems.', specs: { 'Pressure': '300 PSI', 'Material': 'Ductile Iron' }, img: 'https://images.unsplash.com/photo-1530983821650-7c229c159813?auto=format&fit=crop&w=500&q=80' }
-                ]
+            { 
+                name: 'HDPE Pressure Pipes & Fittings', 
+                desc: 'Suitable for all types of drainage applications including soil & waste, above-ground, below-ground, and chemical waste systems.', 
+                specs: { 'Material': 'HDPE', 'Standard': 'EN 1519 - 1' }, 
+                img: 'https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&w=500&q=80', 
+                industries: ['Commercial', 'Infrastructure', 'Industrial', 'Utility'],
+                brands: ['Hepworth']
             },
-            'hvac': {
-                title: 'HVAC',
-                desc: 'High-efficiency Heating, Ventilation, and Air Conditioning units for optimal climate control.',
-                items: [
-                    { name: 'Air Handling Units (AHU)', desc: 'Customizable air handlers for commercial spaces.', specs: { 'Airflow': 'Up to 50,000 CFM', 'Filters': 'MERV 13' }, img: 'https://images.unsplash.com/photo-1617882255776-880358897c8d?auto=format&fit=crop&w=500&q=80', badge: 'High Efficiency' },
-                    { name: 'Water Cooled Chillers', desc: 'Centrifugal chillers for large building cooling.', specs: { 'Capacity': '500 - 2000 Tons', 'Refrigerant': 'R-134a' }, img: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Fan Coil Units (FCU)', desc: 'Concealed and exposed FCUs for individual rooms.', specs: { 'Cooling': '1 - 4 Tons', 'Noise': '< 40 dB(A)' }, img: 'https://images.unsplash.com/photo-1617882255776-880358897c8d?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Cooling Towers', desc: 'Open and closed circuit cooling towers.', specs: { 'Type': 'Crossflow', 'Material': 'FRP' }, img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'VAV Boxes', desc: 'Variable Air Volume terminal units.', specs: { 'Control': 'DDC', 'Airflow': '100 - 3000 CFM' }, img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Exhaust Fans', desc: 'Centrifugal roof and inline exhaust fans.', specs: { 'Static Pressure': 'Up to 3" wg', 'Motor': 'TEFC' }, img: 'https://images.unsplash.com/photo-1617882255776-880358897c8d?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Pre-Insulated Ducts', desc: 'PIR duct panels for energy efficient routing.', specs: { 'Density': '45 kg/m³', 'Fire Rating': 'Class 0' }, img: 'https://images.unsplash.com/photo-1585695026601-52ab53f7fdb0?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Chilled Water Pumps', desc: 'End suction and split case pumps.', specs: { 'Head': '20 - 150m', 'Efficiency': '> 80%' }, img: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'HVAC Sensors', desc: 'Temperature, humidity, and CO2 sensors.', specs: { 'Output': '4-20mA / 0-10V', 'Accuracy': '± 0.2°C' }, img: 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Grilles & Diffusers', desc: 'Linear slot diffusers and return grilles.', specs: { 'Material': 'Extruded Aluminum', 'Finish': 'Powder Coated' }, img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80' }
-                ]
+            { 
+                name: 'UPVC Duct Pipes & Fabricated Fittings', 
+                desc: 'DUCT Pipes are manufactured as per DIN 8062 and BS 3506 standards. UPVC is self-extinguishing and will not support combustion.', 
+                specs: { 'Material': 'uPVC', 'Standard': 'DIN 8062, BS 3506' }, 
+                img: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=500&q=80', 
+                industries: ['Infrastructure', 'Utility'],
+                brands: ['Hycount']
             },
-            'electrical': {
-                title: 'Electrical',
-                desc: 'Premium electrical components and power distribution solutions ensuring uninterrupted performance.',
-                items: [
-                    { name: 'Power Transformers', desc: 'Cast resin dry-type transformers.', specs: { 'Rating': '1000 kVA', 'Voltage': '11kV / 415V' }, img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=500&q=80', badge: 'Critical' },
-                    { name: 'Switchgear Panels', desc: 'Main Distribution Boards (MDB) & SMDBs.', specs: { 'Fault Level': '50kA / 1 sec', 'Enclosure': 'IP54' }, img: 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Armored Cables', desc: 'XLPE/SWA/PVC low voltage power cables.', specs: { 'Cores': '4 Core', 'Size': '16mm² - 300mm²' }, img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Busbar Trunking', desc: 'Compact sandwich type busbar systems.', specs: { 'Rating': '800A - 4000A', 'Conductor': 'Copper / Aluminum' }, img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'LED High Bay Lights', desc: 'Industrial grade LED lighting fixtures.', specs: { 'Lumen': '20,000 lm', 'Lifespan': '50,000 Hrs' }, img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Circuit Breakers (ACB/MCCB)', desc: 'Molded case and air circuit breakers.', specs: { 'Poles': '3P / 4P', 'Trip Unit': 'Electronic' }, img: 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Uninterruptible Power Supply', desc: 'Three-phase online UPS systems.', specs: { 'Capacity': '20 - 500 kVA', 'Autonomy': '15 - 60 Mins' }, img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Wiring Accessories', desc: 'Switches, sockets, and faceplates.', specs: { 'Standard': 'BS 1363', 'Finish': 'Brushed Steel / White' }, img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Earthing Systems', desc: 'Copper clad earth rods and lightning protection.', specs: { 'Resistance': '< 1 Ohm', 'Material': 'Solid Copper' }, img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=500&q=80' },
-                    { name: 'Diesel Generators', desc: 'Backup prime and standby power gen-sets.', specs: { 'Output': '500 kVA', 'Engine': 'Cummins / Perkins' }, img: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&w=500&q=80' }
-                ]
+            { 
+                name: 'Generators', 
+                desc: 'Generates electrical power and hot water simultaneously from a single heat source. Operates using gas, wood, and multiple fuel types.', 
+                specs: { 'Output': '1–2 kW electrical', 'Application': 'Residential, commercial, off-grid' }, 
+                img: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&w=500&q=80', 
+                badge: 'Sustainable',
+                industries: ['Residential', 'Commercial', 'Off-grid'],
+                brands: ['Sterling Generators']
+            },
+            { 
+                name: 'PVC Conduits & Accessories', 
+                desc: 'High impact strength, UV stabilized PVC conduits and complete range of GI boxes. Low smoke for fire retardant.', 
+                specs: { 'Material': 'PVC', 'Standard': 'BSEN4607, IEC61386' }, 
+                img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=500&q=80', 
+                industries: ['Commercial', 'Residential', 'Industrial'],
+                brands: ['Rexton']
+            },
+            { 
+                name: 'Row DBs & ONU Cabinets', 
+                desc: 'Designed & fabricated as per specifications of telecom operators. Tempered glass door with ventilation provision.', 
+                specs: { 'Material': 'Electro Galvanized Sheet Steel', 'Standard': 'RAL7035, RAL9010' }, 
+                img: 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=500&q=80', 
+                industries: ['Telecom', 'Commercial'],
+                brands: ['Rexton']
+            },
+            { 
+                name: 'GI Conduits & Accessories', 
+                desc: 'Class 3 & 4 GI conduits - Hot dip galvanized coated for corrosion protection. Non-Flame propagating.', 
+                specs: { 'Material': 'GI', 'Standard': 'British & European standards' }, 
+                img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=500&q=80', 
+                industries: ['Infrastructure', 'Industrial'],
+                brands: ['Caparo']
+            },
+
+            // Giacomini Products
+            { 
+                name: 'Pressure Independent Control Valve (PICV)', 
+                desc: 'Enables to regulate and keep constant the flow rate in the terminal unit when the differential pressure of the main circuit varies.', 
+                specs: { 'Max working pressure': '25 bar', 'Working temp': '5÷110 °C' }, 
+                img: 'https://images.unsplash.com/photo-1584988775269-e0d00fbdcc94?auto=format&fit=crop&w=500&q=80', 
+                industries: ['HVAC', 'Commercial', 'Residential'],
+                brands: ['Giacomini']
+            },
+            { 
+                name: 'Static Balancing Valve', 
+                desc: 'Static balancing valves allow a gradual and precise regulation of the flow rate. Venturi principle flowmeter.', 
+                specs: { 'Max working pressure': '25 bar', 'Working temp': '5÷110 °C' }, 
+                img: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=500&q=80', 
+                industries: ['HVAC', 'Hydronic Distribution'],
+                brands: ['Giacomini']
+            },
+            { 
+                name: 'Thermostatic Mixer', 
+                desc: 'Thermostatic mixer for domestic water systems with high efficiency thermo-electric probe.', 
+                specs: { 'Max working pressure': '16 bar', 'Max working temp': '100 °C' }, 
+                img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80', 
+                industries: ['Residential', 'Commercial'],
+                brands: ['Giacomini']
+            },
+            { 
+                name: 'Diaphragm Pressure Reducer', 
+                desc: 'Automatic valve that reduces and stabilizes the pressure of a fluid in a water distribution conduit according to a preset value.', 
+                specs: { 'Max working pressure': '25 bar', 'Sound class': 'II' }, 
+                img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80', 
+                badge: 'Safety',
+                industries: ['HVAC', 'Plumbing', 'Commercial'],
+                brands: ['Giacomini']
+            },
+            { 
+                name: 'Hydraulic Separators', 
+                desc: 'Hydraulic separator with flanged connections. Equipped with automatic air vent and drain cock. Varnished steel body.', 
+                specs: { 'Max working pressure': '10 bar', 'Temperature': '0÷110 °C' }, 
+                img: 'https://images.unsplash.com/photo-1617882255776-880358897c8d?auto=format&fit=crop&w=500&q=80', 
+                industries: ['HVAC', 'Industrial'],
+                brands: ['Giacomini']
+            },
+
+            // NEWAY Products
+            { 
+                name: 'Concentric Butterfly Valves', 
+                desc: 'High-performance butterfly valves for fluid control and isolation across various water treatment applications.', 
+                specs: { 'Application': 'Flow control', 'Actuation': 'Manual / Motorized' }, 
+                img: 'https://images.unsplash.com/photo-1616781442999-52e6973e215e?auto=format&fit=crop&w=500&q=80', 
+                industries: ['Wastewater Treatment', 'Desalination Plants', 'District Cooling', 'Data Centres'],
+                brands: ['NEWAY']
+            },
+            { 
+                name: 'Resilient Seated Gate Valves', 
+                desc: 'Gate valves ensuring zero leakage and reliable isolation in high-demand water transmission systems.', 
+                specs: { 'Type': 'NRS / OS&Y', 'Application': 'Isolation' }, 
+                img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=500&q=80', 
+                badge: 'Zero Leakage',
+                industries: ['Potable Waterworks', 'Wastewater Treatment', 'Data Centres'],
+                brands: ['NEWAY']
+            },
+            { 
+                name: 'Double Door Check Valves', 
+                desc: 'Non-return valves designed to prevent backflow in critical pipeline systems, minimizing water hammer.', 
+                specs: { 'Type': 'Non-return', 'Feature': 'Silent check' }, 
+                img: 'https://images.unsplash.com/photo-1530983821650-7c229c159813?auto=format&fit=crop&w=500&q=80', 
+                industries: ['Desalination Plants', 'District Cooling', 'Potable Waterworks'],
+                brands: ['NEWAY']
+            },
+            { 
+                name: 'Air Release Valves', 
+                desc: 'Single or double orifice air release valves to prevent air accumulation in pipelines, ensuring efficiency.', 
+                specs: { 'Type': 'Single/Double Orifice', 'Application': 'Pipeline protection' }, 
+                img: 'https://images.unsplash.com/photo-1585695026601-52ab53f7fdb0?auto=format&fit=crop&w=500&q=80', 
+                industries: ['Potable Waterworks', 'Wastewater Treatment'],
+                brands: ['NEWAY']
+            },
+            { 
+                name: 'Strainers', 
+                desc: 'Y-Strainers and Foot valves designed for efficient filtration and pump protection in pipelines.', 
+                specs: { 'Type': 'Y-Strainer / Foot valve', 'Application': 'Filtration' }, 
+                img: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=500&q=80', 
+                industries: ['Desalination Plants', 'Data Centres', 'Potable Waterworks'],
+                brands: ['NEWAY']
+            },
+            { 
+                name: 'Flow Control Valves', 
+                desc: 'Piston type flow regulators and automatic control valves for precise flow management in critical facilities.', 
+                specs: { 'Type': 'Piston type', 'Application': 'Flow Regulation' }, 
+                img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=500&q=80', 
+                badge: 'Precision',
+                industries: ['Desalination Plants', 'District Cooling', 'Wastewater Treatment'],
+                brands: ['NEWAY']
             }
-        };
-
-        const urlParams = new URLSearchParams(window.location.search);
-        let categoryParam = urlParams.get('category');
-        
-        // Default to infrastructure if invalid
-        if (!categoryParam || !productsData[categoryParam]) {
-            categoryParam = 'infrastructure';
-        }
-
-        const category = productsData[categoryParam];
-
-        document.getElementById('category-title').textContent = category.title;
-        document.getElementById('category-desc').textContent = category.desc;
+        ];
 
         let gridHTML = '';
-        category.items.forEach((item, index) => {
+        productsData.forEach((item, index) => {
             const badgeHTML = item.badge ? `<div class="catalogue-badge">${item.badge}</div>` : '';
             
             gridHTML += `
@@ -390,8 +451,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             document.getElementById('modal-specs').innerHTML = specsHTML;
 
+            let industriesHTML = '';
+            if (item.industries && item.industries.length > 0) {
+                item.industries.forEach(industry => {
+                    industriesHTML += `<span class="industry-tag">${industry}</span>`;
+                });
+            }
+            document.getElementById('modal-industries').innerHTML = industriesHTML;
+
+            let brandsHTML = '';
+            if (item.brands && item.brands.length > 0) {
+                item.brands.forEach(brand => {
+                    brandsHTML += `<span class="brand-tag"><i data-lucide="award" style="width: 14px; height: 14px; display: inline; margin-right: 4px;"></i>${brand}</span>`;
+                });
+            } else {
+                brandsHTML = '<span style="color: var(--text-muted); font-size: 0.9rem;">Not specified</span>';
+            }
+            
+            // We need to inject the brands section. Let's add it dynamically or update an existing container.
+            const brandsContainer = document.getElementById('modal-brands');
+            if(brandsContainer) {
+                brandsContainer.innerHTML = brandsHTML;
+            }
+
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // prevent background scrolling
+            document.body.style.overflow = 'hidden';
+            // Re-initialize lucide icons inside the modal after content is injected
+            lucide.createIcons();
         };
 
         const closeModal = () => {
@@ -402,7 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.product-item').forEach(card => {
             card.querySelector('.view-details-btn').addEventListener('click', () => {
                 const index = card.getAttribute('data-index');
-                openModal(category.items[index]);
+                openModal(productsData[index]);
             });
         });
 
@@ -411,6 +497,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === modal) {
                 closeModal();
             }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
         });
 
         // Trigger GSAP animations for dynamically added elements
