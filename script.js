@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     requestAnimationFrame(raf);
 
-    gsap.ticker.add((time)=>{
+    gsap.ticker.add((time) => {
         lenis.raf(time * 1000);
     });
     gsap.ticker.lagSmoothing(0);
@@ -30,15 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Custom Cursor Logic
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
-    
-    if(cursorDot && cursorOutline && window.innerWidth > 768) {
+
+    if (cursorDot && cursorOutline && window.innerWidth > 768) {
         window.addEventListener('mousemove', (e) => {
             const posX = e.clientX;
             const posY = e.clientY;
-            
+
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.top = `${posY}px`;
-            
+
             cursorOutline.animate({
                 left: `${posX}px`,
                 top: `${posY}px`
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Scale the background and show the kicker
         .to(".hero-media", { scale: 1.15, duration: 2, ease: "power1.inOut" }, 0)
         .to(".hero-kicker", { opacity: 1, duration: 0.5 }, 0)
-        
+
         // Show graphic
         .to(".hero-graphic", { opacity: 0.6, duration: 1 }, 0.5)
 
@@ -124,12 +124,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fadeElements = gsap.utils.toArray('.fade-up');
     fadeElements.forEach(el => {
-        gsap.fromTo(el, 
+        gsap.fromTo(el,
             { y: 50, opacity: 0 },
-            { 
-                y: 0, 
-                opacity: 1, 
-                duration: 1, 
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: el,
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 0.8,
         stagger: {
             each: 0.1,
-            onComplete: function() {
+            onComplete: function () {
                 this.targets()[0].classList.add('ready');
             }
         },
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    gsap.fromTo(".sourcing-bg-img", 
+    gsap.fromTo(".sourcing-bg-img",
         { yPercent: -10 },
         {
             yPercent: 10,
@@ -175,11 +175,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gsap.fromTo(".map-img",
         { scale: 0.9, opacity: 0, rotationX: 15 },
-        { 
-            scale: 1, 
-            opacity: 1, 
-            rotationX: 0, 
-            duration: 1.5, 
+        {
+            scale: 1,
+            opacity: 1,
+            rotationX: 0,
+            duration: 1.5,
             ease: "power3.out",
             scrollTrigger: {
                 trigger: ".map-container",
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 0.6,
         stagger: {
             each: 0.1,
-            onComplete: function() {
+            onComplete: function () {
                 this.targets()[0].closest('.why-card').classList.add('ready');
             }
         },
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.counter');
     counters.forEach(counter => {
         const target = +counter.getAttribute('data-target');
-        
+
         ScrollTrigger.create({
             trigger: counter,
             start: "top 90%",
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     duration: 2.5,
                     ease: "power3.out",
                     snap: { innerHTML: 1 },
-                    onUpdate: function() {
+                    onUpdate: function () {
                         counter.innerHTML = Math.ceil(this.targets()[0].innerHTML);
                     }
                 });
@@ -233,174 +233,174 @@ document.addEventListener('DOMContentLoaded', () => {
     const productsGrid = document.getElementById('products-grid');
     if (productsGrid) {
         // We are on products.html
-        
+
         const productsData = [
             // Brochure Products
-            { 
-                name: 'UPVC Drainage Pipes & Fittings', 
-                desc: 'Complete range of uPVC drainage pipes & fittings (32 mm – 1000 mm). Ideal for domestic and industrial drainage applications.', 
-                specs: { 'Material': 'uPVC', 'Standard': 'British-European standards', 'Joints': 'Solvent weld and rubber ring' }, 
-                img: 'https://images.unsplash.com/photo-1585695026601-52ab53f7fdb0?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'UPVC Drainage Pipes & Fittings',
+                desc: 'Complete range of uPVC drainage pipes & fittings (32 mm – 1000 mm). Ideal for domestic and industrial drainage applications.',
+                specs: { 'Material': 'uPVC', 'Standard': 'British-European standards', 'Joints': 'Solvent weld and rubber ring' },
+                img: 'https://images.unsplash.com/photo-1519452576308-bbfe5b58e6e5?auto=format&fit=crop&w=500&q=80',
                 badge: 'Premium',
                 industries: ['Commercial', 'Infrastructure', 'Industrial', 'Residential'],
                 brands: ['Hepworth']
             },
-            { 
-                name: 'Soundproof Pipes & Fittings', 
-                desc: 'Innovative mineral reinforced polypropylene (CPP) soil & waste system. Optimized 3-layer pipe structure & higher weight for reduced noise levels.', 
-                specs: { 'Material': 'Mineral reinforced PP', 'Standard': 'EN-1451-1, EN 13501 & DIN EN 14366' }, 
-                img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Soundproof Pipes & Fittings',
+                desc: 'Innovative mineral reinforced polypropylene (CPP) soil & waste system. Optimized 3-layer pipe structure & higher weight for reduced noise levels.',
+                specs: { 'Material': 'Mineral reinforced PP', 'Standard': 'EN-1451-1, EN 13501 & DIN EN 14366' },
+                img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80',
                 industries: ['Commercial', 'Residential'],
                 brands: ['Wavin', 'SiTech+', 'AS+']
             },
-            { 
-                name: 'High Pressure Pipes & Fittings', 
-                desc: 'Distribution of cold water under pressure, air conditioning drain systems, piping networks for swimming pools, and transport of chemicals.', 
-                specs: { 'Material': 'PVC', 'Applications': 'High Pressure Fluids' }, 
-                img: 'https://images.unsplash.com/photo-1584988775269-e0d00fbdcc94?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'High Pressure Pipes & Fittings',
+                desc: 'Distribution of cold water under pressure, air conditioning drain systems, piping networks for swimming pools, and transport of chemicals.',
+                specs: { 'Material': 'PVC', 'Applications': 'High Pressure Fluids' },
+                img: 'https://images.unsplash.com/photo-1584988775269-e0d00fbdcc94?auto=format&fit=crop&w=500&q=80',
                 industries: ['Industrial', 'Infrastructure'],
                 brands: ['Hepworth']
             },
-            { 
-                name: 'HDPE Pressure Pipes & Fittings', 
-                desc: 'Suitable for all types of drainage applications including soil & waste, above-ground, below-ground, and chemical waste systems.', 
-                specs: { 'Material': 'HDPE', 'Standard': 'EN 1519 - 1' }, 
-                img: 'https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'HDPE Pressure Pipes & Fittings',
+                desc: 'Suitable for all types of drainage applications including soil & waste, above-ground, below-ground, and chemical waste systems.',
+                specs: { 'Material': 'HDPE', 'Standard': 'EN 1519 - 1' },
+                img: 'https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&w=500&q=80',
                 industries: ['Commercial', 'Infrastructure', 'Industrial', 'Utility'],
                 brands: ['Hepworth']
             },
-            { 
-                name: 'UPVC Duct Pipes & Fabricated Fittings', 
-                desc: 'DUCT Pipes are manufactured as per DIN 8062 and BS 3506 standards. UPVC is self-extinguishing and will not support combustion.', 
-                specs: { 'Material': 'uPVC', 'Standard': 'DIN 8062, BS 3506' }, 
-                img: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'UPVC Duct Pipes & Fabricated Fittings',
+                desc: 'DUCT Pipes are manufactured as per DIN 8062 and BS 3506 standards. UPVC is self-extinguishing and will not support combustion.',
+                specs: { 'Material': 'uPVC', 'Standard': 'DIN 8062, BS 3506' },
+                img: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=500&q=80',
                 industries: ['Infrastructure', 'Utility'],
                 brands: ['Hycount']
             },
-            { 
-                name: 'Generators', 
-                desc: 'Generates electrical power and hot water simultaneously from a single heat source. Operates using gas, wood, and multiple fuel types.', 
-                specs: { 'Output': '1–2 kW electrical', 'Application': 'Residential, commercial, off-grid' }, 
-                img: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Generators',
+                desc: 'Generates electrical power and hot water simultaneously from a single heat source. Operates using gas, wood, and multiple fuel types.',
+                specs: { 'Output': '1–2 kW electrical', 'Application': 'Residential, commercial, off-grid' },
+                img: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&w=500&q=80',
                 badge: 'Sustainable',
                 industries: ['Residential', 'Commercial', 'Off-grid'],
                 brands: ['Sterling Generators']
             },
-            { 
-                name: 'PVC Conduits & Accessories', 
-                desc: 'High impact strength, UV stabilized PVC conduits and complete range of GI boxes. Low smoke for fire retardant.', 
-                specs: { 'Material': 'PVC', 'Standard': 'BSEN4607, IEC61386' }, 
-                img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'PVC Conduits & Accessories',
+                desc: 'High impact strength, UV stabilized PVC conduits and complete range of GI boxes. Low smoke for fire retardant.',
+                specs: { 'Material': 'PVC', 'Standard': 'BSEN4607, IEC61386' },
+                img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=500&q=80',
                 industries: ['Commercial', 'Residential', 'Industrial'],
                 brands: ['Rexton']
             },
-            { 
-                name: 'Row DBs & ONU Cabinets', 
-                desc: 'Designed & fabricated as per specifications of telecom operators. Tempered glass door with ventilation provision.', 
-                specs: { 'Material': 'Electro Galvanized Sheet Steel', 'Standard': 'RAL7035, RAL9010' }, 
-                img: 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Row DBs & ONU Cabinets',
+                desc: 'Designed & fabricated as per specifications of telecom operators. Tempered glass door with ventilation provision.',
+                specs: { 'Material': 'Electro Galvanized Sheet Steel', 'Standard': 'RAL7035, RAL9010' },
+                img: 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=500&q=80',
                 industries: ['Telecom', 'Commercial'],
                 brands: ['Rexton']
             },
-            { 
-                name: 'GI Conduits & Accessories', 
-                desc: 'Class 3 & 4 GI conduits - Hot dip galvanized coated for corrosion protection. Non-Flame propagating.', 
-                specs: { 'Material': 'GI', 'Standard': 'British & European standards' }, 
-                img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'GI Conduits & Accessories',
+                desc: 'Class 3 & 4 GI conduits - Hot dip galvanized coated for corrosion protection. Non-Flame propagating.',
+                specs: { 'Material': 'GI', 'Standard': 'British & European standards' },
+                img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=500&q=80',
                 industries: ['Infrastructure', 'Industrial'],
                 brands: ['Caparo']
             },
 
             // Giacomini Products
-            { 
-                name: 'Pressure Independent Control Valve (PICV)', 
-                desc: 'Enables to regulate and keep constant the flow rate in the terminal unit when the differential pressure of the main circuit varies.', 
-                specs: { 'Max working pressure': '25 bar', 'Working temp': '5÷110 °C' }, 
-                img: 'https://images.unsplash.com/photo-1584988775269-e0d00fbdcc94?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Pressure Independent Control Valve (PICV)',
+                desc: 'Enables to regulate and keep constant the flow rate in the terminal unit when the differential pressure of the main circuit varies.',
+                specs: { 'Max working pressure': '25 bar', 'Working temp': '5÷110 °C' },
+                img: 'https://images.unsplash.com/photo-1584988775269-e0d00fbdcc94?auto=format&fit=crop&w=500&q=80',
                 industries: ['HVAC', 'Commercial', 'Residential'],
                 brands: ['Giacomini']
             },
-            { 
-                name: 'Static Balancing Valve', 
-                desc: 'Static balancing valves allow a gradual and precise regulation of the flow rate. Venturi principle flowmeter.', 
-                specs: { 'Max working pressure': '25 bar', 'Working temp': '5÷110 °C' }, 
-                img: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Static Balancing Valve',
+                desc: 'Static balancing valves allow a gradual and precise regulation of the flow rate. Venturi principle flowmeter.',
+                specs: { 'Max working pressure': '25 bar', 'Working temp': '5÷110 °C' },
+                img: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=500&q=80',
                 industries: ['HVAC', 'Hydronic Distribution'],
                 brands: ['Giacomini']
             },
-            { 
-                name: 'Thermostatic Mixer', 
-                desc: 'Thermostatic mixer for domestic water systems with high efficiency thermo-electric probe.', 
-                specs: { 'Max working pressure': '16 bar', 'Max working temp': '100 °C' }, 
-                img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Thermostatic Mixer',
+                desc: 'Thermostatic mixer for domestic water systems with high efficiency thermo-electric probe.',
+                specs: { 'Max working pressure': '16 bar', 'Max working temp': '100 °C' },
+                img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80',
                 industries: ['Residential', 'Commercial'],
                 brands: ['Giacomini']
             },
-            { 
-                name: 'Diaphragm Pressure Reducer', 
-                desc: 'Automatic valve that reduces and stabilizes the pressure of a fluid in a water distribution conduit according to a preset value.', 
-                specs: { 'Max working pressure': '25 bar', 'Sound class': 'II' }, 
-                img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Diaphragm Pressure Reducer',
+                desc: 'Automatic valve that reduces and stabilizes the pressure of a fluid in a water distribution conduit according to a preset value.',
+                specs: { 'Max working pressure': '25 bar', 'Sound class': 'II' },
+                img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80',
                 badge: 'Safety',
                 industries: ['HVAC', 'Plumbing', 'Commercial'],
                 brands: ['Giacomini']
             },
-            { 
-                name: 'Hydraulic Separators', 
-                desc: 'Hydraulic separator with flanged connections. Equipped with automatic air vent and drain cock. Varnished steel body.', 
-                specs: { 'Max working pressure': '10 bar', 'Temperature': '0÷110 °C' }, 
-                img: 'https://images.unsplash.com/photo-1617882255776-880358897c8d?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Hydraulic Separators',
+                desc: 'Hydraulic separator with flanged connections. Equipped with automatic air vent and drain cock. Varnished steel body.',
+                specs: { 'Max working pressure': '10 bar', 'Temperature': '0÷110 °C' },
+                img: 'https://images.unsplash.com/photo-1617882255776-880358897c8d?auto=format&fit=crop&w=500&q=80',
                 industries: ['HVAC', 'Industrial'],
                 brands: ['Giacomini']
             },
 
             // NEWAY Products
-            { 
-                name: 'Concentric Butterfly Valves', 
-                desc: 'High-performance butterfly valves for fluid control and isolation across various water treatment applications.', 
-                specs: { 'Application': 'Flow control', 'Actuation': 'Manual / Motorized' }, 
-                img: 'https://images.unsplash.com/photo-1616781442999-52e6973e215e?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Concentric Butterfly Valves',
+                desc: 'High-performance butterfly valves for fluid control and isolation across various water treatment applications.',
+                specs: { 'Application': 'Flow control', 'Actuation': 'Manual / Motorized' },
+                img: 'https://images.unsplash.com/photo-1616781442999-52e6973e215e?auto=format&fit=crop&w=500&q=80',
                 industries: ['Wastewater Treatment', 'Desalination Plants', 'District Cooling', 'Data Centres'],
-                brands: ['NEWAY']
+                brands: ['MECHWAY']
             },
-            { 
-                name: 'Resilient Seated Gate Valves', 
-                desc: 'Gate valves ensuring zero leakage and reliable isolation in high-demand water transmission systems.', 
-                specs: { 'Type': 'NRS / OS&Y', 'Application': 'Isolation' }, 
-                img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Resilient Seated Gate Valves',
+                desc: 'Gate valves ensuring zero leakage and reliable isolation in high-demand water transmission systems.',
+                specs: { 'Type': 'NRS / OS&Y', 'Application': 'Isolation' },
+                img: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=500&q=80',
                 badge: 'Zero Leakage',
                 industries: ['Potable Waterworks', 'Wastewater Treatment', 'Data Centres'],
                 brands: ['NEWAY']
             },
-            { 
-                name: 'Double Door Check Valves', 
-                desc: 'Non-return valves designed to prevent backflow in critical pipeline systems, minimizing water hammer.', 
-                specs: { 'Type': 'Non-return', 'Feature': 'Silent check' }, 
-                img: 'https://images.unsplash.com/photo-1530983821650-7c229c159813?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Double Door Check Valves',
+                desc: 'Non-return valves designed to prevent backflow in critical pipeline systems, minimizing water hammer.',
+                specs: { 'Type': 'Non-return', 'Feature': 'Silent check' },
+                img: 'https://images.unsplash.com/photo-1530983821650-7c229c159813?auto=format&fit=crop&w=500&q=80',
                 industries: ['Desalination Plants', 'District Cooling', 'Potable Waterworks'],
                 brands: ['NEWAY']
             },
-            { 
-                name: 'Air Release Valves', 
-                desc: 'Single or double orifice air release valves to prevent air accumulation in pipelines, ensuring efficiency.', 
-                specs: { 'Type': 'Single/Double Orifice', 'Application': 'Pipeline protection' }, 
-                img: 'https://images.unsplash.com/photo-1585695026601-52ab53f7fdb0?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Air Release Valves',
+                desc: 'Single or double orifice air release valves to prevent air accumulation in pipelines, ensuring efficiency.',
+                specs: { 'Type': 'Single/Double Orifice', 'Application': 'Pipeline protection' },
+                img: 'https://images.unsplash.com/photo-1585695026601-52ab53f7fdb0?auto=format&fit=crop&w=500&q=80',
                 industries: ['Potable Waterworks', 'Wastewater Treatment'],
                 brands: ['NEWAY']
             },
-            { 
-                name: 'Strainers', 
-                desc: 'Y-Strainers and Foot valves designed for efficient filtration and pump protection in pipelines.', 
-                specs: { 'Type': 'Y-Strainer / Foot valve', 'Application': 'Filtration' }, 
-                img: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Strainers',
+                desc: 'Y-Strainers and Foot valves designed for efficient filtration and pump protection in pipelines.',
+                specs: { 'Type': 'Y-Strainer / Foot valve', 'Application': 'Filtration' },
+                img: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=500&q=80',
                 industries: ['Desalination Plants', 'Data Centres', 'Potable Waterworks'],
                 brands: ['NEWAY']
             },
-            { 
-                name: 'Flow Control Valves', 
-                desc: 'Piston type flow regulators and automatic control valves for precise flow management in critical facilities.', 
-                specs: { 'Type': 'Piston type', 'Application': 'Flow Regulation' }, 
-                img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=500&q=80', 
+            {
+                name: 'Flow Control Valves',
+                desc: 'Piston type flow regulators and automatic control valves for precise flow management in critical facilities.',
+                specs: { 'Type': 'Piston type', 'Application': 'Flow Regulation' },
+                img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=500&q=80',
                 badge: 'Precision',
                 industries: ['Desalination Plants', 'District Cooling', 'Wastewater Treatment'],
                 brands: ['NEWAY']
@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let gridHTML = '';
         productsData.forEach((item, index) => {
             const badgeHTML = item.badge ? `<div class="catalogue-badge">${item.badge}</div>` : '';
-            
+
             gridHTML += `
                 <div class="catalogue-card product-item" data-index="${index}">
                     <div class="catalogue-image">
@@ -431,14 +431,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Modal Logic
         const modal = document.getElementById('product-modal');
         const modalClose = document.getElementById('modal-close');
-        
+
         const openModal = (item) => {
             document.getElementById('modal-title').textContent = item.name;
             document.getElementById('modal-desc').textContent = item.desc;
             document.getElementById('modal-img').src = item.img;
-            
+
             const badge = document.getElementById('modal-badge');
-            if(item.badge) {
+            if (item.badge) {
                 badge.style.display = 'inline-block';
                 badge.textContent = item.badge;
             } else {
@@ -467,10 +467,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 brandsHTML = '<span style="color: var(--text-muted); font-size: 0.9rem;">Not specified</span>';
             }
-            
+
             // We need to inject the brands section. Let's add it dynamically or update an existing container.
             const brandsContainer = document.getElementById('modal-brands');
-            if(brandsContainer) {
+            if (brandsContainer) {
                 brandsContainer.innerHTML = brandsHTML;
             }
 
@@ -505,7 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Trigger GSAP animations for dynamically added elements
         setTimeout(() => {
             lucide.createIcons();
-            
+
             // Stagger the product cards smoothly
             gsap.from(".product-item", {
                 y: 60,
@@ -513,7 +513,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 0.8,
                 stagger: {
                     each: 0.1,
-                    onComplete: function() {
+                    onComplete: function () {
                         this.targets()[0].classList.add('ready');
                     }
                 },
@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const fadeElements = gsap.utils.toArray('.fade-up');
             fadeElements.forEach(el => {
-                gsap.fromTo(el, 
+                gsap.fromTo(el,
                     { y: 50, opacity: 0 },
                     { y: 0, opacity: 1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 95%" }, onComplete: () => el.classList.add('ready') }
                 );
@@ -540,7 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cookieBanner) {
         // Check if user has already made a choice
         const cookieConsent = localStorage.getItem('mechway_cookie_consent');
-        
+
         if (!cookieConsent) {
             // Show banner after a slight delay
             setTimeout(() => {
