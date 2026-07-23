@@ -240,9 +240,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'UPVC Drainage Pipes & Fittings',
                 desc: 'Complete range of uPVC drainage pipes & fittings (32 mm – 1000 mm). Ideal for domestic and industrial drainage applications.',
                 specs: { 'Material': 'uPVC', 'Standard': 'British-European standards', 'Joints': 'Solvent weld and rubber ring' },
-                img: 'assets/upvc-drainage-pipes.png',
+                img: 'assets/Screenshot 2026-07-23 170328.png',
                 images: [
-                    'assets/upvc-drainage-pipes.png',
+                    'assets/Screenshot 2026-07-23 170328.png',
                     'assets/Hepworth.jpg',
                     'assets/images%20(1).jpg'
                 ],
@@ -254,9 +254,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'Soundproof Pipes & Fittings',
                 desc: 'Innovative mineral reinforced polypropylene (CPP) soil & waste system. Optimized 3-layer pipe structure & higher weight for reduced noise levels.',
                 specs: { 'Material': 'Mineral reinforced PP', 'Standard': 'EN-1451-1, EN 13501 & DIN EN 14366' },
-                img: 'assets/soundproof-pipes.png',
+                img: 'assets/Screenshot 2026-07-23 170345.png',
                 images: [
-                    'assets/soundproof-pipes.png',
+                    'assets/Screenshot 2026-07-23 170345.png',
                     'assets/Wavin-India-Website-Images.webp'
                 ],
                 industries: ['Commercial', 'Residential'],
@@ -266,9 +266,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'High Pressure Pipes & Fittings',
                 desc: 'Distribution of cold water under pressure, air conditioning drain systems, piping networks for swimming pools, and transport of chemicals.',
                 specs: { 'Material': 'PVC', 'Applications': 'High Pressure Fluids' },
-                img: 'assets/high-pressure-pipes.png',
+                img: 'assets/Screenshot 2026-07-23 170414.png',
                 images: [
-                    'assets/high-pressure-pipes.png',
+                    'assets/Screenshot 2026-07-23 170414.png',
                     'assets/pvc-pipe-fittings-500x500.webp',
                     'assets/RACCORDI-PVC_1S.webp'
                 ],
@@ -291,9 +291,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'UPVC Duct Pipes & Fabricated Fittings',
                 desc: 'DUCT Pipes are manufactured as per DIN 8062 and BS 3506 standards. UPVC is self-extinguishing and will not support combustion.',
                 specs: { 'Material': 'uPVC', 'Standard': 'DIN 8062, BS 3506' },
-                img: 'assets/upvc-drainage-pipes.png',
+                img: 'assets/Screenshot 2026-07-23 170403.png',
                 images: [
-                    'assets/upvc-drainage-pipes.png',
+                    'assets/Screenshot 2026-07-23 170403.png',
                     'assets/images%20(3).jpg'
                 ],
                 industries: ['Infrastructure', 'Utility'],
@@ -303,10 +303,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'Generators',
                 desc: 'Generates electrical power and hot water simultaneously from a single heat source. Operates using gas, wood, and multiple fuel types.',
                 specs: { 'Output': '1–2 kW electrical', 'Application': 'Residential, commercial, off-grid' },
-                img: 'assets/diesel-generator.png',
+                img: 'assets/sterling-sge-25-pr-25-kva-generator.jpg',
                 images: [
-                    'assets/diesel-generator.png',
-                    'assets/images%20(4).jpg'
+                    'assets/sterling-sge-25-pr-25-kva-generator.jpg',
+                    'assets/sterling gen 2.jpg'
                 ],
                 badge: 'Sustainable',
                 industries: ['Residential', 'Commercial', 'Off-grid'],
@@ -328,10 +328,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'Row DBs & ONU Cabinets',
                 desc: 'Designed & fabricated as per specifications of telecom operators. Tempered glass door with ventilation provision.',
                 specs: { 'Material': 'Electro Galvanized Sheet Steel', 'Standard': 'RAL7035, RAL9010' },
-                img: 'assets/Screenshot%202026-07-23%20091655.png',
+                img: 'assets/image.png',
                 images: [
-                    'assets/Screenshot%202026-07-23%20091655.png',
-                    'assets/Screenshot%202026-07-23%20091713.png'
+                    'assets/image.png',
+
                 ],
                 industries: ['Telecom', 'Commercial'],
                 brands: ['Rexton']
@@ -340,10 +340,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'GI Conduits & Accessories',
                 desc: 'Class 3 & 4 GI conduits - Hot dip galvanized coated for corrosion protection. Non-Flame propagating.',
                 specs: { 'Material': 'GI', 'Standard': 'British & European standards' },
-                img: 'assets/high-pressure-pipes.png',
+                img: 'assets/image copy 2.png',
                 images: [
-                    'assets/high-pressure-pipes.png',
-                    'assets/Screenshot%202026-07-23%20091854.png'
+                    'assets/image copy 2.png',
+
                 ],
                 industries: ['Infrastructure', 'Industrial'],
                 brands: ['Caparo']
@@ -390,10 +390,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'Diaphragm Pressure Reducer',
                 desc: 'Automatic valve that reduces and stabilizes the pressure of a fluid in a water distribution conduit according to a preset value.',
                 specs: { 'Max working pressure': '25 bar', 'Sound class': 'II' },
-                img: 'assets/infrastructure%20valve.jpeg',
+                img: 'assets/image copy.png',
                 images: [
-                    'assets/infrastructure%20valve.jpeg',
-                    'assets/giacomni.png'
+                    'assets/image copy.png',
+
                 ],
                 badge: 'Safety',
                 industries: ['HVAC', 'Plumbing', 'Commercial'],
@@ -403,28 +403,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'Hydraulic Separators',
                 desc: 'Hydraulic separator with flanged connections. Equipped with automatic air vent and drain cock. Varnished steel body.',
                 specs: { 'Max working pressure': '10 bar', 'Temperature': '0÷110 °C' },
-                img: 'assets/giacomni.png',
+                img: 'assets/hydrulic.jpg',
                 images: [
-                    'assets/giacomni.png',
-                    'assets/infrastructure%20valve.jpeg'
+                    'assets/hydrulic.jpg',
+
                 ],
                 industries: ['HVAC', 'Industrial'],
                 brands: ['Giacomini']
             },
 
             // NEWAY Products
-            {
-                name: 'Concentric Butterfly Valves',
-                desc: 'High-performance butterfly valves for fluid control and isolation across various water treatment applications.',
-                specs: { 'Application': 'Flow control', 'Actuation': 'Manual / Motorized' },
-                img: 'assets/infrastructure%20valve.jpeg',
-                images: [
-                    'assets/infrastructure%20valve.jpeg',
-                    'assets/check%20valve%202.jpg'
-                ],
-                industries: ['Wastewater Treatment', 'Desalination Plants', 'District Cooling', 'Data Centres'],
-                brands: ['MECHWAY']
-            },
+
+
             {
                 name: 'Resilient Seated Gate Valves',
                 desc: 'Gate valves ensuring zero leakage and reliable isolation in high-demand water transmission systems.',
@@ -450,32 +440,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 industries: ['Desalination Plants', 'District Cooling', 'Potable Waterworks'],
                 brands: ['NEWAY']
             },
-            {
-                name: 'Air Release Valves',
-                desc: 'Single or double orifice air release valves to prevent air accumulation in pipelines, ensuring efficiency.',
-                specs: { 'Type': 'Single/Double Orifice', 'Application': 'Pipeline protection' },
-                img: 'assets/infrastructure%20valve.jpeg',
-                images: [
-                    'assets/infrastructure%20valve.jpeg',
-                    'assets/check%20valve.jpg'
-                ],
-                industries: ['Potable Waterworks', 'Wastewater Treatment'],
-                brands: ['NEWAY']
-            },
+
             {
                 name: 'Strainers',
                 desc: 'Y-Strainers and Foot valves designed for efficient filtration and pump protection in pipelines.',
                 specs: { 'Type': 'Y-Strainer / Foot valve', 'Application': 'Filtration' },
-                img: 'assets/check%20valve%202.jpg',
+                img: 'assets/y strainer.jpg',
                 images: [
-                    'assets/check%20valve%202.jpg',
+                    'assets/y strainer.jpg',
                     'assets/infrastructure%20valve.jpeg'
                 ],
                 industries: ['Desalination Plants', 'Data Centres', 'Potable Waterworks'],
                 brands: ['NEWAY']
             },
             {
-                name: 'Flow Control Valves',
+                name: 'Water Meter',
                 desc: 'Piston type flow regulators and automatic control valves for precise flow management in critical facilities.',
                 specs: { 'Type': 'Piston type', 'Application': 'Flow Regulation' },
                 img: 'assets/ultrasonic%20wate%20rmeter.jpeg',
