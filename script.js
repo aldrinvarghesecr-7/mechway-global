@@ -241,6 +241,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 desc: 'Complete range of uPVC drainage pipes & fittings (32 mm – 1000 mm). Ideal for domestic and industrial drainage applications.',
                 specs: { 'Material': 'uPVC', 'Standard': 'British-European standards', 'Joints': 'Solvent weld and rubber ring' },
                 img: 'https://images.unsplash.com/photo-1519452576308-bbfe5b58e6e5?auto=format&fit=crop&w=500&q=80',
+                images: [
+                    'https://images.unsplash.com/photo-1519452576308-bbfe5b58e6e5?auto=format&fit=crop&w=500&q=80',
+                    'assets/Hepworth.jpg',
+                    'assets/images%20(1).jpg'
+                ],
                 badge: 'Premium',
                 industries: ['Commercial', 'Infrastructure', 'Industrial', 'Residential'],
                 brands: ['Hepworth']
@@ -258,6 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 desc: 'Distribution of cold water under pressure, air conditioning drain systems, piping networks for swimming pools, and transport of chemicals.',
                 specs: { 'Material': 'PVC', 'Applications': 'High Pressure Fluids' },
                 img: 'https://images.unsplash.com/photo-1584988775269-e0d00fbdcc94?auto=format&fit=crop&w=500&q=80',
+                images: [
+                    'https://images.unsplash.com/photo-1584988775269-e0d00fbdcc94?auto=format&fit=crop&w=500&q=80',
+                    'assets/pvc-pipe-fittings-500x500.webp',
+                    'assets/RACCORDI-PVC_1S.webp'
+                ],
                 industries: ['Industrial', 'Infrastructure'],
                 brands: ['Hepworth']
             },
@@ -266,6 +276,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 desc: 'Suitable for all types of drainage applications including soil & waste, above-ground, below-ground, and chemical waste systems.',
                 specs: { 'Material': 'HDPE', 'Standard': 'EN 1519 - 1' },
                 img: 'https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&w=500&q=80',
+                images: [
+                    'https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?auto=format&fit=crop&w=500&q=80',
+                    'assets/placeholder1.jpg',
+                    'assets/placeholder2.jpg'
+                ],
                 industries: ['Commercial', 'Infrastructure', 'Industrial', 'Utility'],
                 brands: ['Hepworth']
             },
@@ -274,6 +289,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 desc: 'DUCT Pipes are manufactured as per DIN 8062 and BS 3506 standards. UPVC is self-extinguishing and will not support combustion.',
                 specs: { 'Material': 'uPVC', 'Standard': 'DIN 8062, BS 3506' },
                 img: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=500&q=80',
+                images: [
+                    'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=500&q=80',
+                    'assets/placeholder1.jpg',
+                    'assets/placeholder2.jpg'
+                ],
                 industries: ['Infrastructure', 'Utility'],
                 brands: ['Hycount']
             },
@@ -282,6 +302,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 desc: 'Generates electrical power and hot water simultaneously from a single heat source. Operates using gas, wood, and multiple fuel types.',
                 specs: { 'Output': '1–2 kW electrical', 'Application': 'Residential, commercial, off-grid' },
                 img: 'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&w=500&q=80',
+                images: [
+                    'https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?auto=format&fit=crop&w=500&q=80',
+                    'assets/placeholder1.jpg',
+                    'assets/placeholder2.jpg'
+                ],
                 badge: 'Sustainable',
                 industries: ['Residential', 'Commercial', 'Off-grid'],
                 brands: ['Sterling Generators']
@@ -431,11 +456,65 @@ document.addEventListener('DOMContentLoaded', () => {
         // Modal Logic
         const modal = document.getElementById('product-modal');
         const modalClose = document.getElementById('modal-close');
+        
+        let currentImages = [];
+        let currentImageIndex = 0;
+        const modalPrevBtn = document.getElementById('modal-prev-btn');
+        const modalNextBtn = document.getElementById('modal-next-btn');
+        const modalSliderDots = document.getElementById('modal-slider-dots');
+        const modalImg = document.getElementById('modal-img');
+
+        const updateSlider = () => {
+            if (!currentImages || currentImages.length <= 1) {
+                if(modalPrevBtn) modalPrevBtn.style.display = 'none';
+                if(modalNextBtn) modalNextBtn.style.display = 'none';
+                if(modalSliderDots) modalSliderDots.style.display = 'none';
+                if(modalImg) modalImg.src = currentImages[0] || '';
+                return;
+            }
+            if(modalPrevBtn) modalPrevBtn.style.display = 'flex';
+            if(modalNextBtn) modalNextBtn.style.display = 'flex';
+            if(modalSliderDots) modalSliderDots.style.display = 'flex';
+            
+            if(modalImg) modalImg.src = currentImages[currentImageIndex];
+            
+            if(modalSliderDots) {
+                let dotsHTML = '';
+                currentImages.forEach((_, idx) => {
+                    dotsHTML += `<div class="modal-dot ${idx === currentImageIndex ? 'active' : ''}" data-idx="${idx}"></div>`;
+                });
+                modalSliderDots.innerHTML = dotsHTML;
+                document.querySelectorAll('.modal-dot').forEach(dot => {
+                    dot.addEventListener('click', (e) => {
+                        currentImageIndex = parseInt(e.target.getAttribute('data-idx'));
+                        updateSlider();
+                    });
+                });
+            }
+        };
+
+        if(modalPrevBtn && modalNextBtn) {
+            modalPrevBtn.addEventListener('click', () => {
+                if(currentImages.length > 1) {
+                    currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+                    updateSlider();
+                }
+            });
+            modalNextBtn.addEventListener('click', () => {
+                if(currentImages.length > 1) {
+                    currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+                    updateSlider();
+                }
+            });
+        }
 
         const openModal = (item) => {
             document.getElementById('modal-title').textContent = item.name;
             document.getElementById('modal-desc').textContent = item.desc;
-            document.getElementById('modal-img').src = item.img;
+            
+            currentImages = item.images && item.images.length > 0 ? item.images : [item.img];
+            currentImageIndex = 0;
+            updateSlider();
 
             const badge = document.getElementById('modal-badge');
             if (item.badge) {
