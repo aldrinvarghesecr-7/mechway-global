@@ -454,16 +454,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 brands: ['NEWAY']
             },
             {
-                name: 'Water Meter',
+                name: 'Ultrasonic Water Meter and BTU Meters',
                 desc: 'Piston type flow regulators and automatic control valves for precise flow management in critical facilities.',
-                specs: { 'Type': 'Piston type', 'Application': 'Flow Regulation' },
+                specs: { 'Type': 'Ultrasonic Water Meter and BTU Meters', 'Application': 'Metering' },
                 img: 'assets/ultrasonic%20wate%20rmeter.jpeg',
                 images: [
                     'assets/ultrasonic%20wate%20rmeter.jpeg',
-                    'assets/infrastructure%20valve.jpeg'
+                    'assets/BTU%20METER.jpg'
                 ],
                 badge: 'Precision',
-                industries: ['Desalination Plants', 'District Cooling', 'Wastewater Treatment'],
+                industries: ['Metering', 'HVAC'],
                 brands: ['NEWAY']
             }
         ];
