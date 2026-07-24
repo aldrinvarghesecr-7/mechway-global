@@ -366,10 +366,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: 'Static Balancing Valve',
                 desc: 'Static balancing valves allow a gradual and precise regulation of the flow rate. Venturi principle flowmeter.',
                 specs: { 'Max working pressure': '25 bar', 'Working temp': '5÷110 °C' },
-                img: 'assets/staicb.jpg',
+                img: 'assets/staticbalancing.png',
                 images: [
-                    'assets/staicb.jpg',
-                    'assets/static.jpg'
+                    'assets/staticbalancing.png',
+                    'assets/staticblancing2.png'
                 ],
                 industries: ['HVAC', 'Hydronic Distribution'],
                 brands: ['Giacomini']
