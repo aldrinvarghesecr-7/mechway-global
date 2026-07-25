@@ -465,6 +465,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge: 'Precision',
                 industries: ['Metering', 'HVAC'],
                 brands: ['NEWAY']
+            },
+            {
+                name: 'Industrial Valves',
+                desc: 'Industrial Valves with cutting-edge innovation and design.',
+                specs: { 'Type': 'Butterfly Valves, Ball Valves, Gate Valves', 'Application': 'Industrial' },
+                img: 'assets/infrastructure2.png',
+                images: [
+                    'assets/infrastructure2.png',
+                    'assets/double offsetbutterfly.png',
+                ],
+                badge: 'Precision',
+                industries: ['Metering', 'HVAC'],
+                brands: ['NEWAY']
             }
         ];
 
