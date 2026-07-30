@@ -111,17 +111,88 @@
             <div class="container fade-up">
                 <div class="section-header text-center" style="margin-bottom: 2rem;">
                     <h2 class="section-title">Global <span class="text-gradient">Manufacturers</span></h2>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">Click on any brand logo below to view all available products under that brand.</p>
                 </div>
                 <div class="brands-grid">
-                    <!-- Brand Logotype Placeholders -->
-                    <img src="assets/giacomni.png" alt="Giacomini" class="brand-logo">
-                    <img src="assets/hepworth%20logo.png" alt="Hepworth" class="brand-logo">
-                    <img src="assets/wavin%20logo.png" alt="Wavin" class="brand-logo">
-                    <img src="assets/download.png" alt="Partner Brand" class="brand-logo">
-                    <img src="assets/images.png" alt="Partner Brand" class="brand-logo">
-                    <img src="assets/Screenshot 2026-07-23 121141.png" alt="Partner Brand" class="brand-logo">
-                    <img src="assets/comer.png" alt="Partner Brand" class="brand-logo">
-                    <img src="assets/neway.png" alt="Neway" class="brand-logo">
+                    <div class="brand-card-interactive" data-brand="Giacomini" title="Click to view Giacomini products">
+                        <div class="brand-card-img-wrapper">
+                            <img src="assets/giacomni.png" alt="Giacomini Logo" class="brand-logo">
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-card-name">Giacomini</span>
+                            <span class="brand-card-btn"><i data-lucide="layers"></i> View Products</span>
+                        </div>
+                    </div>
+
+                    <div class="brand-card-interactive" data-brand="Hepworth" title="Click to view Hepworth products">
+                        <div class="brand-card-img-wrapper">
+                            <img src="assets/hepworth%20logo.png" alt="Hepworth Logo" class="brand-logo">
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-card-name">Hepworth</span>
+                            <span class="brand-card-btn"><i data-lucide="layers"></i> View Products</span>
+                        </div>
+                    </div>
+
+                    <div class="brand-card-interactive" data-brand="Wavin" title="Click to view Wavin products">
+                        <div class="brand-card-img-wrapper">
+                            <img src="assets/wavin%20logo.png" alt="Wavin Logo" class="brand-logo">
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-card-name">Wavin</span>
+                            <span class="brand-card-btn"><i data-lucide="layers"></i> View Products</span>
+                        </div>
+                    </div>
+
+                    <div class="brand-card-interactive" data-brand="Supreme" title="Click to view Supreme products">
+                        <div class="brand-card-img-wrapper">
+                            <img src="assets/download.png" alt="Supreme Logo" class="brand-logo">
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-card-name">Supreme</span>
+                            <span class="brand-card-btn"><i data-lucide="layers"></i> View Products</span>
+                        </div>
+                    </div>
+
+                    <div class="brand-card-interactive" data-brand="Comer" title="Click to view Comer products">
+                        <div class="brand-card-img-wrapper">
+                            <img src="assets/comer.png" alt="Comer Logo" class="brand-logo">
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-card-name">Comer</span>
+                            <span class="brand-card-btn"><i data-lucide="layers"></i> View Products</span>
+                        </div>
+                    </div>
+
+                    <div class="brand-card-interactive" data-brand="HYCOUNT" title="Click to view HYCOUNT products">
+                        <div class="brand-card-img-wrapper">
+                            <img src="assets/Screenshot 2026-07-23 121141.png" alt="HYCOUNT Logo" class="brand-logo">
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-card-name">HYCOUNT</span>
+                            <span class="brand-card-btn"><i data-lucide="layers"></i> View Products</span>
+                        </div>
+                    </div>
+
+                    <div class="brand-card-interactive" data-brand="Neway" title="Click to view Neway products">
+                        <div class="brand-card-img-wrapper">
+                            <img src="assets/neway.png" alt="Neway Logo" class="brand-logo">
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-card-name">Neway</span>
+                            <span class="brand-card-btn"><i data-lucide="layers"></i> View Products</span>
+                        </div>
+                    </div>
+
+                    <div class="brand-card-interactive" data-brand="Maddalena" title="Click to view Maddalena products">
+                        <div class="brand-card-img-wrapper" style="background: linear-gradient(135deg, #1e293b, #0f172a); display: flex; align-items: center; justify-content: center;">
+                            <span style="color: #ffffff; font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em;">MADDALENA</span>
+                        </div>
+                        <div class="brand-card-footer">
+                            <span class="brand-card-name">Maddalena</span>
+                            <span class="brand-card-btn"><i data-lucide="layers"></i> View Products</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -168,6 +239,63 @@
             </div>
         </div>
     </footer>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal-overlay">
+        <div class="product-modal-content">
+            <button id="modal-close" class="modal-close-btn" aria-label="Close modal"><i data-lucide="x"></i></button>
+            <div class="modal-grid">
+                <div class="modal-image-col">
+                    <img id="modal-img" src="" alt="Product View">
+                    <button id="modal-prev-btn" class="modal-slider-btn" aria-label="Previous view"><i data-lucide="chevron-left"></i></button>
+                    <button id="modal-next-btn" class="modal-slider-btn" aria-label="Next view"><i data-lucide="chevron-right"></i></button>
+                    <div id="modal-slider-dots" class="modal-slider-dots"></div>
+                    <div id="modal-badge" class="modal-badge"></div>
+                </div>
+                <div class="modal-info-col">
+                    <h2 id="modal-title" class="modal-title"></h2>
+                    <p id="modal-desc" class="modal-desc"></p>
+                    
+                    <div class="modal-section">
+                        <h3>Specifications</h3>
+                        <ul id="modal-specs" class="modal-specs-list"></ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>Brands Available</h3>
+                        <div id="modal-brands" class="brands-available-grid"></div>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3>Applications & Industries</h3>
+                        <div id="modal-industries" class="modal-industries-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brand Products Modal -->
+    <div id="brand-products-modal" class="modal-overlay">
+        <div class="brand-modal-content">
+            <button id="brand-modal-close" class="modal-close-btn" aria-label="Close modal"><i data-lucide="x"></i></button>
+            <div class="brand-modal-header">
+                <div class="brand-modal-logo-wrapper" id="brand-modal-logo-wrapper">
+                    <!-- Brand logo injected here -->
+                </div>
+                <div>
+                    <span class="section-kicker">MANUFACTURER PORTFOLIO</span>
+                    <h2 id="brand-modal-title" class="brand-modal-title">Available Products</h2>
+                    <p id="brand-modal-subtitle" class="brand-modal-subtitle">Explore all engineering components supplied under this brand.</p>
+                </div>
+            </div>
+            <div class="brand-modal-body">
+                <div id="brand-products-grid" class="catalogue-grid">
+                    <!-- Brand products dynamically injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
     <script>

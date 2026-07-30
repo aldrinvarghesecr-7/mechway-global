@@ -144,10 +144,10 @@
             <button id="modal-close" class="modal-close-btn" aria-label="Close modal"><i data-lucide="x"></i></button>
             <div class="modal-grid">
                 <div class="modal-image-col">
-                    <img id="modal-img" src="" alt="">
-                    <button id="modal-prev-btn" class="modal-slider-btn" aria-label="Previous image" style="display: none;"><i data-lucide="chevron-left"></i></button>
-                    <button id="modal-next-btn" class="modal-slider-btn" aria-label="Next image" style="display: none;"><i data-lucide="chevron-right"></i></button>
-                    <div id="modal-slider-dots" class="modal-slider-dots" style="display: none;"></div>
+                    <img id="modal-img" src="" alt="Product Placeholder View">
+                    <button id="modal-prev-btn" class="modal-slider-btn" aria-label="Previous view"><i data-lucide="chevron-left"></i></button>
+                    <button id="modal-next-btn" class="modal-slider-btn" aria-label="Next view"><i data-lucide="chevron-right"></i></button>
+                    <div id="modal-slider-dots" class="modal-slider-dots"></div>
                     <div id="modal-badge" class="modal-badge"></div>
                 </div>
                 <div class="modal-info-col">
@@ -161,13 +161,35 @@
 
                     <div class="modal-section">
                         <h3>Brands Available</h3>
-                        <div id="modal-brands" class="modal-industries-container"></div>
+                        <div id="modal-brands" class="brands-available-grid"></div>
                     </div>
 
                     <div class="modal-section">
-                        <h3>Industries Served</h3>
+                        <h3>Applications & Industries</h3>
                         <div id="modal-industries" class="modal-industries-container"></div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brand Products Modal -->
+    <div id="brand-products-modal" class="modal-overlay">
+        <div class="brand-modal-content">
+            <button id="brand-modal-close" class="modal-close-btn" aria-label="Close modal"><i data-lucide="x"></i></button>
+            <div class="brand-modal-header">
+                <div class="brand-modal-logo-wrapper" id="brand-modal-logo-wrapper">
+                    <!-- Brand logo injected here -->
+                </div>
+                <div>
+                    <span class="section-kicker">MANUFACTURER PORTFOLIO</span>
+                    <h2 id="brand-modal-title" class="brand-modal-title">Available Products</h2>
+                    <p id="brand-modal-subtitle" class="brand-modal-subtitle">Explore all engineering components supplied under this brand.</p>
+                </div>
+            </div>
+            <div class="brand-modal-body">
+                <div id="brand-products-grid" class="catalogue-grid">
+                    <!-- Brand products dynamically injected here -->
                 </div>
             </div>
         </div>

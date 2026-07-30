@@ -228,413 +228,588 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // PRODUCTS PAGE LOGIC
+    // PRODUCTS & BRANDS LOGIC
     // ==========================================
+
+    // Master Products Database
+    const productsData = [
+        {
+            name: 'UPVC Drainage Pipes & Fittings',
+            desc: 'Complete range of uPVC drainage pipes & fittings (32 mm – 1000 mm) manufactured to British and European standards for domestic, commercial, and infrastructure applications.',
+            specs: {
+                'Material': 'uPVC (Unplasticized Polyvinyl Chloride)',
+                'Standards': 'BS EN 1329 / BS EN 1401 / DIN standards',
+                'Applications': 'Building Services, Infrastructure, Landscaping',
+                'Features': 'Corrosion resistant, high flow capacity, durable rubber ring/solvent joints'
+            },
+            badge: 'Infrastructure Grade',
+            icon: 'layers',
+            industries: ['Building Services - Residential & Commercial', 'Infrastructure', 'Landscaping'],
+            brands: ['Hepworth', 'Supreme']
+        },
+        {
+            name: 'PPR pipes and fittings',
+            desc: 'High-performance Polypropylene Random Copolymer (PPR) piping systems for hot and cold pressure distribution networks.',
+            specs: {
+                'Material': 'PPR (Polypropylene Random Copolymer)',
+                'Pressure Rating': 'PN10, PN16, PN20',
+                'Applications': 'Hot & Cold Water Supply, HVAC Systems',
+                'Features': 'Homogeneous fusion welding, leak-proof joints, non-corrosive'
+            },
+            badge: 'Hot & Cold Water',
+            icon: 'repeat',
+            industries: ['Building Services - Residential & Commercial'],
+            brands: ['Supreme']
+        },
+        {
+            name: 'PEX pipe and fittings',
+            desc: 'Flexible cross-linked polyethylene (PEX) piping system providing exceptional temperature resistance and long-term mechanical durability.',
+            specs: {
+                'Material': 'Cross-linked Polyethylene (PEX)',
+                'Temperature Range': '-40°C to +95°C',
+                'Applications': 'Plumbing, Underfloor Heating, Chilled Water',
+                'Features': 'High flexibility, scale resistance, freeze resistant'
+            },
+            badge: 'Flexible Piping',
+            icon: 'corner-down-right',
+            industries: ['Building Services - Residential & Commercial'],
+            brands: ['Supreme']
+        },
+        {
+            name: 'Sound proof Drainage Pipes & Fittings',
+            desc: 'Acoustically optimized 3-layer mineral-reinforced soil & waste system designed to eliminate drainage noise in high-end developments.',
+            specs: {
+                'Material': 'Mineral-Reinforced Polypropylene (CPP)',
+                'Standards': 'EN 1451-1, DIN EN 14366 acoustic test certified',
+                'Noise Level': '< 15 dB acoustic dampening',
+                'Features': 'High weight structure, sound dampening core'
+            },
+            badge: 'Acoustic Silent',
+            icon: 'shield',
+            industries: ['Building Services - Residential & Commercial'],
+            brands: ['Wavin']
+        },
+        {
+            name: 'High Pressure Pipes & Fittings',
+            desc: 'Heavy-duty pressure piping systems designed for demanding fluid distribution, chemical transport, and air conditioning condensate loops.',
+            specs: {
+                'Material': 'Heavy-duty uPVC / PVC',
+                'Pressure Class': 'Up to 16 Bar (PN16)',
+                'Applications': 'Chilled Water, Condensate Drain, Swimming Pools',
+                'Features': 'High tensile strength, UV resistant'
+            },
+            badge: 'High Pressure',
+            icon: 'gauge',
+            industries: ['Building Services - Residential & Commercial'],
+            brands: ['Hepworth', 'Comer']
+        },
+        {
+            name: 'HDPE Pipes & Fittings',
+            desc: 'High-Density Polyethylene (HDPE) pressure pipes offering flexibility, superior chemical resistance, and robust joint integrity.',
+            specs: {
+                'Material': 'PE100 High-Density Polyethylene',
+                'Standards': 'EN 1519-1 / ISO 4427',
+                'Joint Method': 'Butt Fusion & Electrofusion',
+                'Features': 'Impact resistant, ground movement flexible'
+            },
+            badge: 'Heavy Duty',
+            icon: 'box',
+            industries: ['Building Services - Residential & Commercial'],
+            brands: ['Hepworth']
+        },
+        {
+            name: 'Duct Pipes & Accessories',
+            desc: 'Precision uPVC cable ducting pipes and fabricated accessories for power, telecom, infrastructure, and underground protection.',
+            specs: {
+                'Material': 'Self-extinguishing uPVC',
+                'Standards': 'DIN 8062, BS 3506',
+                'Applications': 'Electrical, Telecom, Utility Ducts',
+                'Features': 'Non-conductive, flame retardant, high impact'
+            },
+            badge: 'Cable Protection',
+            icon: 'grid',
+            industries: ['Building Services - Residential & Commercial', 'Infrastructure', 'Landscaping'],
+            brands: ['Hepworth', 'HYCOUNT']
+        },
+        {
+            name: 'Copper Alloy Plumbing & HVAC Valves',
+            desc: 'Precision brass and bronze alloy valves for domestic water supply, pressure control, and hydronic heating/cooling distribution.',
+            specs: {
+                'Material': 'Dezincification Resistant (DZR) Brass & Bronze',
+                'Pressure Class': 'PN16 / PN25',
+                'Temperature Rating': '-10°C to +110°C',
+                'Types': 'Ball valves, Check valves, Strainers, Gate valves'
+            },
+            badge: 'Precision Alloy',
+            icon: 'sliders',
+            industries: ['Building Services - Residential & Commercial'],
+            brands: ['Giacomini']
+        },
+        {
+            name: 'Iron Body Plumbing & HVAC Valves',
+            desc: 'Heavy industrial ductile and cast iron body isolation and check valves engineered for major commercial HVAC mains and plumbing risers.',
+            specs: {
+                'Material': 'Ductile Iron GGG40 / Cast Iron GG25',
+                'End Connections': 'Flanged BS EN 1092-2 / ANSI 150',
+                'Features': 'Resilient seated, epoxy coated internal/external',
+                'Applications': 'Central Plant, Risers, Chilled Water Mains'
+            },
+            badge: 'Industrial Grade',
+            icon: 'anchor',
+            industries: ['Building Services - Residential & Commercial'],
+            brands: ['Giacomini', 'Neway']
+        },
+        {
+            name: 'Pre-Assembled FCU Valve Package',
+            desc: 'Factory-tested pre-assembled Fan Coil Unit (FCU) hook-up packages integrating PICV, strainers, bypass valves, and drain ports.',
+            specs: {
+                'Components': 'PICV, Y-Strainer, 3-Port Bypass Valve, Test Points',
+                'Testing': '100% Factory Pressure & Flow Tested',
+                'Features': 'Drastically reduces on-site installation time and leaks',
+                'Applications': 'Fan Coil Units, Chilled Beams'
+            },
+            badge: 'Pre-Fab Modular',
+            icon: 'package-check',
+            industries: ['Building Services - Residential & Commercial'],
+            brands: ['Giacomini']
+        },
+        {
+            name: 'Plumbing Speciality Valves',
+            desc: 'Specialized hydronic control devices including pressure reducing valves, thermostatic mixing valves, and automatic air vents.',
+            specs: {
+                'Types': 'Pressure Reducers, TMVs, Dynamic Balancing, Air Vents',
+                'Standard': 'EN 1567 sound class certified',
+                'Max Working Temp': 'Up to 100°C',
+                'Features': 'Diaphragm operation, tamper-proof setpoints'
+            },
+            badge: 'Specialty Control',
+            icon: 'filter',
+            industries: ['Building Services - Residential & Commercial'],
+            brands: ['Giacomini']
+        },
+        {
+            name: 'Industrial Valves',
+            desc: 'High-performance butterfly, gate, globe, check, and ball valves engineered for heavy industrial processes, marine, and energy networks.',
+            specs: {
+                'Types': 'Triple-Offset Butterfly, OS&Y Gate, Swing Check, Ball Valves',
+                'Pressure Ratings': 'Class 150 to Class 1500 / PN10-PN100',
+                'Standards': 'API 600, API 609, BS 5163',
+                'Applications': 'Infrastructure, Landscaping, Marine, Oil & Gas'
+            },
+            badge: 'Heavy Industrial',
+            icon: 'wrench',
+            industries: ['Infrastructure', 'Landscaping', 'Marine', 'Oil & Gas'],
+            brands: ['Neway']
+        },
+        {
+            name: 'Water & Thermal Energy Metering Solutions',
+            desc: 'High-accuracy static ultrasonic water meters, thermal energy meters (BTU meters), and smart sub-metering infrastructure.',
+            specs: {
+                'Technology': 'Ultrasonic Transit-Time & Thermal Sensors',
+                'Communication': 'M-Bus, Modbus, LoRaWAN, Pulse Output',
+                'Accuracy': 'MID Class 2 / ISO 4064',
+                'Applications': 'District Cooling, Tenant Sub-Metering, Commercial'
+            },
+            badge: 'Smart Metering',
+            icon: 'gauge',
+            industries: ['Building Services - Residential & Commercial'],
+            brands: ['Maddalena']
+        }
+    ];
+
+    // Helper: Generate Multiple Image Placeholders per Product
+    const generateProductPlaceholders = (item) => {
+        const title = item.name.toUpperCase();
+        
+        const svg1 = `data:image/svg+xml;utf8,${encodeURIComponent(`
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+                <defs>
+                    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#0f172a" />
+                        <stop offset="100%" stop-color="#1e293b" />
+                    </linearGradient>
+                    <pattern id="grid1" width="30" height="30" patternUnits="userSpaceOnUse">
+                        <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#bg1)" />
+                <rect width="100%" height="100%" fill="url(#grid1)" />
+                <circle cx="300" cy="170" r="75" fill="none" stroke="rgba(200, 16, 46, 0.35)" stroke-width="2"/>
+                <circle cx="300" cy="170" r="105" fill="none" stroke="rgba(200, 16, 46, 0.15)" stroke-width="1" stroke-dasharray="6,6"/>
+                <rect x="250" y="120" width="100" height="100" rx="18" fill="rgba(255,255,255,0.04)" stroke="rgba(200,16,46,0.6)" stroke-width="2"/>
+                <text x="300" y="315" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="18" font-weight="700" letter-spacing="1.5">${title}</text>
+                <text x="300" y="342" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="500" letter-spacing="1">VIEW 01 - TECHNICAL SCHEMATIC & DRAFT</text>
+            </svg>
+        `)}`;
+
+        const svg2 = `data:image/svg+xml;utf8,${encodeURIComponent(`
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+                <defs>
+                    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#111827" />
+                        <stop offset="100%" stop-color="#0f172a" />
+                    </linearGradient>
+                    <pattern id="grid2" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(200,16,46,0.08)" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#bg2)" />
+                <rect width="100%" height="100%" fill="url(#grid2)" />
+                <line x1="80" y1="180" x2="520" y2="180" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="8,8"/>
+                <line x1="300" y1="60" x2="300" y2="300" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="8,8"/>
+                <circle cx="300" cy="180" r="65" fill="rgba(200,16,46,0.12)" stroke="#c8102e" stroke-width="2"/>
+                <text x="300" y="315" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="18" font-weight="700" letter-spacing="1.5">${title}</text>
+                <text x="300" y="342" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="500" letter-spacing="1">VIEW 02 - SPECIFICATION & DIMENSIONAL MATRIX</text>
+            </svg>
+        `)}`;
+
+        const svg3 = `data:image/svg+xml;utf8,${encodeURIComponent(`
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+                <defs>
+                    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#1e1b4b" />
+                        <stop offset="100%" stop-color="#0f172a" />
+                    </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#bg3)" />
+                <polygon points="300,80 385,225 215,225" fill="none" stroke="rgba(200, 16, 46, 0.45)" stroke-width="2.5"/>
+                <circle cx="300" cy="175" r="40" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1.5"/>
+                <text x="300" y="315" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="18" font-weight="700" letter-spacing="1.5">${title}</text>
+                <text x="300" y="342" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="500" letter-spacing="1">VIEW 03 - ISO CERTIFICATION & MATERIAL PROFILE</text>
+            </svg>
+        `)}`;
+
+        return [svg1, svg2, svg3];
+    };
+
+    // Helper: Map brand names to logo images for Brands Available section
+    const getBrandLogoImageCard = (brandName) => {
+        const brandsMap = {
+            'Hepworth': { img: 'assets/hepworth logo.png', color: '#c8102e' },
+            'Supreme': { img: 'assets/download.png', color: '#004b93' },
+            'Wavin': { img: 'assets/wavin logo.png', color: '#0072ce' },
+            'Comer': { img: 'assets/comer.png', color: '#e65100' },
+            'HYCOUNT': { img: 'assets/Screenshot 2026-07-23 121141.png', color: '#2e7d32' },
+            'Giacomini': { img: 'assets/giacomni.png', color: '#c8102e' },
+            'Neway': { img: 'assets/neway.png', color: '#0052cc' },
+            'Maddalena': { img: null, color: '#6a1b9a' }
+        };
+
+        const b = brandsMap[brandName] || { img: null, color: '#c8102e' };
+
+        let imageTag = '';
+        if (b.img) {
+            imageTag = `<img src="${b.img}" alt="${brandName} Logo" class="brand-available-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';" />
+            <span class="brand-fallback-text" style="display:none; color: ${b.color}; font-weight: 700;">${brandName}</span>`;
+        } else {
+            imageTag = `<span class="brand-fallback-text" style="color: #ffffff; font-weight: 800; font-family: 'Outfit', sans-serif;">${brandName}</span>`;
+        }
+
+        return `
+            <div class="brand-available-card" data-brand="${brandName}" title="Click to view all ${brandName} products">
+                <div class="brand-available-img-box">
+                    ${imageTag}
+                </div>
+                <span class="brand-available-title">${brandName}</span>
+                <span class="brand-click-hint"><i data-lucide="arrow-up-right"></i> View Products</span>
+            </div>
+        `;
+    };
+
+    // Render Products Grid (if on products.html)
     const productsGrid = document.getElementById('products-grid');
     if (productsGrid) {
-        // We are on products.html
-
-        const productsData = [
-            // Brochure Products
-            {
-                name: 'UPVC Drainage Pipes & Fittings',
-                desc: 'Complete range of uPVC drainage pipes & fittings (32 mm – 1000 mm). Ideal for domestic and industrial drainage applications.',
-                specs: { 'Material': 'uPVC', 'Standard': 'British-European standards', 'Joints': 'Solvent weld and rubber ring' },
-                img: 'assets/Screenshot 2026-07-23 170328.png',
-                images: [
-                    'assets/Screenshot 2026-07-23 170328.png',
-                    'assets/Hepworth.jpg',
-                    'assets/images%20(1).jpg'
-                ],
-                badge: 'Premium',
-                industries: ['Commercial', 'Infrastructure', 'Industrial', 'Residential'],
-                brands: ['Hepworth']
-            },
-            {
-                name: 'Soundproof Pipes & Fittings',
-                desc: 'Innovative mineral reinforced polypropylene (CPP) soil & waste system. Optimized 3-layer pipe structure & higher weight for reduced noise levels.',
-                specs: { 'Material': 'Mineral reinforced PP', 'Standard': 'EN-1451-1, EN 13501 & DIN EN 14366' },
-                img: 'assets/Screenshot 2026-07-23 170345.png',
-                images: [
-                    'assets/Screenshot 2026-07-23 170345.png',
-                    'assets/Wavin-India-Website-Images.webp'
-                ],
-                industries: ['Commercial', 'Residential'],
-                brands: ['Wavin', 'SiTech+', 'AS+']
-            },
-            {
-                name: 'High Pressure Pipes & Fittings',
-                desc: 'Distribution of cold water under pressure, air conditioning drain systems, piping networks for swimming pools, and transport of chemicals.',
-                specs: { 'Material': 'PVC', 'Applications': 'High Pressure Fluids' },
-                img: 'assets/Screenshot 2026-07-23 170414.png',
-                images: [
-                    'assets/Screenshot 2026-07-23 170414.png',
-                    'assets/pvc-pipe-fittings-500x500.webp',
-                    'assets/RACCORDI-PVC_1S.webp'
-                ],
-                industries: ['Industrial', 'Infrastructure'],
-                brands: ['Hepworth', 'wavin']
-            },
-            {
-                name: 'HDPE Pressure Pipes & Fittings',
-                desc: 'Suitable for all types of drainage applications including soil & waste, above-ground, below-ground, and chemical waste systems.',
-                specs: { 'Material': 'HDPE', 'Standard': 'EN 1519 - 1' },
-                img: 'assets/hdpe-pipes.png',
-                images: [
-                    'assets/hdpe-pipes.png',
-                    'assets/images%20(2).jpg'
-                ],
-                industries: ['Commercial', 'Infrastructure', 'Industrial', 'Utility'],
-                brands: ['Hepworth']
-            },
-            {
-                name: 'UPVC Duct Pipes & Fabricated Fittings',
-                desc: 'DUCT Pipes are manufactured as per DIN 8062 and BS 3506 standards. UPVC is self-extinguishing and will not support combustion.',
-                specs: { 'Material': 'uPVC', 'Standard': 'DIN 8062, BS 3506' },
-                img: 'assets/Screenshot 2026-07-23 170403.png',
-                images: [
-                    'assets/Screenshot 2026-07-23 170403.png',
-                    'assets/images%20(3).jpg'
-                ],
-                industries: ['Infrastructure', 'Utility'],
-                brands: ['Hycount']
-            },
-            {
-                name: 'Generators',
-                desc: 'Generates electrical power and hot water simultaneously from a single heat source. Operates using gas, wood, and multiple fuel types.',
-                specs: { 'Output': '1–2 kW electrical', 'Application': 'Residential, commercial, off-grid' },
-                img: 'assets/sterling-sge-25-pr-25-kva-generator.jpg',
-                images: [
-                    'assets/sterling-sge-25-pr-25-kva-generator.jpg',
-                    'assets/sterling gen 2.jpg'
-                ],
-                badge: 'Sustainable',
-                industries: ['Residential', 'Commercial', 'Off-grid'],
-                brands: ['Sterling Generators']
-            },
-            {
-                name: 'PVC Conduits & Accessories',
-                desc: 'High impact strength, UV stabilized PVC conduits and complete range of GI boxes. Low smoke for fire retardant.',
-                specs: { 'Material': 'PVC', 'Standard': 'BSEN4607, IEC61386' },
-                img: 'assets/high-pressure-pipes.png',
-                images: [
-                    'assets/high-pressure-pipes.png',
-                    'assets/images%20(5).jpg'
-                ],
-                industries: ['Commercial', 'Residential', 'Industrial'],
-                brands: ['Rexton']
-            },
-            {
-                name: 'Row DBs & ONU Cabinets',
-                desc: 'Designed & fabricated as per specifications of telecom operators. Tempered glass door with ventilation provision.',
-                specs: { 'Material': 'Electro Galvanized Sheet Steel', 'Standard': 'RAL7035, RAL9010' },
-                img: 'assets/image.png',
-                images: [
-                    'assets/image.png',
-
-                ],
-                industries: ['Telecom', 'Commercial'],
-                brands: ['Rexton']
-            },
-            {
-                name: 'GI Conduits & Accessories',
-                desc: 'Class 3 & 4 GI conduits - Hot dip galvanized coated for corrosion protection. Non-Flame propagating.',
-                specs: { 'Material': 'GI', 'Standard': 'British & European standards' },
-                img: 'assets/image copy 2.png',
-                images: [
-                    'assets/image copy 2.png',
-
-                ],
-                industries: ['Infrastructure', 'Industrial'],
-                brands: ['Caparo']
-            },
-
-            // Giacomini Products
-            {
-                name: 'Pressure Independent Control Valve (PICV)',
-                desc: 'Enables to regulate and keep constant the flow rate in the terminal unit when the differential pressure of the main circuit varies.',
-                specs: { 'Max working pressure': '25 bar', 'Working temp': '5÷110 °C' },
-                img: 'assets/picv.jpg',
-                images: [
-                    'assets/picv.jpg',
-                    'assets/check%20valve.jpg'
-                ],
-                industries: ['HVAC', 'Commercial', 'Residential'],
-                brands: ['Giacomini']
-            },
-            {
-                name: 'Static Balancing Valve',
-                desc: 'Static balancing valves allow a gradual and precise regulation of the flow rate. Venturi principle flowmeter.',
-                specs: { 'Max working pressure': '25 bar', 'Working temp': '5÷110 °C' },
-                img: 'assets/staticbalancing.png',
-                images: [
-                    'assets/staticbalancing.png',
-                    'assets/staticblancing2.png'
-                ],
-                industries: ['HVAC', 'Hydronic Distribution'],
-                brands: ['Giacomini']
-            },
-            {
-                name: 'Thermostatic Mixer',
-                desc: 'Thermostatic mixer for domestic water systems with high efficiency thermo-electric probe.',
-                specs: { 'Max working pressure': '16 bar', 'Max working temp': '100 °C' },
-                img: 'assets/thermostatic.jpg',
-                images: [
-                    'assets/thermostatic.jpg',
-                    'assets/thermostatic%202.jpg'
-                ],
-                industries: ['Residential', 'Commercial'],
-                brands: ['Giacomini']
-            },
-            {
-                name: 'Diaphragm Pressure Reducer',
-                desc: 'Automatic valve that reduces and stabilizes the pressure of a fluid in a water distribution conduit according to a preset value.',
-                specs: { 'Max working pressure': '25 bar', 'Sound class': 'II' },
-                img: 'assets/image copy.png',
-                images: [
-                    'assets/image copy.png',
-
-                ],
-                badge: 'Safety',
-                industries: ['HVAC', 'Plumbing', 'Commercial'],
-                brands: ['Giacomini']
-            },
-            {
-                name: 'Hydraulic Separators',
-                desc: 'Hydraulic separator with flanged connections. Equipped with automatic air vent and drain cock. Varnished steel body.',
-                specs: { 'Max working pressure': '10 bar', 'Temperature': '0÷110 °C' },
-                img: 'assets/hydrulic.jpg',
-                images: [
-                    'assets/hydrulic.jpg',
-
-                ],
-                industries: ['HVAC', 'Industrial'],
-                brands: ['Giacomini']
-            },
-
-            // NEWAY Products
-
-
-            {
-                name: 'Resilient Seated Gate Valves',
-                desc: 'Gate valves ensuring zero leakage and reliable isolation in high-demand water transmission systems.',
-                specs: { 'Type': 'NRS / OS&Y', 'Application': 'Isolation' },
-                img: 'assets/check%20valve%202.jpg',
-                images: [
-                    'assets/check%20valve%202.jpg',
-                    'assets/infrastructure%20valve.jpeg'
-                ],
-                badge: 'Zero Leakage',
-                industries: ['Potable Waterworks', 'Wastewater Treatment', 'Data Centres'],
-                brands: ['NEWAY']
-            },
-            {
-                name: 'Double Door Check Valves',
-                desc: 'Non-return valves designed to prevent backflow in critical pipeline systems, minimizing water hammer.',
-                specs: { 'Type': 'Non-return', 'Feature': 'Silent check' },
-                img: 'assets/check%20valve.jpg',
-                images: [
-                    'assets/check%20valve.jpg',
-                    'assets/check%20valve%202.jpg'
-                ],
-                industries: ['Desalination Plants', 'District Cooling', 'Potable Waterworks'],
-                brands: ['NEWAY']
-            },
-
-            {
-                name: 'Strainers',
-                desc: 'Y-Strainers and Foot valves designed for efficient filtration and pump protection in pipelines.',
-                specs: { 'Type': 'Y-Strainer / Foot valve', 'Application': 'Filtration' },
-                img: 'assets/y strainer.jpg',
-                images: [
-                    'assets/y strainer.jpg',
-                    'assets/infrastructure%20valve.jpeg'
-                ],
-                industries: ['Desalination Plants', 'Data Centres', 'Potable Waterworks'],
-                brands: ['NEWAY']
-            },
-            {
-                name: 'Ultrasonic Water Meter and BTU Meters',
-                desc: 'Piston type flow regulators and automatic control valves for precise flow management in critical facilities.',
-                specs: { 'Type': 'Ultrasonic Water Meter and BTU Meters', 'Application': 'Metering' },
-                img: 'assets/ultrasonic%20wate%20rmeter.jpeg',
-                images: [
-                    'assets/ultrasonic%20wate%20rmeter.jpeg',
-                    'assets/BTU%20METER.jpg'
-                ],
-                badge: 'Precision',
-                industries: ['Metering', 'HVAC'],
-                brands: ['NEWAY']
-            },
-            {
-                name: 'Industrial Valves',
-                desc: 'Industrial Valves with cutting-edge innovation and design.',
-                specs: { 'Type': 'Butterfly Valves, Ball Valves, Gate Valves', 'Application': 'Industrial' },
-                img: 'assets/infrastructure2.png',
-                images: [
-                    'assets/infrastructure2.png',
-                    'assets/double offsetbutterfly.png',
-                ],
-                badge: 'Precision',
-                industries: ['Metering', 'HVAC'],
-                brands: ['NEWAY']
-            }
-        ];
-
         let gridHTML = '';
         productsData.forEach((item, index) => {
-            const badgeHTML = item.badge ? `<div class="catalogue-badge">${item.badge}</div>` : '';
+            const badgeHTML = item.badge ? `<div class="modal-badge" style="position: absolute; top: 1rem; left: 1rem; z-index: 5;">${item.badge}</div>` : '';
+            const iconName = item.icon || 'package';
 
             gridHTML += `
                 <div class="catalogue-card product-item" data-index="${index}">
-                    <div class="catalogue-image">
-                        <img src="${item.img}" alt="${item.name}">
+                    <div class="product-placeholder-banner">
+                        <div class="placeholder-graphic">
+                            <svg viewBox="0 0 400 240" class="placeholder-svg">
+                                <defs>
+                                    <linearGradient id="gridGrad-${index}" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#1e293b" />
+                                        <stop offset="100%" stop-color="#0f172a" />
+                                    </linearGradient>
+                                    <pattern id="grid-${index}" width="20" height="20" patternUnits="userSpaceOnUse">
+                                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#gridGrad-${index})" />
+                                <rect width="100%" height="100%" fill="url(#grid-${index})" />
+                                <circle cx="200" cy="110" r="50" fill="none" stroke="rgba(200, 16, 46, 0.25)" stroke-width="2"/>
+                                <circle cx="200" cy="110" r="70" fill="none" stroke="rgba(200, 16, 46, 0.12)" stroke-width="1" stroke-dasharray="4,4"/>
+                            </svg>
+                            <div class="placeholder-icon-wrapper">
+                                <i data-lucide="${iconName}" class="placeholder-icon"></i>
+                            </div>
+                            <span class="placeholder-label">SPECIFICATION PLACEHOLDER</span>
+                        </div>
                         ${badgeHTML}
                     </div>
                     <div class="catalogue-content">
+                        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                            ${item.brands.map(b => `<span class="brand-tag-mini"><i data-lucide="award" style="width: 12px; height: 12px;"></i> ${b}</span>`).join('')}
+                        </div>
                         <h3>${item.name}</h3>
                         <p style="margin-bottom: 0;">${item.desc}</p>
-                        <a href="javascript:void(0)" class="btn-primary-outline catalogue-btn view-details-btn" style="margin-top: 1.5rem;">View Details <i data-lucide="arrow-right"></i></a>
+                        <a href="javascript:void(0)" class="btn-primary-outline catalogue-btn view-details-btn" style="margin-top: 1.5rem;">View Specs & Details <i data-lucide="arrow-right"></i></a>
                     </div>
                 </div>
             `;
         });
-
         productsGrid.innerHTML = gridHTML;
+    }
 
-        // Modal Logic
-        const modal = document.getElementById('product-modal');
-        const modalClose = document.getElementById('modal-close');
+    // Modal Logic Setup
+    const modal = document.getElementById('product-modal');
+    const modalClose = document.getElementById('modal-close');
+    const brandProductsModal = document.getElementById('brand-products-modal');
+    const brandModalClose = document.getElementById('brand-modal-close');
 
-        let currentImages = [];
-        let currentImageIndex = 0;
-        const modalPrevBtn = document.getElementById('modal-prev-btn');
-        const modalNextBtn = document.getElementById('modal-next-btn');
-        const modalSliderDots = document.getElementById('modal-slider-dots');
-        const modalImg = document.getElementById('modal-img');
+    let currentPlaceholders = [];
+    let currentPlaceholderIndex = 0;
 
-        const updateSlider = () => {
-            if (!currentImages || currentImages.length <= 1) {
-                if (modalPrevBtn) modalPrevBtn.style.display = 'none';
-                if (modalNextBtn) modalNextBtn.style.display = 'none';
-                if (modalSliderDots) modalSliderDots.style.display = 'none';
-                if (modalImg) modalImg.src = currentImages[0] || '';
-                return;
-            }
-            if (modalPrevBtn) modalPrevBtn.style.display = 'flex';
-            if (modalNextBtn) modalNextBtn.style.display = 'flex';
-            if (modalSliderDots) modalSliderDots.style.display = 'flex';
+    const modalPrevBtn = document.getElementById('modal-prev-btn');
+    const modalNextBtn = document.getElementById('modal-next-btn');
+    const modalSliderDots = document.getElementById('modal-slider-dots');
+    const modalImg = document.getElementById('modal-img');
 
-            if (modalImg) modalImg.src = currentImages[currentImageIndex];
+    const updateSlider = () => {
+        if (!currentPlaceholders || currentPlaceholders.length === 0) return;
+        if (modalImg) modalImg.src = currentPlaceholders[currentPlaceholderIndex];
 
-            if (modalSliderDots) {
-                let dotsHTML = '';
-                currentImages.forEach((_, idx) => {
-                    dotsHTML += `<div class="modal-dot ${idx === currentImageIndex ? 'active' : ''}" data-idx="${idx}"></div>`;
-                });
-                modalSliderDots.innerHTML = dotsHTML;
-                document.querySelectorAll('.modal-dot').forEach(dot => {
-                    dot.addEventListener('click', (e) => {
-                        currentImageIndex = parseInt(e.target.getAttribute('data-idx'));
-                        updateSlider();
-                    });
-                });
-            }
-        };
-
-        if (modalPrevBtn && modalNextBtn) {
-            modalPrevBtn.addEventListener('click', () => {
-                if (currentImages.length > 1) {
-                    currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
-                    updateSlider();
-                }
+        if (modalSliderDots) {
+            let dotsHTML = '';
+            currentPlaceholders.forEach((_, idx) => {
+                dotsHTML += `<div class="modal-dot ${idx === currentPlaceholderIndex ? 'active' : ''}" data-idx="${idx}"></div>`;
             });
-            modalNextBtn.addEventListener('click', () => {
-                if (currentImages.length > 1) {
-                    currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+            modalSliderDots.innerHTML = dotsHTML;
+
+            document.querySelectorAll('.modal-dot').forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    currentPlaceholderIndex = parseInt(e.target.getAttribute('data-idx'));
                     updateSlider();
-                }
+                });
             });
         }
+    };
 
-        const openModal = (item) => {
-            document.getElementById('modal-title').textContent = item.name;
-            document.getElementById('modal-desc').textContent = item.desc;
+    if (modalPrevBtn && modalNextBtn) {
+        modalPrevBtn.addEventListener('click', () => {
+            if (currentPlaceholders.length > 1) {
+                currentPlaceholderIndex = (currentPlaceholderIndex - 1 + currentPlaceholders.length) % currentPlaceholders.length;
+                updateSlider();
+            }
+        });
+        modalNextBtn.addEventListener('click', () => {
+            if (currentPlaceholders.length > 1) {
+                currentPlaceholderIndex = (currentPlaceholderIndex + 1) % currentPlaceholders.length;
+                updateSlider();
+            }
+        });
+    }
 
-            currentImages = item.images && item.images.length > 0 ? item.images : [item.img];
-            currentImageIndex = 0;
-            updateSlider();
+    const openProductModal = (item) => {
+        if (!modal) return;
 
-            const badge = document.getElementById('modal-badge');
+        document.getElementById('modal-title').textContent = item.name;
+        document.getElementById('modal-desc').textContent = item.desc;
+
+        // Generate and set multiple image placeholders
+        currentPlaceholders = generateProductPlaceholders(item);
+        currentPlaceholderIndex = 0;
+        updateSlider();
+
+        const badge = document.getElementById('modal-badge');
+        if (badge) {
             if (item.badge) {
                 badge.style.display = 'inline-block';
                 badge.textContent = item.badge;
             } else {
                 badge.style.display = 'none';
             }
+        }
 
-            let specsHTML = '';
-            for (const [key, value] of Object.entries(item.specs)) {
-                specsHTML += `<li><span>${key}:</span> ${value}</li>`;
-            }
-            document.getElementById('modal-specs').innerHTML = specsHTML;
+        let specsHTML = '';
+        for (const [key, value] of Object.entries(item.specs)) {
+            specsHTML += `<li><span>${key}:</span> ${value}</li>`;
+        }
+        document.getElementById('modal-specs').innerHTML = specsHTML;
 
-            let industriesHTML = '';
-            if (item.industries && item.industries.length > 0) {
-                item.industries.forEach(industry => {
-                    industriesHTML += `<span class="industry-tag">${industry}</span>`;
-                });
-            }
-            document.getElementById('modal-industries').innerHTML = industriesHTML;
-
-            let brandsHTML = '';
-            if (item.brands && item.brands.length > 0) {
-                item.brands.forEach(brand => {
-                    brandsHTML += `<span class="brand-tag"><i data-lucide="award" style="width: 14px; height: 14px; display: inline; margin-right: 4px;"></i>${brand}</span>`;
-                });
-            } else {
-                brandsHTML = '<span style="color: var(--text-muted); font-size: 0.9rem;">Not specified</span>';
-            }
-
-            // We need to inject the brands section. Let's add it dynamically or update an existing container.
-            const brandsContainer = document.getElementById('modal-brands');
-            if (brandsContainer) {
-                brandsContainer.innerHTML = brandsHTML;
-            }
-
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            // Re-initialize lucide icons inside the modal after content is injected
-            lucide.createIcons();
-        };
-
-        const closeModal = () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        };
-
-        document.querySelectorAll('.product-item').forEach(card => {
-            card.querySelector('.view-details-btn').addEventListener('click', () => {
-                const index = card.getAttribute('data-index');
-                openModal(productsData[index]);
+        let industriesHTML = '';
+        if (item.industries && item.industries.length > 0) {
+            item.industries.forEach(industry => {
+                industriesHTML += `<span class="industry-tag">${industry}</span>`;
             });
-        });
+        }
+        document.getElementById('modal-industries').innerHTML = industriesHTML;
 
-        modalClose.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
+        // Render Brand Logo Images inside Brands Available section
+        let brandsHTML = '';
+        if (item.brands && item.brands.length > 0) {
+            item.brands.forEach(brandName => {
+                brandsHTML += getBrandLogoImageCard(brandName);
+            });
+        } else {
+            brandsHTML = '<span style="color: var(--text-muted); font-size: 0.9rem;">Not specified</span>';
+        }
+
+        const brandsContainer = document.getElementById('modal-brands');
+        if (brandsContainer) {
+            brandsContainer.innerHTML = brandsHTML;
+
+            // Add click events to brand cards inside the product modal
+            brandsContainer.querySelectorAll('.brand-available-card').forEach(bCard => {
+                bCard.addEventListener('click', () => {
+                    const selectedBrand = bCard.getAttribute('data-brand');
+                    closeProductModal();
+                    openBrandProductsModal(selectedBrand);
+                });
+            });
+        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        lucide.createIcons();
+    };
+
+    const closeProductModal = () => {
+        if (modal) modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    };
+
+    // Open Brand Products Modal
+    const openBrandProductsModal = (brandName) => {
+        if (!brandProductsModal) return;
+
+        const titleEl = document.getElementById('brand-modal-title');
+        const subtitleEl = document.getElementById('brand-modal-subtitle');
+        const logoWrapper = document.getElementById('brand-modal-logo-wrapper');
+        const gridEl = document.getElementById('brand-products-grid');
+
+        if (titleEl) titleEl.textContent = `${brandName} Products`;
+
+        // Map logo image
+        const brandImageMap = {
+            'Hepworth': 'assets/hepworth logo.png',
+            'Supreme': 'assets/download.png',
+            'Wavin': 'assets/wavin logo.png',
+            'Comer': 'assets/comer.png',
+            'HYCOUNT': 'assets/Screenshot 2026-07-23 121141.png',
+            'Giacomini': 'assets/giacomni.png',
+            'Neway': 'assets/neway.png'
+        };
+
+        const imgSrc = brandImageMap[brandName];
+        if (logoWrapper) {
+            if (imgSrc) {
+                logoWrapper.innerHTML = `<img src="${imgSrc}" alt="${brandName} Logo" />`;
+            } else {
+                logoWrapper.innerHTML = `<span style="color: var(--text-main); font-weight: 800; font-family: 'Outfit'; font-size: 1.3rem;">${brandName}</span>`;
             }
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
+        }
+
+        // Filter products matching this brand
+        const filteredProducts = productsData.filter(p => p.brands && p.brands.includes(brandName));
+        if (subtitleEl) subtitleEl.textContent = `Showing all ${filteredProducts.length} engineering components available from ${brandName}.`;
+
+        let bGridHTML = '';
+        filteredProducts.forEach((item) => {
+            const originalIndex = productsData.findIndex(p => p.name === item.name);
+            const iconName = item.icon || 'package';
+
+            bGridHTML += `
+                <div class="catalogue-card product-item" data-index="${originalIndex}">
+                    <div class="product-placeholder-banner">
+                        <div class="placeholder-graphic">
+                            <div class="placeholder-icon-wrapper">
+                                <i data-lucide="${iconName}" class="placeholder-icon"></i>
+                            </div>
+                            <span class="placeholder-label">${brandName.toUpperCase()} PRODUCT</span>
+                        </div>
+                    </div>
+                    <div class="catalogue-content">
+                        <h3>${item.name}</h3>
+                        <p style="margin-bottom: 0;">${item.desc}</p>
+                        <button class="btn-primary-outline catalogue-btn view-details-btn" style="margin-top: 1.25rem; width: 100%;">View Specifications <i data-lucide="arrow-right"></i></button>
+                    </div>
+                </div>
+            `;
         });
 
-        // Trigger GSAP animations for dynamically added elements
-        setTimeout(() => {
-            lucide.createIcons();
+        if (gridEl) {
+            gridEl.innerHTML = bGridHTML;
+            gridEl.querySelectorAll('.view-details-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const card = e.target.closest('.product-item');
+                    const index = card.getAttribute('data-index');
+                    closeBrandProductsModal();
+                    openProductModal(productsData[index]);
+                });
+            });
+        }
 
-            // Stagger the product cards smoothly
+        brandProductsModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        lucide.createIcons();
+    };
+
+    const closeBrandProductsModal = () => {
+        if (brandProductsModal) brandProductsModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    };
+
+    // Attach click handlers to product cards on products.html
+    document.querySelectorAll('.product-item').forEach(card => {
+        const btn = card.querySelector('.view-details-btn');
+        if (btn) {
+            btn.addEventListener('click', () => {
+                const index = card.getAttribute('data-index');
+                openProductModal(productsData[index]);
+            });
+        }
+    });
+
+    // Attach click handlers to interactive brand cards on brands.html
+    document.querySelectorAll('.brand-card-interactive').forEach(bCard => {
+        bCard.addEventListener('click', () => {
+            const brandName = bCard.getAttribute('data-brand');
+            openBrandProductsModal(brandName);
+        });
+    });
+
+    // Modal Close Events
+    if (modalClose) modalClose.addEventListener('click', closeProductModal);
+    if (brandModalClose) brandModalClose.addEventListener('click', closeBrandProductsModal);
+
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeProductModal();
+        });
+    }
+
+    if (brandProductsModal) {
+        brandProductsModal.addEventListener('click', (e) => {
+            if (e.target === brandProductsModal) closeBrandProductsModal();
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeProductModal();
+            closeBrandProductsModal();
+        }
+    });
+
+    // Refresh lucide icons and GSAP scroll animations
+    setTimeout(() => {
+        lucide.createIcons();
+
+        if (productsGrid) {
             gsap.from(".product-item", {
                 y: 60,
                 opacity: 0,
@@ -642,7 +817,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 stagger: {
                     each: 0.1,
                     onComplete: function () {
-                        this.targets()[0].classList.add('ready');
+                        if (this.targets()[0]) this.targets()[0].classList.add('ready');
                     }
                 },
                 ease: "power2.out",
@@ -651,17 +826,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     start: "top 95%"
                 }
             });
+        }
 
-            const fadeElements = gsap.utils.toArray('.fade-up');
-            fadeElements.forEach(el => {
-                gsap.fromTo(el,
-                    { y: 50, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 95%" }, onComplete: () => el.classList.add('ready') }
-                );
-            });
-            ScrollTrigger.refresh();
-        }, 100);
-    }
+        const fadeElements = gsap.utils.toArray('.fade-up');
+        fadeElements.forEach(el => {
+            gsap.fromTo(el,
+                { y: 50, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 95%" }, onComplete: () => el.classList.add('ready') }
+            );
+        });
+        ScrollTrigger.refresh();
+    }, 100);
 
     // Cookie Consent Logic
     const cookieBanner = document.getElementById('cookie-consent');
