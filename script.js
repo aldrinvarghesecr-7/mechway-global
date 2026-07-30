@@ -660,12 +660,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        lenis.stop();
         lucide.createIcons();
     };
 
     const closeProductModal = () => {
         if (modal) modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = '';
+        lenis.start();
     };
 
     // Open Brand Products Modal
@@ -741,12 +743,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         brandProductsModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        lenis.stop();
         lucide.createIcons();
     };
 
     const closeBrandProductsModal = () => {
         if (brandProductsModal) brandProductsModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = '';
+        lenis.start();
     };
 
     // Attach click handlers to product cards on products.html

@@ -1877,6 +1877,7 @@ body:hover .cursor-dot {
     padding-top: 2rem;
 }
 
+
 /* Social Links */
 .social-links {
     display: flex;
@@ -1890,12 +1891,14 @@ body:hover .cursor-dot {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--bg-white);
-    transition: var(--transition-smooth);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
 }
 
 .social-links a i {
@@ -1903,9 +1906,22 @@ body:hover .cursor-dot {
     height: 20px;
 }
 
-.social-links a:hover {
-    background: var(--primary-red);
-    transform: translateY(-3px);
+/* LinkedIn - brand blue on hover */
+.social-links a[aria-label="LinkedIn"]:hover {
+    background: #0a66c2;
+    border-color: #0a66c2;
+    color: #ffffff;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(10, 102, 194, 0.45);
+}
+
+/* Instagram - gradient on hover */
+.social-links a[aria-label="Instagram"]:hover {
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-color: #e6683c;
+    color: #ffffff;
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(220, 39, 67, 0.45);
 }
 
 @media (max-width: 1024px) {

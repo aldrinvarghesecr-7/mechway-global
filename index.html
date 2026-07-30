@@ -23,6 +23,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
 
+    <!-- Preload hero image for faster LCP -->
+    <link rel="preload" href="assets/hero-bg.png" as="image" fetchpriority="high">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -71,7 +74,7 @@
             <!-- This container gets pinned -->
             <div class="hero-pin-container">
                 <div class="hero-bg">
-                    <img src="assets/hero-bg.png" alt="Precision Engineering Background" class="hero-media">
+                    <img src="assets/hero-bg.png" alt="Precision Engineering Background" class="hero-media" fetchpriority="high" decoding="sync" loading="eager">
                     <div class="hero-overlay"></div>
                 </div>
 
@@ -142,7 +145,7 @@
                     </div>
                 </div>
                 <div class="about-image-wrapper fade-up" style="transition-delay: 0.2s;">
-                    <img src="assets/about-img.png" alt="Sleek Manufacturing Facility" class="about-image">
+                    <img src="assets/about-img.png" alt="Sleek Manufacturing Facility" class="about-image" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
