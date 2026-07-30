@@ -62,60 +62,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Navbar scroll effect
+    // 3. Navbar scroll effect - Entire navbar banner (logo, links, phone number) goes away on scrolling
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add('nav-hidden');
+            } else {
+                navbar.classList.remove('nav-hidden');
+            }
+        });
+    }
 
-    // 4. Advanced GSAP Scroll Animations
+    // 4. Advanced GSAP Animations
     gsap.registerPlugin(ScrollTrigger);
 
     // ==========================================
-    // HIGH-END PINNED HERO ANIMATION SEQUENCE
+    // AUTOMATIC HERO ENTRANCE ANIMATION SEQUENCE
     // ==========================================
-    const heroTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".hero",
-            start: "top top",
-            end: "bottom bottom", // Uses the 350vh height of the hero section
-            scrub: 1, // Smooth scrubbing effect
-            pin: ".hero-pin-container",
-            anticipatePin: 1
-        }
-    });
+    const heroMedia = document.querySelector('.hero-media');
+    if (heroMedia) {
+        const heroTl = gsap.timeline({
+            defaults: { ease: "power3.out" }
+        });
 
-    // Animate the timeline based on scroll progress
-    heroTl
-        // Scale the background and show the kicker
-        .to(".hero-media", { scale: 1.15, duration: 2, ease: "power1.inOut" }, 0)
-        .to(".hero-kicker", { opacity: 1, duration: 0.5 }, 0)
+        heroTl
+            .to(".hero-media", { scale: 1.08, duration: 2.2, ease: "power1.out" }, 0)
+            .to(".hero-kicker", { opacity: 1, y: 0, duration: 0.8 }, 0.2)
+            .to(".hero-graphic", { opacity: 0.7, duration: 1.2 }, 0.4)
+            .to(".word-1", { y: 0, opacity: 1, duration: 0.9, ease: "back.out(1.4)" }, 0.5)
+            .to(".word-2", { y: 0, opacity: 1, duration: 0.9, ease: "back.out(1.4)" }, 0.75)
+            .to(".word-3", { y: 0, opacity: 1, duration: 0.9, ease: "back.out(1.4)" }, 1.0)
+            .to(".hero-subtitle", { opacity: 1, y: 0, duration: 1 }, 1.25)
+            .to(".hero-cta", { opacity: 1, y: 0, duration: 1 }, 1.45)
+            .to(".scroll-indicator", { opacity: 1, duration: 1 }, 1.7);
 
-        // Show graphic
-        .to(".hero-graphic", { opacity: 0.6, duration: 1 }, 0.5)
-
-        // Stagger in the main title words (sliding up from below)
-        .to(".word-1", { y: 0, opacity: 1, duration: 0.8, ease: "back.out(1.2)" }, 0.5)
-        .to(".word-2", { y: 0, opacity: 1, duration: 0.8, ease: "back.out(1.2)" }, 0.8)
-        .to(".word-3", { y: 0, opacity: 1, duration: 0.8, ease: "back.out(1.2)" }, 1.1)
-
-        // Spin the geometric rings as the user scrolls
-        .to(".ring-1", { rotation: 180, duration: 4, ease: "none" }, 0)
-        .to(".ring-2", { rotation: -180, duration: 4, ease: "none" }, 0)
-        .to(".ring-3", { rotation: 360, scale: 1.1, duration: 4, ease: "power1.inOut" }, 0)
-
-        // Fade in subtitle and buttons
-        .to(".hero-subtitle", { opacity: 1, duration: 1 }, 1.5)
-        .to(".hero-cta", { opacity: 1, y: 0, duration: 1, ease: "power2.out" }, 1.8)
-
-        // Final transition: Elements fade/fly away as the hero finishes its pin
-        .to(".hero-text-wrapper", { y: -150, opacity: 0, duration: 1.5, ease: "power2.in" }, 3)
-        .to(".hero-graphic", { x: 150, opacity: 0, duration: 1.5, ease: "power2.in" }, 3)
-        .to(".hero-overlay", { opacity: 0, duration: 1 }, 3.5);
+        // Continuous ambient rotation for geometric rings
+        gsap.to(".ring-1", { rotation: 360, duration: 35, repeat: -1, ease: "none" });
+        gsap.to(".ring-2", { rotation: -360, duration: 28, repeat: -1, ease: "none" });
+        gsap.to(".ring-3", { rotation: 360, duration: 22, repeat: -1, ease: "none" });
+    }
 
 
     // ==========================================

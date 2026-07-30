@@ -263,14 +263,20 @@ body:hover .cursor-dot {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 2rem 0;
-    transition: var(--transition-smooth);
+    padding: 1.8rem 0;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, padding 0.3s ease;
     background: transparent;
     border-bottom: 1px solid transparent;
 }
 
+.navbar.nav-hidden {
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+}
+
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     padding: 1rem 0;
@@ -319,6 +325,49 @@ body:hover .cursor-dot {
     font-weight: 700;
     color: #666666;
     letter-spacing: 0.18em;
+}
+
+.logo-phone-sub {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    letter-spacing: 0.08em;
+    margin-top: 0.2rem;
+    text-transform: none;
+}
+
+.logo-phone-sub i {
+    width: 10px;
+    height: 10px;
+}
+
+.nav-phone-badge {
+    color: var(--text-main);
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    background: rgba(200, 16, 46, 0.08);
+    border: 1px solid rgba(200, 16, 46, 0.2);
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-phone-badge:hover {
+    background: var(--primary-red);
+    color: #ffffff;
+    border-color: var(--primary-red);
+}
+
+.nav-phone-badge i {
+    width: 13px;
+    height: 13px;
 }
 
 .nav-links {
