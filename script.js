@@ -406,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Helper: Generate Multiple Image Placeholders per Product
     const generateProductPlaceholders = (item) => {
         const title = item.name.toUpperCase();
-        
+
         const svg1 = `data:image/svg+xml;utf8,${encodeURIComponent(`
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
                 <defs>
@@ -472,7 +472,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const getBrandLogoImageCard = (brandName) => {
         const brandsMap = {
             'Hepworth': { img: 'assets/hepworth logo.png', color: '#c8102e' },
-            'Supreme': { img: 'assets/download.png', color: '#004b93' },
+            'Supreme': { img: 'assets/supreme.png', color: '#004b93' },
             'Wavin': { img: 'assets/wavin logo.png', color: '#0072ce' },
             'Comer': { img: 'assets/comer.png', color: '#e65100' },
             'HYCOUNT': { img: 'assets/Screenshot 2026-07-23 121141.png', color: '#2e7d32' },
@@ -684,7 +684,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Map logo image
         const brandImageMap = {
             'Hepworth': 'assets/hepworth logo.png',
-            'Supreme': 'assets/download.png',
+            'Supreme': 'assets/supreme.png',
             'Wavin': 'assets/wavin logo.png',
             'Comer': 'assets/comer.png',
             'HYCOUNT': 'assets/Screenshot 2026-07-23 121141.png',
