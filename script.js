@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: 'Complete range of uPVC drainage pipes & fittings (32 mm – 1000 mm) manufactured to British and European standards for domestic, commercial, and infrastructure applications.',
             specs: {
                 'Material': 'uPVC (Unplasticized Polyvinyl Chloride)',
-                'Standards': 'BS EN 1329 / BS EN 1401 / DIN standards',
+
                 'Applications': 'Building Services, Infrastructure, Landscaping',
                 'Features': 'Corrosion resistant, high flow capacity, durable rubber ring/solvent joints'
             },
