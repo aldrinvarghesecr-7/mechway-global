@@ -1888,14 +1888,15 @@ body:hover .cursor-dot {
 /* Social Links */
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     justify-content: center;
+    align-items: center;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
 
 .social-links a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 48px;
@@ -1909,14 +1910,16 @@ body:hover .cursor-dot {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.social-links a i,
 .social-links a svg {
     width: 22px;
     height: 22px;
     stroke: #ffffff;
-    color: #ffffff;
+    fill: none;
     stroke-width: 2;
-    display: block;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+    pointer-events: none;
 }
 
 /* LinkedIn - brand blue on hover */
