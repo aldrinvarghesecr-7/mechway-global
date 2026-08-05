@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
             brands: ['Wavin'],
             images: [
                 'assets/wavin thumbnail.webp',
-                'assets/wavin sound proof one.webp'
+                'assets/sondprf.jpeg'
             ]
         },
         {
@@ -304,8 +304,8 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Hepworth', 'Comer'],
             images: [
-                'assets/supreme upvc.png',
-                'assets/hepworth upvc.jpg'
+                'assets/highpress.jpeg',
+                'assets/highpres.jpeg'
             ]
         },
         {
@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
             brands: ['Hepworth', 'HYCOUNT'],
             images: [
                 'assets/hepwoeth duct.jpg',
-                'assets/hepworth duct 1.jpg'
+                'assets/duct pipe.jpeg'
             ]
         },
         {
