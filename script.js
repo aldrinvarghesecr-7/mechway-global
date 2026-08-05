@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'HYCOUNT': { img: 'assets/hycount%20main.png', color: '#2e7d32' },
             'Giacomini': { img: 'assets/giacomni.png', color: '#c8102e' },
             'Neway': { img: 'assets/newaylogo.png', color: '#0052cc' },
-            'Maddalena': { img: null, color: '#6a1b9a' }
+            'Maddalena': { img: 'assets/maddalena_logo_elenco.png', color: '#6a1b9a' }
         };
 
         const b = brandsMap[brandName] || { img: null, color: '#c8102e' };
@@ -664,7 +664,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'Comer': 'assets/comer.png',
             'HYCOUNT': 'assets/Screenshot 2026-07-23 121141.png',
             'Giacomini': 'assets/giacomni.png',
-            'Neway': 'assets/newaylogo.png'
+            'Neway': 'assets/newaylogo.png',
+            'Maddalena': 'assets/maddalena_logo_elenco.png'
         };
 
         const imgSrc = brandImageMap[brandName];
