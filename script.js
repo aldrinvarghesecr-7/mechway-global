@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Heavy Duty',
             icon: 'box',
             industries: ['Building Services - Residential & Commercial'],
-            brands: ['Hepworth'],
+            brands: ['Hepworth', 'Supreme'],
             images: [
                 'assets/highpress.jpeg',
                 'assets/supreme upvc.png'
@@ -412,6 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Giacomini'],
             images: [
+                'assets/plmbngspec.jpeg',
                 'assets/plumbspec.webp',
 
             ]
@@ -448,6 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Maddalena'],
             images: [
+                'assets/watereee.jpeg',
                 'assets/water.jpeg',
 
             ]
