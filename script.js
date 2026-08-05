@@ -430,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Infrastructure', 'Landscaping', 'Marine', 'Oil & Gas'],
             brands: ['Neway'],
             images: [
-                'assets/industrialvalve neway.webp',
+                'assets/industrialvalve.jpeg',
                 'assets/industrial valve newyay2.webp'
             ]
         },
