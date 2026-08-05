@@ -224,14 +224,17 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: 'Complete range of uPVC drainage pipes & fittings (32 mm – 1000 mm) manufactured to British and European standards for domestic, commercial, and infrastructure applications.',
             specs: {
                 'Material': 'uPVC (Unplasticized Polyvinyl Chloride)',
-
                 'Applications': 'Building Services, Infrastructure, Landscaping',
                 'Features': 'Corrosion resistant, high flow capacity, durable rubber ring/solvent joints'
             },
             badge: 'Infrastructure Grade',
             icon: 'layers',
             industries: ['Building Services - Residential & Commercial', 'Infrastructure', 'Landscaping'],
-            brands: ['Hepworth', 'Supreme']
+            brands: ['Hepworth', 'Supreme'],
+            images: [
+                'assets/hepworth upvc.jpg',
+                'assets/supreme upvc.png'
+            ]
         },
         {
             name: 'PPR pipes and fittings',
@@ -245,7 +248,11 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Hot & Cold Water',
             icon: 'repeat',
             industries: ['Building Services - Residential & Commercial'],
-            brands: ['Supreme']
+            brands: ['Supreme'],
+            images: [
+                'assets/supreme ppr pipes.webp',
+                'assets/supreme ppr.png'
+            ]
         },
         {
             name: 'PEX pipe and fittings',
@@ -259,7 +266,11 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Flexible Piping',
             icon: 'corner-down-right',
             industries: ['Building Services - Residential & Commercial'],
-            brands: ['Supreme']
+            brands: ['Supreme'],
+            images: [
+                'assets/PEX pipes and fittings thumbnail.jpeg',
+                'assets/hepworth upvc.jpg'
+            ]
         },
         {
             name: 'Sound proof Drainage Pipes & Fittings',
@@ -273,7 +284,11 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Acoustic Silent',
             icon: 'shield',
             industries: ['Building Services - Residential & Commercial'],
-            brands: ['Wavin']
+            brands: ['Wavin'],
+            images: [
+                'assets/supreme upvc.png',
+                'assets/hepworth upvc.jpg'
+            ]
         },
         {
             name: 'High Pressure Pipes & Fittings',
@@ -287,7 +302,11 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'High Pressure',
             icon: 'gauge',
             industries: ['Building Services - Residential & Commercial'],
-            brands: ['Hepworth', 'Comer']
+            brands: ['Hepworth', 'Comer'],
+            images: [
+                'assets/supreme upvc.png',
+                'assets/hepworth upvc.jpg'
+            ]
         },
         {
             name: 'HDPE Pipes & Fittings',
@@ -301,7 +320,11 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Heavy Duty',
             icon: 'box',
             industries: ['Building Services - Residential & Commercial'],
-            brands: ['Hepworth']
+            brands: ['Hepworth'],
+            images: [
+                'assets/hepworth upvc.jpg',
+                'assets/supreme upvc.png'
+            ]
         },
         {
             name: 'Duct Pipes & Accessories',
@@ -315,7 +338,11 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Cable Protection',
             icon: 'grid',
             industries: ['Building Services - Residential & Commercial', 'Infrastructure', 'Landscaping'],
-            brands: ['Hepworth', 'HYCOUNT']
+            brands: ['Hepworth', 'HYCOUNT'],
+            images: [
+                'assets/hepworth upvc.jpg',
+                'assets/supreme upvc.png'
+            ]
         },
         {
             name: 'Copper Alloy Plumbing & HVAC Valves',
@@ -329,7 +356,11 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Precision Alloy',
             icon: 'sliders',
             industries: ['Building Services - Residential & Commercial'],
-            brands: ['Giacomini']
+            brands: ['Giacomini'],
+            images: [
+                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg',
+                'assets/Iron Body Plumbing & HVAC Valves thumbnails.jpeg'
+            ]
         },
         {
             name: 'Iron Body Plumbing & HVAC Valves',
@@ -343,7 +374,11 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Industrial Grade',
             icon: 'anchor',
             industries: ['Building Services - Residential & Commercial'],
-            brands: ['Giacomini', 'Neway']
+            brands: ['Giacomini', 'Neway'],
+            images: [
+                'assets/Iron Body Plumbing & HVAC Valves thumbnails.jpeg',
+                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg'
+            ]
         },
         {
             name: 'Pre-Assembled FCU Valve Package',
@@ -357,7 +392,11 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Pre-Fab Modular',
             icon: 'package-check',
             industries: ['Building Services - Residential & Commercial'],
-            brands: ['Giacomini']
+            brands: ['Giacomini'],
+            images: [
+                'assets/Pre assembled FCU Valve package thumbnail.jpeg',
+                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg'
+            ]
         },
         {
             name: 'Plumbing Speciality Valves',
@@ -371,7 +410,11 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Specialty Control',
             icon: 'filter',
             industries: ['Building Services - Residential & Commercial'],
-            brands: ['Giacomini']
+            brands: ['Giacomini'],
+            images: [
+                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg',
+                'assets/Pre assembled FCU Valve package thumbnail.jpeg'
+            ]
         },
         {
             name: 'Industrial Valves',
@@ -385,7 +428,11 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Heavy Industrial',
             icon: 'wrench',
             industries: ['Infrastructure', 'Landscaping', 'Marine', 'Oil & Gas'],
-            brands: ['Neway']
+            brands: ['Neway'],
+            images: [
+                'assets/Iron Body Plumbing & HVAC Valves thumbnails.jpeg',
+                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg'
+            ]
         },
         {
             name: 'Water & Thermal Energy Metering Solutions',
@@ -399,74 +446,13 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Smart Metering',
             icon: 'gauge',
             industries: ['Building Services - Residential & Commercial'],
-            brands: ['Maddalena']
+            brands: ['Maddalena'],
+            images: [
+                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg',
+                'assets/Pre assembled FCU Valve package thumbnail.jpeg'
+            ]
         }
     ];
-
-    // Helper: Generate Multiple Image Placeholders per Product
-    const generateProductPlaceholders = (item) => {
-        const title = item.name.toUpperCase();
-
-        const svg1 = `data:image/svg+xml;utf8,${encodeURIComponent(`
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
-                <defs>
-                    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#0f172a" />
-                        <stop offset="100%" stop-color="#1e293b" />
-                    </linearGradient>
-                    <pattern id="grid1" width="30" height="30" patternUnits="userSpaceOnUse">
-                        <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-                    </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#bg1)" />
-                <rect width="100%" height="100%" fill="url(#grid1)" />
-                <circle cx="300" cy="170" r="75" fill="none" stroke="rgba(200, 16, 46, 0.35)" stroke-width="2"/>
-                <circle cx="300" cy="170" r="105" fill="none" stroke="rgba(200, 16, 46, 0.15)" stroke-width="1" stroke-dasharray="6,6"/>
-                <rect x="250" y="120" width="100" height="100" rx="18" fill="rgba(255,255,255,0.04)" stroke="rgba(200,16,46,0.6)" stroke-width="2"/>
-                <text x="300" y="315" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="18" font-weight="700" letter-spacing="1.5">${title}</text>
-                <text x="300" y="342" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="500" letter-spacing="1">VIEW 01 - TECHNICAL SCHEMATIC & DRAFT</text>
-            </svg>
-        `)}`;
-
-        const svg2 = `data:image/svg+xml;utf8,${encodeURIComponent(`
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
-                <defs>
-                    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#111827" />
-                        <stop offset="100%" stop-color="#0f172a" />
-                    </linearGradient>
-                    <pattern id="grid2" width="20" height="20" patternUnits="userSpaceOnUse">
-                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(200,16,46,0.08)" stroke-width="1"/>
-                    </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#bg2)" />
-                <rect width="100%" height="100%" fill="url(#grid2)" />
-                <line x1="80" y1="180" x2="520" y2="180" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="8,8"/>
-                <line x1="300" y1="60" x2="300" y2="300" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="8,8"/>
-                <circle cx="300" cy="180" r="65" fill="rgba(200,16,46,0.12)" stroke="#c8102e" stroke-width="2"/>
-                <text x="300" y="315" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="18" font-weight="700" letter-spacing="1.5">${title}</text>
-                <text x="300" y="342" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="500" letter-spacing="1">VIEW 02 - SPECIFICATION & DIMENSIONAL MATRIX</text>
-            </svg>
-        `)}`;
-
-        const svg3 = `data:image/svg+xml;utf8,${encodeURIComponent(`
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
-                <defs>
-                    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#1e1b4b" />
-                        <stop offset="100%" stop-color="#0f172a" />
-                    </linearGradient>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#bg3)" />
-                <polygon points="300,80 385,225 215,225" fill="none" stroke="rgba(200, 16, 46, 0.45)" stroke-width="2.5"/>
-                <circle cx="300" cy="175" r="40" fill="rgba(255,255,255,0.05)" stroke="#ffffff" stroke-width="1.5"/>
-                <text x="300" y="315" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="18" font-weight="700" letter-spacing="1.5">${title}</text>
-                <text x="300" y="342" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="12" font-weight="500" letter-spacing="1">VIEW 03 - ISO CERTIFICATION & MATERIAL PROFILE</text>
-            </svg>
-        `)}`;
-
-        return [svg1, svg2, svg3];
-    };
 
     // Helper: Map brand names to logo images for Brands Available section
     const getBrandLogoImageCard = (brandName) => {
@@ -507,33 +493,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (productsGrid) {
         let gridHTML = '';
         productsData.forEach((item, index) => {
-            const badgeHTML = item.badge ? `<div class="modal-badge" style="position: absolute; top: 1rem; left: 1rem; z-index: 5;">${item.badge}</div>` : '';
-            const iconName = item.icon || 'package';
+            const badgeHTML = item.badge ? `<div class="catalogue-badge">${item.badge}</div>` : '';
+            const imgSrc = (item.images && item.images.length > 0) ? item.images[0] : 'assets/hepworth upvc.jpg';
 
             gridHTML += `
                 <div class="catalogue-card product-item" data-index="${index}">
-                    <div class="product-placeholder-banner">
-                        <div class="placeholder-graphic">
-                            <svg viewBox="0 0 400 240" class="placeholder-svg">
-                                <defs>
-                                    <linearGradient id="gridGrad-${index}" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#1e293b" />
-                                        <stop offset="100%" stop-color="#0f172a" />
-                                    </linearGradient>
-                                    <pattern id="grid-${index}" width="20" height="20" patternUnits="userSpaceOnUse">
-                                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                                    </pattern>
-                                </defs>
-                                <rect width="100%" height="100%" fill="url(#gridGrad-${index})" />
-                                <rect width="100%" height="100%" fill="url(#grid-${index})" />
-                                <circle cx="200" cy="110" r="50" fill="none" stroke="rgba(200, 16, 46, 0.25)" stroke-width="2"/>
-                                <circle cx="200" cy="110" r="70" fill="none" stroke="rgba(200, 16, 46, 0.12)" stroke-width="1" stroke-dasharray="4,4"/>
-                            </svg>
-                            <div class="placeholder-icon-wrapper">
-                                <i data-lucide="${iconName}" class="placeholder-icon"></i>
-                            </div>
-                            <span class="placeholder-label">SPECIFICATION PLACEHOLDER</span>
-                        </div>
+                    <div class="catalogue-image">
+                        <img src="${imgSrc}" alt="${item.name}" loading="lazy">
                         ${badgeHTML}
                     </div>
                     <div class="catalogue-content">
@@ -556,8 +522,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const brandProductsModal = document.getElementById('brand-products-modal');
     const brandModalClose = document.getElementById('brand-modal-close');
 
-    let currentPlaceholders = [];
-    let currentPlaceholderIndex = 0;
+    let currentImages = [];
+    let currentImageIndex = 0;
 
     const modalPrevBtn = document.getElementById('modal-prev-btn');
     const modalNextBtn = document.getElementById('modal-next-btn');
@@ -565,35 +531,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalImg = document.getElementById('modal-img');
 
     const updateSlider = () => {
-        if (!currentPlaceholders || currentPlaceholders.length === 0) return;
-        if (modalImg) modalImg.src = currentPlaceholders[currentPlaceholderIndex];
+        if (!currentImages || currentImages.length === 0) return;
+        if (modalImg) modalImg.src = currentImages[currentImageIndex];
+
+        const hasMultiple = currentImages.length > 1;
+        if (modalPrevBtn) modalPrevBtn.style.display = hasMultiple ? 'flex' : 'none';
+        if (modalNextBtn) modalNextBtn.style.display = hasMultiple ? 'flex' : 'none';
 
         if (modalSliderDots) {
-            let dotsHTML = '';
-            currentPlaceholders.forEach((_, idx) => {
-                dotsHTML += `<div class="modal-dot ${idx === currentPlaceholderIndex ? 'active' : ''}" data-idx="${idx}"></div>`;
-            });
-            modalSliderDots.innerHTML = dotsHTML;
-
-            document.querySelectorAll('.modal-dot').forEach(dot => {
-                dot.addEventListener('click', (e) => {
-                    currentPlaceholderIndex = parseInt(e.target.getAttribute('data-idx'));
-                    updateSlider();
+            if (!hasMultiple) {
+                modalSliderDots.style.display = 'none';
+            } else {
+                modalSliderDots.style.display = 'flex';
+                let dotsHTML = '';
+                currentImages.forEach((_, idx) => {
+                    dotsHTML += `<div class="modal-dot ${idx === currentImageIndex ? 'active' : ''}" data-idx="${idx}"></div>`;
                 });
-            });
+                modalSliderDots.innerHTML = dotsHTML;
+
+                document.querySelectorAll('.modal-dot').forEach(dot => {
+                    dot.addEventListener('click', (e) => {
+                        currentImageIndex = parseInt(e.target.getAttribute('data-idx'));
+                        updateSlider();
+                    });
+                });
+            }
         }
     };
 
     if (modalPrevBtn && modalNextBtn) {
         modalPrevBtn.addEventListener('click', () => {
-            if (currentPlaceholders.length > 1) {
-                currentPlaceholderIndex = (currentPlaceholderIndex - 1 + currentPlaceholders.length) % currentPlaceholders.length;
+            if (currentImages.length > 1) {
+                currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
                 updateSlider();
             }
         });
         modalNextBtn.addEventListener('click', () => {
-            if (currentPlaceholders.length > 1) {
-                currentPlaceholderIndex = (currentPlaceholderIndex + 1) % currentPlaceholders.length;
+            if (currentImages.length > 1) {
+                currentImageIndex = (currentImageIndex + 1) % currentImages.length;
                 updateSlider();
             }
         });
@@ -605,9 +580,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modal-title').textContent = item.name;
         document.getElementById('modal-desc').textContent = item.desc;
 
-        // Generate and set multiple image placeholders
-        currentPlaceholders = generateProductPlaceholders(item);
-        currentPlaceholderIndex = 0;
+        // Set images array from item
+        currentImages = (item.images && item.images.length > 0) ? item.images : ['assets/hepworth upvc.jpg'];
+        currentImageIndex = 0;
         updateSlider();
 
         const badge = document.getElementById('modal-badge');
@@ -708,17 +683,13 @@ document.addEventListener('DOMContentLoaded', () => {
         let bGridHTML = '';
         filteredProducts.forEach((item) => {
             const originalIndex = productsData.findIndex(p => p.name === item.name);
-            const iconName = item.icon || 'package';
+            const pImg = (item.images && item.images.length > 0) ? item.images[0] : 'assets/hepworth upvc.jpg';
 
             bGridHTML += `
                 <div class="catalogue-card product-item" data-index="${originalIndex}">
-                    <div class="product-placeholder-banner">
-                        <div class="placeholder-graphic">
-                            <div class="placeholder-icon-wrapper">
-                                <i data-lucide="${iconName}" class="placeholder-icon"></i>
-                            </div>
-                            <span class="placeholder-label">${brandName.toUpperCase()} PRODUCT</span>
-                        </div>
+                    <div class="catalogue-image">
+                        <img src="${pImg}" alt="${item.name}" loading="lazy">
+                        ${item.badge ? `<div class="catalogue-badge">${item.badge}</div>` : ''}
                     </div>
                     <div class="catalogue-content">
                         <h3>${item.name}</h3>
@@ -780,12 +751,24 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeProductModal();
         });
+        const pContent = modal.querySelector('.product-modal-content');
+        if (pContent) {
+            pContent.addEventListener('wheel', (e) => {
+                e.stopPropagation();
+            }, { passive: true });
+        }
     }
 
     if (brandProductsModal) {
         brandProductsModal.addEventListener('click', (e) => {
             if (e.target === brandProductsModal) closeBrandProductsModal();
         });
+        const bContent = brandProductsModal.querySelector('.brand-modal-content');
+        if (bContent) {
+            bContent.addEventListener('wheel', (e) => {
+                e.stopPropagation();
+            }, { passive: true });
+        }
     }
 
     document.addEventListener('keydown', (e) => {
