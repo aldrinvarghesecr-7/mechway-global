@@ -304,8 +304,8 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Hepworth', 'Comer'],
             images: [
-                'assets/highpress.jpeg',
-                'assets/highpres.jpeg'
+
+                'assets/highpres.jpeg',
             ]
         },
         {
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Hepworth'],
             images: [
-                'assets/hepworth upvc.jpg',
+                'assets/highpress.jpeg',
                 'assets/supreme upvc.png'
             ]
         },
