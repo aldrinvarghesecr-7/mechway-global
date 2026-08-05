@@ -490,6 +490,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Render Products Grid (if on products.html)
     const productsGrid = document.getElementById('products-grid');
+    const getProductImageBackground = (src) => `--product-bg-image: url('${src}');`;
+
     if (productsGrid) {
         let gridHTML = '';
         productsData.forEach((item, index) => {
@@ -498,7 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             gridHTML += `
                 <div class="catalogue-card product-item" data-index="${index}">
-                    <div class="catalogue-image">
+                    <div class="catalogue-image" style="${getProductImageBackground(imgSrc)}">
                         <img src="${imgSrc}" alt="${item.name}" loading="lazy">
                         ${badgeHTML}
                     </div>
@@ -532,7 +534,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateSlider = () => {
         if (!currentImages || currentImages.length === 0) return;
-        if (modalImg) modalImg.src = currentImages[currentImageIndex];
+        const activeImage = currentImages[currentImageIndex];
+        if (modalImg) modalImg.src = activeImage;
+
+        const modalImageCol = modalImg ? modalImg.closest('.modal-image-col') : null;
+        if (modalImageCol) {
+            modalImageCol.style.setProperty('--product-bg-image', `url('${activeImage}')`);
+        }
 
         const hasMultiple = currentImages.length > 1;
         if (modalPrevBtn) modalPrevBtn.style.display = hasMultiple ? 'flex' : 'none';
@@ -688,7 +696,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             bGridHTML += `
                 <div class="catalogue-card product-item" data-index="${originalIndex}">
-                    <div class="catalogue-image">
+                    <div class="catalogue-image" style="${getProductImageBackground(pImg)}">
                         <img src="${pImg}" alt="${item.name}" loading="lazy">
                         ${item.badge ? `<div class="catalogue-badge">${item.badge}</div>` : ''}
                     </div>
