@@ -2121,22 +2121,26 @@ body:hover .cursor-dot {
     border-radius: 24px 0 0 24px;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 480px;
+    min-height: 440px;
     height: 100%;
-    padding: 1.5rem;
+    padding: 3rem 2rem 3.5rem 2rem;
     border-right: 1px solid rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
 }
 
 .modal-image-col img {
-    width: 100%;
-    height: 100%;
-    max-height: 440px;
+    max-width: 100%;
+    max-height: 380px;
+    width: auto;
+    height: auto;
     object-fit: contain;
     object-position: center;
     display: block;
-    margin: auto;
+    margin: 0 auto;
+    align-self: center;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
 }
