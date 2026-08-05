@@ -463,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Comer': { img: 'assets/comer.png', color: '#e65100' },
             'HYCOUNT': { img: 'assets/hycount%20main.png', color: '#2e7d32' },
             'Giacomini': { img: 'assets/giacomni.png', color: '#c8102e' },
-            'Neway': { img: 'assets/neway.png', color: '#0052cc' },
+            'Neway': { img: 'assets/newaylogo.png', color: '#0052cc' },
             'Maddalena': { img: null, color: '#6a1b9a' }
         };
 
@@ -664,7 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Comer': 'assets/comer.png',
             'HYCOUNT': 'assets/Screenshot 2026-07-23 121141.png',
             'Giacomini': 'assets/giacomni.png',
-            'Neway': 'assets/neway.png'
+            'Neway': 'assets/newaylogo.png'
         };
 
         const imgSrc = brandImageMap[brandName];
