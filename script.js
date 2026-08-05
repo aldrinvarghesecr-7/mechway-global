@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
             brands: ['Supreme'],
             images: [
                 'assets/PEX pipes and fittings thumbnail.jpeg',
-                'assets/hepworth upvc.jpg'
+                'assets/pex supreme.jpg'
             ]
         },
         {
@@ -286,8 +286,8 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Wavin'],
             images: [
-                'assets/supreme upvc.png',
-                'assets/hepworth upvc.jpg'
+                'assets/wavin thumbnail.webp',
+                'assets/wavin sound proof one.webp'
             ]
         },
         {
@@ -340,8 +340,8 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial', 'Infrastructure', 'Landscaping'],
             brands: ['Hepworth', 'HYCOUNT'],
             images: [
-                'assets/hepworth upvc.jpg',
-                'assets/supreme upvc.png'
+                'assets/hepwoeth duct.jpg',
+                'assets/hepworth duct 1.jpg'
             ]
         },
         {
@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Supreme': { img: 'assets/supreme.png', color: '#004b93' },
             'Wavin': { img: 'assets/wavin logo.png', color: '#0072ce' },
             'Comer': { img: 'assets/comer.png', color: '#e65100' },
-            'HYCOUNT': { img: 'assets/Screenshot 2026-07-23 121141.png', color: '#2e7d32' },
+            'HYCOUNT': { img: 'assets/hycount%20main.png', color: '#2e7d32' },
             'Giacomini': { img: 'assets/giacomni.png', color: '#c8102e' },
             'Neway': { img: 'assets/neway.png', color: '#0052cc' },
             'Maddalena': { img: null, color: '#6a1b9a' }
