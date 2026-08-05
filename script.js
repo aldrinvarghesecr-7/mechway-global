@@ -227,7 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Applications': 'Building Services, Infrastructure, Landscaping',
                 'Features': 'Corrosion resistant, high flow capacity, durable rubber ring/solvent joints'
             },
-            badge: 'Infrastructure Grade',
             icon: 'layers',
             industries: ['Building Services - Residential & Commercial', 'Infrastructure', 'Landscaping'],
             brands: ['Hepworth', 'Supreme'],
