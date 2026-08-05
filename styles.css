@@ -2125,7 +2125,7 @@ body:hover .cursor-dot {
     justify-content: center;
     min-height: 420px;
     height: 100%;
-    padding: 3.5rem;
+    padding: 1.5rem 3rem 4.5rem 3rem;
     border-right: 1px solid rgba(0, 0, 0, 0.06);
     box-sizing: border-box;
 }
@@ -2136,7 +2136,7 @@ body:hover .cursor-dot {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    object-position: center;
+    object-position: center 40%;
     display: block;
     transition: opacity 0.3s ease;
     filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08));
