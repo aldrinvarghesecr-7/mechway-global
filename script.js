@@ -412,8 +412,8 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Giacomini'],
             images: [
-                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg',
-                'assets/Pre assembled FCU Valve package thumbnail.jpeg'
+                'assets/plumbspec.webp',
+
             ]
         },
         {
@@ -430,8 +430,8 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Infrastructure', 'Landscaping', 'Marine', 'Oil & Gas'],
             brands: ['Neway'],
             images: [
-                'assets/Iron Body Plumbing & HVAC Valves thumbnails.jpeg',
-                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg'
+                'assets/industrialvalve neway.webp',
+                'assets/industrial valve newyay2.webp'
             ]
         },
         {
@@ -448,8 +448,8 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Maddalena'],
             images: [
-                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg',
-                'assets/Pre assembled FCU Valve package thumbnail.jpeg'
+                'assets/water.jpeg',
+
             ]
         }
     ];
