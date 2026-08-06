@@ -1,8 +1,8 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize Lenis for Smooth Scrolling
     const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        duration: 1.1,
+        easing: (t) => 1 - Math.pow(1 - t, 4),
         direction: 'vertical',
         gestureDirection: 'vertical',
         smooth: true,
@@ -15,12 +15,6 @@
     lenis.on('scroll', (e) => {
         ScrollTrigger.update();
     });
-
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
 
     gsap.ticker.add((time) => {
         lenis.raf(time * 1000);
@@ -39,10 +33,13 @@
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.top = `${posY}px`;
 
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
+            gsap.to(cursorOutline, {
+                left: posX,
+                top: posY,
+                duration: 0.18,
+                ease: "power3.out",
+                overwrite: true
+            });
         });
 
         const interactables = document.querySelectorAll('a, button, .catalogue-card, input, textarea');
@@ -83,19 +80,19 @@
     const heroMedia = document.querySelector('.hero-media');
     if (heroMedia) {
         const heroTl = gsap.timeline({
-            defaults: { ease: "power3.out" }
+            defaults: { ease: "power2.out" }
         });
 
         heroTl
-            .to(".hero-media", { scale: 1.08, duration: 2.2, ease: "power1.out" }, 0)
-            .to(".hero-kicker", { opacity: 1, y: 0, duration: 0.8 }, 0.2)
-            .to(".hero-graphic", { opacity: 0.7, duration: 1.2 }, 0.4)
-            .to(".word-1", { y: 0, opacity: 1, duration: 0.9, ease: "back.out(1.4)" }, 0.5)
-            .to(".word-2", { y: 0, opacity: 1, duration: 0.9, ease: "back.out(1.4)" }, 0.75)
-            .to(".word-3", { y: 0, opacity: 1, duration: 0.9, ease: "back.out(1.4)" }, 1.0)
-            .to(".hero-subtitle", { opacity: 1, y: 0, duration: 1 }, 1.25)
-            .to(".hero-cta", { opacity: 1, y: 0, duration: 1 }, 1.45)
-            .to(".scroll-indicator", { opacity: 1, duration: 1 }, 1.7);
+            .to(".hero-media", { scale: 1.06, duration: 2.4, ease: "power1.out" }, 0)
+            .to(".hero-kicker", { opacity: 1, y: 0, duration: 0.7 }, 0.15)
+            .to(".hero-graphic", { opacity: 0.7, duration: 1.1 }, 0.35)
+            .to(".word-1", { y: 0, opacity: 1, duration: 0.75, ease: "power3.out" }, 0.45)
+            .to(".word-2", { y: 0, opacity: 1, duration: 0.75, ease: "power3.out" }, 0.68)
+            .to(".word-3", { y: 0, opacity: 1, duration: 0.75, ease: "power3.out" }, 0.91)
+            .to(".hero-subtitle", { opacity: 1, y: 0, duration: 0.9 }, 1.15)
+            .to(".hero-cta", { opacity: 1, y: 0, duration: 0.85 }, 1.32)
+            .to(".scroll-indicator", { opacity: 1, duration: 0.85 }, 1.55);
 
         // Continuous ambient rotation for geometric rings
         gsap.to(".ring-1", { rotation: 360, duration: 35, repeat: -1, ease: "none" });
@@ -115,8 +112,8 @@
             {
                 y: 0,
                 opacity: 1,
-                duration: 1,
-                ease: "power3.out",
+                duration: 0.9,
+                ease: "power2.out",
                 scrollTrigger: {
                     trigger: el,
                     start: "top 85%",
@@ -358,8 +355,7 @@
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Giacomini'],
             images: [
-                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg',
-                'assets/Iron Body Plumbing & HVAC Valves thumbnails.jpeg'
+                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg'
             ]
         },
         {
@@ -376,8 +372,7 @@
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Giacomini', 'Neway'],
             images: [
-                'assets/Iron Body Plumbing & HVAC Valves thumbnails.jpeg',
-                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg'
+                'assets/Iron Body Plumbing & HVAC Valves thumbnails.jpeg'
             ]
         },
         {
@@ -394,8 +389,7 @@
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Giacomini'],
             images: [
-                'assets/Pre assembled FCU Valve package thumbnail.jpeg',
-                'assets/Copper Alloy plumbing and HVAC valves thumbnail.jpeg'
+                'assets/Pre assembled FCU Valve package thumbnail.jpeg'
             ]
         },
         {
@@ -411,9 +405,7 @@
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Giacomini'],
             images: [
-                'assets/plmbngspec.jpeg',
-                'assets/plumbspec.webp',
-
+                'assets/plmbngspec.jpeg'
             ]
         },
         {
