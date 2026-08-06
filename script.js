@@ -406,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Giacomini'],
             images: [
-                'assets/plmbngspec.jpeg'
+                'assets/plmbngspec.jpeg',
                 'assets/giacomnivlv.jpg'
             ]
         },
@@ -837,6 +837,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('cookie-accept')?.addEventListener('click', () => handleConsent('accepted'));
         document.getElementById('cookie-reject')?.addEventListener('click', () => handleConsent('rejected'));
+    }
+
+    // 12. Mobile Menu Toggle for Top Banner / Navigation
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active', isActive);
+
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) {
+                icon.setAttribute('data-lucide', isActive ? 'x' : 'menu');
+                if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') {
+                    lucide.createIcons();
+                }
+            }
+        });
+
+        // Close menu when clicking anywhere outside
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    icon.setAttribute('data-lucide', 'menu');
+                    if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') {
+                        lucide.createIcons();
+                    }
+                }
+            }
+        });
+
+        // Close menu when clicking a link inside the nav
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    icon.setAttribute('data-lucide', 'menu');
+                    if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') {
+                        lucide.createIcons();
+                    }
+                }
+            });
+        });
     }
 });
 
