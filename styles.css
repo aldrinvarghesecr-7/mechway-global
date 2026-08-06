@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
     /* White, Grey, Red Colors */
@@ -1724,6 +1724,12 @@ body:hover .cursor-dot {
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
 }
 
+
+.trust-logo--giacomini {
+    width: 220px;
+    height: 95px;
+    transform: scale(1.12);
+}
 
 .trust-logo--wavin {
     width: 200px;

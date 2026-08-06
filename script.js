@@ -389,7 +389,8 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Giacomini'],
             images: [
-                'assets/Pre assembled FCU Valve package thumbnail.jpeg'
+                'assets/Pre assembled FCU Valve package thumbnail.jpeg',
+                'assets/fcu-valve--670.jpg',
             ]
         },
         {
@@ -406,6 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
             brands: ['Giacomini'],
             images: [
                 'assets/plmbngspec.jpeg'
+                'assets/giacomnivlv.jpg'
             ]
         },
         {
@@ -423,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
             brands: ['Neway'],
             images: [
                 'assets/industrialvalve.jpeg',
-                'assets/industrial valve newyay2.webp'
+                'assets/giamainvlv.jpeg'
             ]
         },
         {
@@ -454,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Wavin': { img: 'assets/wavin%20logo.png', color: '#0072ce' },
         'Comer': { img: 'assets/comerlogo.png', color: '#e65100' },
         'HYCOUNT': { img: 'assets/hycount%20main.png', color: '#2e7d32' },
-        'Giacomini': { img: 'assets/giacomni.png', color: '#c8102e' },
+        'Giacomini': { img: 'assets/giacomnii.png', color: '#c8102e' },
         'Neway': { img: 'assets/newaylogo.png', color: '#0052cc' },
         'Maddalena': { img: 'assets/maddalena_logo_elenco.png', color: '#6a1b9a' }
     };
@@ -666,7 +668,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Wavin': 'assets/wavin%20logo.png',
             'Comer': 'assets/comerlogo.png',
             'HYCOUNT': 'assets/hycount%20main.png',
-            'Giacomini': 'assets/giacomni.png',
+            'Giacomini': 'assets/giacomnii.png',
             'Neway': 'assets/newaylogo.png',
             'Maddalena': 'assets/maddalena_logo_elenco.png'
         };
