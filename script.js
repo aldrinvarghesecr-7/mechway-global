@@ -456,17 +456,19 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Helper: Map brand names to logo images for Brands Available section
+    const brandLogoMap = {
+        'Hepworth': { img: 'assets/hepworth%20logo.png', color: '#c8102e' },
+        'Supreme': { img: 'assets/supreme.png', color: '#004b93' },
+        'Wavin': { img: 'assets/wavin%20logo.png', color: '#0072ce' },
+        'Comer': { img: 'assets/comerlogo.png', color: '#e65100' },
+        'HYCOUNT': { img: 'assets/hycount%20main.png', color: '#2e7d32' },
+        'Giacomini': { img: 'assets/giacomni.png', color: '#c8102e' },
+        'Neway': { img: 'assets/newaylogo.png', color: '#0052cc' },
+        'Maddalena': { img: 'assets/maddalena_logo_elenco.png', color: '#6a1b9a' }
+    };
+
     const getBrandLogoImageCard = (brandName) => {
-        const brandsMap = {
-            'Hepworth': { img: 'assets/hepworth logo.png', color: '#c8102e' },
-            'Supreme': { img: 'assets/supreme.png', color: '#004b93' },
-            'Wavin': { img: 'assets/wavin logo.png', color: '#0072ce' },
-            'Comer': { img: 'assets/comer.png', color: '#e65100' },
-            'HYCOUNT': { img: 'assets/hycount%20main.png', color: '#2e7d32' },
-            'Giacomini': { img: 'assets/giacomni.png', color: '#c8102e' },
-            'Neway': { img: 'assets/newaylogo.png', color: '#0052cc' },
-            'Maddalena': { img: 'assets/maddalena_logo_elenco.png', color: '#6a1b9a' }
-        };
+        const brandsMap = brandLogoMap;
 
         const b = brandsMap[brandName] || { img: null, color: '#c8102e' };
 
@@ -667,11 +669,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Map logo image
         const brandImageMap = {
-            'Hepworth': 'assets/hepworth logo.png',
+            'Hepworth': 'assets/hepworth%20logo.png',
             'Supreme': 'assets/supreme.png',
-            'Wavin': 'assets/wavin logo.png',
-            'Comer': 'assets/comer.png',
-            'HYCOUNT': 'assets/Screenshot 2026-07-23 121141.png',
+            'Wavin': 'assets/wavin%20logo.png',
+            'Comer': 'assets/comerlogo.png',
+            'HYCOUNT': 'assets/hycount%20main.png',
             'Giacomini': 'assets/giacomni.png',
             'Neway': 'assets/newaylogo.png',
             'Maddalena': 'assets/maddalena_logo_elenco.png'
@@ -843,3 +845,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('cookie-reject')?.addEventListener('click', () => handleConsent('rejected'));
     }
 });
+
+
+
