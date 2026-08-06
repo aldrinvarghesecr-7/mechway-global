@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize Lenis for Smooth Scrolling
     const lenis = new Lenis({
         duration: 1.2,
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.targets()[0].closest('.why-card').classList.add('ready');
             }
         },
-        ease: "back.out(1.7)",
+        ease: "back.out(1.35)",
         scrollTrigger: {
             trigger: ".why-grid",
             start: "top 80%"
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Master Products Database
     const productsData = [
         {
-            name: 'UPVC Drainage Pipes & Fittings',
+            name: 'uPVC Drainage Pipes & Fittings',
             desc: 'Complete range of uPVC drainage pipes & fittings (32 mm – 1000 mm) manufactured to British and European standards for domestic, commercial, and infrastructure applications.',
             specs: {
                 'Material': 'uPVC (Unplasticized Polyvinyl Chloride)',
@@ -231,12 +231,13 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial', 'Infrastructure', 'Landscaping'],
             brands: ['Hepworth', 'Supreme'],
             images: [
+                'assets/upvc.png',
                 'assets/hepworth upvc.jpg',
                 'assets/supreme upvc.png'
             ]
         },
         {
-            name: 'PPR pipes and fittings',
+            name: 'PPR Pipes & Fittings',
             desc: 'High-performance Polypropylene Random Copolymer (PPR) piping systems for hot and cold pressure distribution networks.',
             specs: {
                 'Material': 'PPR (Polypropylene Random Copolymer)',
@@ -254,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            name: 'PEX pipe and fittings',
+            name: 'PEX Pipes & Fittings',
             desc: 'Flexible cross-linked polyethylene (PEX) piping system providing exceptional temperature resistance and long-term mechanical durability.',
             specs: {
                 'Material': 'Cross-linked Polyethylene (PEX)',
@@ -272,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            name: 'Sound proof Drainage Pipes & Fittings',
+            name: 'Sound-Proof Drainage Pipes & Fittings',
             desc: 'Acoustically optimized 3-layer mineral-reinforced soil & waste system designed to eliminate drainage noise in high-end developments.',
             specs: {
                 'Material': 'Mineral-Reinforced Polypropylene (CPP)',
@@ -290,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            name: 'High Pressure Pipes & Fittings',
+            name: 'High-Pressure Pipes & Fittings',
             desc: 'Heavy-duty pressure piping systems designed for demanding fluid distribution, chemical transport, and air conditioning condensate loops.',
             specs: {
                 'Material': 'Heavy-duty uPVC / PVC',
@@ -398,11 +399,10 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            name: 'Plumbing Speciality Valves',
+            name: 'Plumbing Specialty Valves',
             desc: 'Specialized hydronic control devices including pressure reducing valves, thermostatic mixing valves, and automatic air vents.',
             specs: {
                 'Types': 'Pressure Reducers, TMVs, Dynamic Balancing, Air Vents',
-                'Standard': 'EN 1567 sound class certified',
                 'Max Working Temp': 'Up to 100°C',
                 'Features': 'Diaphragm operation, tamper-proof setpoints'
             },
@@ -817,7 +817,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fadeElements.forEach(el => {
             gsap.fromTo(el,
                 { y: 50, opacity: 0 },
-                { y: 0, opacity: 1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 95%" }, onComplete: () => el.classList.add('ready') }
+                { y: 0, opacity: 1, duration: 0.9, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 95%" }, onComplete: () => el.classList.add('ready') }
             );
         });
         ScrollTrigger.refresh();
@@ -845,6 +845,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('cookie-reject')?.addEventListener('click', () => handleConsent('rejected'));
     }
 });
+
 
 
 

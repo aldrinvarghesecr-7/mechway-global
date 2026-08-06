@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Mechway Global</title>
+    <title>Request a Quotation | Mechway Global</title>
     <meta name="description"
-        content="Get in touch with Mechway Global for comprehensive MEP and Infrastructure solutions.">
+        content="Start a project conversation with Mechway Global for sourcing, procurement, and technical supply coordination.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,18 @@
 
     <link rel="stylesheet" href="styles.css">
     <style>
+        .project-intro-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .project-intro-grid {
+                grid-template-columns: 1fr;
+            }
+        }
         .contact-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -221,105 +233,95 @@
         <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <span class="section-kicker fade-up">Contact Us</span>
+                <span class="section-kicker fade-up">RFQ Submission</span>
                 <h1 class="fade-up"
                     style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1.5rem; text-transform: uppercase;">
-                    Get in <span class="text-gradient">Touch</span></h1>
+                    Request a <span class="text-gradient">Quotation</span></h1>
                 <p class="fade-up"
                     style="color: var(--text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto; font-weight: 400;">
-                    Reach our team for general enquiries, product information, office details, and quick support.</p>
+                    Share your scope, quantities, drawings, and timeline so we can prepare a clear quotation and delivery path.</p>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Project Section -->
         <section class="contact-section">
             <div class="container contact-layout">
-                <div class="contact-info fade-up">
-                    <div class="locations">
+                <div class="project-brief-intro fade-up">
+                    <div class="project-intro-grid">
                         <div class="location-card">
-                            <h3><i data-lucide="building"></i> UAE Headquarters</h3>
-                            <p>The Apex Tower, Dubai, UAE</p>
-                            <p>Operating Hours: Mon-Fri, 9:00 AM - 6:00 PM</p>
-                            <div class="map-placeholder">
-                                [Map Integration Placeholder]
-                            </div>
+                            <h3><i data-lucide="clipboard-list"></i> What to Include for RFQ</h3>
+                            <p>Project type, materials required, quantities, preferred brands, and any technical specifications.</p>
                         </div>
                         <div class="location-card">
-                            <h3><i data-lucide="package"></i> Logistics & Storage</h3>
-                            <p>JAFZA Regional Distribution Center</p>
-                            <p>Dubai, UAE</p>
+                            <h3><i data-lucide="clock-3"></i> RFQ Response</h3>
+                            <p>We review the scope, confirm availability, and respond with next steps or a quotation path.</p>
+                        </div>
+                        <div class="location-card">
+                            <h3><i data-lucide="file-text"></i> Best Files to Attach</h3>
+                            <p>BOQs, drawings, schedules, spec sheets, and any project notes that help us quote accurately.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="contact-info fade-up" style="margin-top: 1rem;">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-main);">Direct Channels</h3>
-                    <div class="direct-channels">
-                        <a href="mailto:sales@mechwayglobal.com" class="channel">
-                            <div class="channel-icon"><i data-lucide="mail"></i></div>
-                            <div class="channel-info">
-                                <h4>General Enquiries</h4>
-                                <p>sales@mechwayglobal.com</p>
-                            </div>
-                        </a>
-                        <a href="tel:+971501234567" class="channel">
-                            <div class="channel-icon"><i data-lucide="phone"></i></div>
-                            <div class="channel-info">
-                                <h4>Direct Line</h4>
-                                <p>+971 50 123 4567</p>
-                            </div>
-                        </a>
-                        <a href="https://wa.me/+971 0508789506" target="_blank" class="channel">
-                            <div class="channel-icon" style="background: #25D366;"><i data-lucide="message-circle"></i></div>
-                            <div class="channel-info">
-                                <h4>WhatsApp Business</h4>
-                                <p>Quick Response</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="contact-form fade-up">
+<div class="contact-form fade-up">
                     <form>
-                        <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">Send a Message</h3>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">RFQ Brief</h3>
                         <div class="form-row">
                             <div class="form-group">
                                 <label
-                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Full
-                                    Name</label>
-                                <input type="text" placeholder="John Doe" required>
+                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Project / RFQ Name</label>
+                                <input type="text" placeholder="Commercial Tower MEP Supply" required>
                             </div>
                             <div class="form-group">
                                 <label
-                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Organization</label>
+                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Company / Consultant / Client</label>
                                 <input type="text" placeholder="Company Ltd.">
                             </div>
                         </div>
-                        <div class="form-row">
+                                                <div class="form-row">
                             <div class="form-group">
                                 <label
-                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Corporate
-                                    Email</label>
+                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Preferred Brand(s)</label>
+                                <input type="text" placeholder="Giacomini, Wavin, Supreme">
+                            </div>
+                            <div class="form-group">
+                                <label
+                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Required Delivery Date</label>
+                                <input type="date">
+                            </div>
+                        </div><div class="form-row">
+                            <div class="form-group">
+                                <label
+                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Quotation Email</label>
                                 <input type="email" placeholder="john@company.com" required>
                             </div>
                             <div class="form-group">
                                 <label
-                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Direct
-                                    Line</label>
+                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Quotation Phone</label>
                                 <input type="tel" placeholder="+971 5X XXX XXXX">
                             </div>
                         </div>
                         <div class="form-group">
                             <label
-                                style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Subject</label>
-                            <input type="text" placeholder="How can we help?">
+                                style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Trade / Product Category</label>
+                            <input type="text" placeholder="HVAC, Plumbing, Drainage, Valves, Infrastructure">
                         </div>
                         <div class="form-group">
                             <label
-                                style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Message</label>
+                                style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Scope / BOQ Details</label>
                             <textarea
-                                placeholder="Tell us what you need, and our team will get back to you shortly."
+                                placeholder="Include product specifications, quantities, preferred brands, target delivery date, and any special requirements."
                                 rows="5"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label
+                                style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Attachments
+                                (Drawings / Schedules)</label>
+                            <div class="file-upload">
+                                <div class="file-upload-btn">
+                                    <i data-lucide="upload-cloud"></i> Click to browse or drag and drop RFQ files
+                                </div>
+                                <input type="file" multiple accept=".pdf,application/pdf,image/*,.doc,.docx,.xls,.xlsx">
+                            </div>
                         </div>
                         <div class="form-group"
                             style="display: flex; align-items: flex-start; gap: 0.8rem; margin: 2rem 0;">
@@ -332,7 +334,7 @@
                                     style="color: var(--primary-red); text-decoration: none;">Privacy Policy</a>.
                             </label>
                         </div>
-                        <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="btn-primary" style="width: 100%;">Submit RFQ Brief</button>
                     </form>
                 </div>
             </div>
@@ -392,6 +394,8 @@
 </body>
 
 </html>
+
+
 
 
 
