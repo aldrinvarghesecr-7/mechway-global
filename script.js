@@ -62,12 +62,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Navbar scroll effect - Entire navbar banner (logo, links, phone number) goes away on scrolling
     const navbar = document.getElementById('navbar');
     if (navbar) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 40) {
+        const handleNavbarScroll = (scrollPos) => {
+            if (scrollPos > 40) {
                 navbar.classList.add('nav-hidden');
             } else {
                 navbar.classList.remove('nav-hidden');
             }
+
+            if (scrollPos > 15) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        };
+
+        lenis.on('scroll', (e) => {
+            handleNavbarScroll(e.scroll);
+        });
+
+        window.addEventListener('scroll', () => {
+            handleNavbarScroll(window.scrollY || document.documentElement.scrollTop);
         });
     }
 
@@ -406,8 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
             industries: ['Building Services - Residential & Commercial'],
             brands: ['Giacomini'],
             images: [
-                'assets/plmbngspec.jpeg',
-                'assets/giacomnivlv.jpg'
+                'assets/plmbngspec.jpeg'
             ]
         },
         {
