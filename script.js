@@ -333,7 +333,6 @@ document.addEventListener('DOMContentLoaded', () => {
             brands: ['Hepworth', 'Supreme'],
             images: [
                 'assets/highpress.jpeg',
-                'assets/supreme upvc.png'
             ]
         },
         {
@@ -403,7 +402,6 @@ document.addEventListener('DOMContentLoaded', () => {
             brands: ['Giacomini'],
             images: [
                 'assets/Pre assembled FCU Valve package thumbnail.jpeg',
-                'assets/fcu-valve--670.jpg',
             ]
         },
         {
