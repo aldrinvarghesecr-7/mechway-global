@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products | Mechway Global</title>
     <meta name="description" content="Explore Mechway Global's premium selection of MEP and Infrastructure components.">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -25,9 +28,11 @@
             padding: 5rem 0;
             border-bottom: 1px solid var(--glass-border);
         }
+
         .category-section:last-of-type {
             border-bottom: none;
         }
+
         .category-title {
             font-size: 2.5rem;
             text-transform: uppercase;
@@ -37,11 +42,13 @@
             align-items: center;
             gap: 1rem;
         }
+
         .category-title i {
             color: var(--primary-red);
             width: 40px;
             height: 40px;
         }
+
         .category-desc {
             font-size: 1.15rem;
             color: var(--text-muted);
@@ -51,6 +58,7 @@
         }
     </style>
 </head>
+
 <body class="products-page">
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
@@ -62,8 +70,10 @@
             <a href="index.html" class="logo">
                 <div class="logo-icon">
                     <svg viewBox="0 0 100 100" style="width: 3.5rem; height: 3.5rem; flex-shrink: 0;">
-                        <path d="M 15,42 L 15,15 L 50,35 L 85,15 L 85,42" fill="none" stroke="var(--primary-red)" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
-                        <path d="M 15,58 L 15,85 L 50,65 L 85,85 L 85,58" fill="none" stroke="#666666" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <path d="M 15,42 L 15,15 L 50,35 L 85,15 L 85,42" fill="none" stroke="var(--primary-red)"
+                            stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <path d="M 15,58 L 15,85 L 50,65 L 85,85 L 85,58" fill="none" stroke="#666666" stroke-width="14"
+                            stroke-linejoin="miter" stroke-linecap="butt" />
                         <rect x="8" y="47.5" width="14" height="5" fill="#666666" />
                         <rect x="78" y="47.5" width="14" height="5" fill="#666666" />
                     </svg>
@@ -76,38 +86,44 @@
             </a>
             <div class="nav-links">
                 <a href="about.html" class="nav-link">About</a>
-                <a href="products.html" class="nav-link" style="color: var(--primary-red);">Products</a>
+                <a href="products.html" class="nav-link">Products</a>
                 <a href="projects.html" class="nav-link">Projects</a>
                 <a href="brands.html" class="nav-link">Brands</a>
                 <a href="contact.html" class="nav-phone-badge"><i data-lucide="mail"></i> Contact Us</a>
-                <a href="initiate-project.html" class="btn-primary-outline" style="padding: 0.75rem 1.5rem; font-size: 0.8rem;">Initiate Project</a>
+                <a href="initiate-project.html" class="btn-primary-outline"
+                    style="padding: 0.75rem 1.5rem; font-size: 0.8rem; background: rgba(200,16,46,0.1);">Initiate
+                    Project</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <i data-lucide="menu"></i>
             </button>
         </div>
     </nav>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-kicker fade-up">Our Capabilities</span>
+            <h1 class="fade-up"
+                style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1.5rem; text-transform: uppercase;">Products
+                & <span class="text-gradient">Solutions</span></h1>
+            <p class="fade-up"
+                style="color: var(--text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto; font-weight: 400;">
+                Explore our core divisions of high-performance components tailored for the world's most demanding
+                projects.</p>
+        </div>
+    </section>
 
-    <main>
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="container">
-                <span class="section-kicker fade-up">Our Capabilities</span>
-                <h1 class="fade-up" style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1.5rem; text-transform: uppercase;">Products & <span class="text-gradient">Solutions</span></h1>
-                <p class="fade-up" style="color: var(--text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto; font-weight: 400;">Explore our core divisions of high-performance components tailored for the world's most demanding projects.</p>
+    <!-- Unified Products Section -->
+    <section class="category-section">
+        <div class="container fade-up">
+            <h2 class="category-title"><i data-lucide="package"></i> Our Complete Range</h2>
+            <p class="category-desc">Explore our comprehensive catalogue of high-performance components tailored for the
+                world's most demanding projects across various industries.</p>
+            <div class="catalogue-grid" id="products-grid">
+                <!-- Products will be dynamically injected here by script.js -->
             </div>
-        </section>
-
-        <!-- Unified Products Section -->
-        <section class="category-section">
-            <div class="container fade-up">
-                <h2 class="category-title"><i data-lucide="package"></i> Our Complete Range</h2>
-                <p class="category-desc">Explore our comprehensive catalogue of high-performance components tailored for the world's most demanding projects across various industries.</p>
-                <div class="catalogue-grid" id="products-grid">
-                    <!-- Products will be dynamically injected here by script.js -->
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
     </main>
 
     <footer class="footer" style="margin-top: 0; padding-top: 4rem;">
@@ -115,8 +131,10 @@
             <div class="logo" style="justify-content: center; margin-bottom: 2rem;">
                 <div class="logo-icon">
                     <svg viewBox="0 0 100 100" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;">
-                        <path d="M 15,42 L 15,15 L 50,35 L 85,15 L 85,42" fill="none" stroke="var(--primary-red)" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
-                        <path d="M 15,58 L 15,85 L 50,65 L 85,85 L 85,58" fill="none" stroke="#888888" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <path d="M 15,42 L 15,15 L 50,35 L 85,15 L 85,42" fill="none" stroke="var(--primary-red)"
+                            stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" />
+                        <path d="M 15,58 L 15,85 L 50,65 L 85,85 L 85,58" fill="none" stroke="#888888" stroke-width="14"
+                            stroke-linejoin="miter" stroke-linecap="butt" />
                         <rect x="8" y="47.5" width="14" height="5" fill="#888888" />
                         <rect x="78" y="47.5" width="14" height="5" fill="#888888" />
                     </svg>
@@ -128,18 +146,40 @@
             </div>
             <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/company/mechway-global" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <a href="https://www.linkedin.com/company/mechway-global" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
                     </a>
-                    <a href="https://www.instagram.com/mechwayglobal" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <a href="https://www.instagram.com/mechwayglobal" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
                     </a>
                 </div>
                 <p>&copy; 2026 Mechway Global. Excellence in Engineering. All rights reserved.</p>
                 <div style="display: flex; gap: 1.5rem; font-size: 0.8rem; flex-wrap: wrap; justify-content: center;">
-                    <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
-                    <a href="terms.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
-                    <a href="privacy.html#dnsmpi" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--primary-red)'" onmouseout="this.style.color='var(--text-muted)'">Do Not Sell My Personal Information</a>
+                    <a href="privacy.html"
+                        style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;"
+                        onmouseover="this.style.color='var(--primary-red)'"
+                        onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
+                    <a href="terms.html"
+                        style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;"
+                        onmouseover="this.style.color='var(--primary-red)'"
+                        onmouseout="this.style.color='var(--text-muted)'">Terms of Service</a>
+                    <a href="privacy.html#dnsmpi"
+                        style="color: var(--text-muted); text-decoration: none; transition: color 0.3s ease;"
+                        onmouseover="this.style.color='var(--primary-red)'"
+                        onmouseout="this.style.color='var(--text-muted)'">Do Not Sell My Personal Information</a>
                 </div>
             </div>
         </div>
@@ -152,15 +192,17 @@
             <div class="modal-grid">
                 <div class="modal-image-col">
                     <img id="modal-img" src="" alt="Product Placeholder View">
-                    <button id="modal-prev-btn" class="modal-slider-btn" aria-label="Previous view"><i data-lucide="chevron-left"></i></button>
-                    <button id="modal-next-btn" class="modal-slider-btn" aria-label="Next view"><i data-lucide="chevron-right"></i></button>
+                    <button id="modal-prev-btn" class="modal-slider-btn" aria-label="Previous view"><i
+                            data-lucide="chevron-left"></i></button>
+                    <button id="modal-next-btn" class="modal-slider-btn" aria-label="Next view"><i
+                            data-lucide="chevron-right"></i></button>
                     <div id="modal-slider-dots" class="modal-slider-dots"></div>
                     <div id="modal-badge" class="modal-badge"></div>
                 </div>
                 <div class="modal-info-col" data-lenis-prevent>
                     <h2 id="modal-title" class="modal-title"></h2>
                     <p id="modal-desc" class="modal-desc"></p>
-                    
+
                     <div class="modal-section">
                         <h3>Specifications</h3>
                         <ul id="modal-specs" class="modal-specs-list"></ul>
@@ -183,7 +225,8 @@
     <!-- Brand Products Modal -->
     <div id="brand-products-modal" class="modal-overlay" data-lenis-prevent>
         <div class="brand-modal-content" data-lenis-prevent>
-            <button id="brand-modal-close" class="modal-close-btn" aria-label="Close modal"><i data-lucide="x"></i></button>
+            <button id="brand-modal-close" class="modal-close-btn" aria-label="Close modal"><i
+                    data-lucide="x"></i></button>
             <div class="brand-modal-header">
                 <div class="brand-modal-logo-wrapper" id="brand-modal-logo-wrapper">
                     <!-- Brand logo injected here -->
@@ -191,7 +234,8 @@
                 <div>
                     <span class="section-kicker">MANUFACTURER PORTFOLIO</span>
                     <h2 id="brand-modal-title" class="brand-modal-title">Available Products</h2>
-                    <p id="brand-modal-subtitle" class="brand-modal-subtitle">Explore all engineering components supplied under this brand.</p>
+                    <p id="brand-modal-subtitle" class="brand-modal-subtitle">Explore all engineering components
+                        supplied under this brand.</p>
                 </div>
             </div>
             <div class="brand-modal-body">
@@ -204,10 +248,8 @@
 
     <script src="script.js"></script>
     <script>
-      lucide.createIcons();
+        lucide.createIcons();
     </script>
 </body>
+
 </html>
-
-
-
