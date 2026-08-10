@@ -243,8 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
             brands: ['Hepworth', 'Supreme'],
             images: [
                 'assets/upvc.png',
-                'assets/hepworth upvc.jpg',
-                'assets/supreme upvc.png'
+                'assets/hepworth upvc.jpg'
             ]
         },
         {
