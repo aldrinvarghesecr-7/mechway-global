@@ -59,13 +59,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Navbar scroll effect - Entire navbar banner (logo, links, phone number) goes away on scrolling
+    // 3. Navbar scroll effect - hides when scrolling down, reveals when scrolling up
     const navbar = document.getElementById('navbar');
     if (navbar) {
+        let lastScroll = 0;
+
         const handleNavbarScroll = (scrollPos) => {
-            if (scrollPos > 40) {
+            const scrollDelta = scrollPos - lastScroll;
+
+            // Always show navbar near the top of the page
+            if (scrollPos <= 40) {
+                navbar.classList.remove('nav-hidden');
+            } else if (scrollDelta > 5) {
+                // Scrolling down -> hide
                 navbar.classList.add('nav-hidden');
-            } else {
+            } else if (scrollDelta < -5) {
+                // Scrolling up -> reveal
                 navbar.classList.remove('nav-hidden');
             }
 
@@ -74,6 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 navbar.classList.remove('scrolled');
             }
+
+            lastScroll = scrollPos;
         };
 
         lenis.on('scroll', (e) => {
@@ -240,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             icon: 'layers',
             industries: ['Building Services - Residential & Commercial', 'Infrastructure', 'Landscaping'],
-            brands: ['Hepworth', 'Supreme'],
+            brands: ['Hepworth'],
             images: [
                 'assets/upvc.png',
                 'assets/hepworth upvc.jpg'
@@ -330,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
             badge: 'Heavy Duty',
             icon: 'box',
             industries: ['Building Services - Residential & Commercial'],
-            brands: ['Hepworth', 'Supreme'],
+            brands: ['Hepworth'],
             images: [
                 'assets/highpress.jpeg',
             ]
@@ -899,7 +910,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-
-
-
