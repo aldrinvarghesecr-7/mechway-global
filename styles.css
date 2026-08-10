@@ -384,7 +384,7 @@ body:hover .cursor-dot {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--text-muted);
+    color: var(--text-main);
     position: relative;
     padding-bottom: 5px;
 }
@@ -406,6 +406,25 @@ body:hover .cursor-dot {
 
 .nav-link:hover::before {
     width: 100%;
+}
+
+/* White nav links on every page except index */
+.about-page .nav-link,
+.products-page .nav-link,
+.projects-page .nav-link,
+.contact-page .nav-link,
+.terms-page .nav-link,
+.privacy-page .nav-link,
+.initiate-project-page .nav-link,
+.brands-page .nav-link {
+    color: #ffffff;
+}
+
+.about-page .nav-link:hover,
+.products-page .nav-link:hover,
+.projects-page .nav-link:hover,
+.brands-page .nav-link:hover {
+    color: var(--primary-red);
 }
 
 .mobile-menu-btn {
