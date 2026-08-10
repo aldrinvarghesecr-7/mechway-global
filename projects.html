@@ -25,45 +25,6 @@
 
     <link rel="stylesheet" href="styles.css">
     <style>
-        .projects-page-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .projects-page-grid .project-card {
-            height: 420px;
-        }
-
-        .project-card .project-location {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: rgba(255, 255, 255, 0.65);
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-        }
-
-        .project-card .project-location i {
-            width: 14px;
-            height: 14px;
-        }
-
-        .project-card .project-scope {
-            display: inline-block;
-            margin-top: 0.75rem;
-            padding: 0.3rem 0.8rem;
-            background: rgba(200, 16, 46, 0.25);
-            border: 1px solid rgba(200, 16, 46, 0.4);
-            border-radius: 20px;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.75rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
         .projects-stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -93,14 +54,28 @@
         }
 
         @media (max-width: 768px) {
-            .projects-page-grid {
-                grid-template-columns: 1fr;
-            }
-
             .projects-stats {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
+        /* Project card location line (mirrors brand-tag-mini styling) */
+        .project-location-mini {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-location-mini i {
+            width: 14px;
+            height: 14px;
+            color: var(--primary-red);
+        }
+
+        /* Project modal location/scope rows reuse modal-specs-list & industry-tag styling */
     </style>
 </head>
 
@@ -162,81 +137,8 @@
         <!-- Projects Grid -->
         <section style="padding: 4rem 0 6rem;">
             <div class="container">
-                <div class="projects-page-grid fade-up">
-
-                    <!-- Project 1: Al Habtoor City Tower -->
-                    <div class="project-card">
-                        <img src="assets/al habtoor city tower.jpg" alt="Al Habtoor City Tower" class="project-image">
-                        <div class="project-overlay">
-                            <h3 class="project-title">Al Habtoor City Tower</h3>
-                            <p class="project-desc">86-Storey Residential Tower — Al Habtoor City, Business Bay,
-                                Dubai</p>
-                            <div class="project-location"><i data-lucide="map-pin"></i> Business Bay, Dubai</div>
-                            <span class="project-scope">HVAC & Plumbing Supply</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 2: PLACEHOLDER — Replace image src and text -->
-                    <div class="project-card">
-                        <img src="assets/address grand downtown.jpg" alt="Project Name" class="project-image">
-                        <div class="project-overlay">
-                            <h3 class="project-title">Address Grand Downtown</h3>
-                            <p class="project-desc">Address Grand Downtown is a 55-storey residential building under
-                                development in Downtown Dubai, Dubai.</p>
-                            <div class="project-location"><i data-lucide="map-pin"></i> Downtown Dubai, Dubai</div>
-                            <span class="project-scope">Supply Scope</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: PLACEHOLDER — Replace image src and text -->
-                    <div class="project-card">
-                        <img src="assets/Damac Islands Bora Bora Villas & Townhouses.jpg" alt="Project Name"
-                            class="project-image">
-                        <div class="project-overlay">
-                            <h3 class="project-title">Damac Islands Bora Bora Villas & Townhouses</h3>
-                            <p class="project-desc">846 TOWNHOUSES / 100 VILLAS IN BORA BORA CLUSTERAT DAMAC ISLANDS –
-                                MASTER DEVELOPMENT, DUBAI.</p>
-                            <div class="project-location"><i data-lucide="map-pin"></i> Dubai, UAE</div>
-                            <span class="project-scope">Supply Scope</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 4: PLACEHOLDER — Replace image src and text -->
-                    <div class="project-card">
-                        <img src="assets\Masaar 2.jpg" alt="Project Name" class="project-image">
-                        <div class="project-overlay">
-                            <h3 class="project-title">Masaar 2</h3>
-                            <p class="project-desc">MASAAR02 VILLAS &TOWNHOUSES-PHASE01 - Arada</p>
-                            <div class="project-location"><i data-lucide="map-pin"></i> Sharjah, UAE</div>
-                            <span class="project-scope">Supply Scope</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 5: PLACEHOLDER — Replace image src and text -->
-                    <div class="project-card">
-                        <img src="assets\Avant Garde Residences.jpg" alt="Project Name" class="project-image">
-                        <div class="project-overlay">
-                            <h3 class="project-title">Avant Garde Residences</h3>
-                            <p class="project-desc">AVANT GARDE RESIDENCES BY SKYLINE G+5P+18 RESIDENTIAL JUMEIRAH
-                                VILLAGE CIRCLE, DUBAI, UAE - - SKYLINE DEVELOPERS REAL ESTATE LLC</p>
-                            <div class="project-location"><i data-lucide="map-pin"></i> Jumeirah Village Circle, Dubai
-                            </div>
-                            <span class="project-scope">Supply Scope</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 6: PLACEHOLDER — Replace image src and text -->
-                    <div class="project-card">
-                        <img src="assets\LIV Lux.jpg" alt="Project Name" class="project-image">
-                        <div class="project-overlay">
-                            <h3 class="project-title">LIV Lux</h3>
-                            <p class="project-desc">LIV LUX TOWER, PLOT NO:392-0288, DUBAI MARINA, DUBAI. UAE - M/S. LIV
-                                DEVELOPERS</p>
-                            <div class="project-location"><i data-lucide="map-pin"></i> Dubai Marina, Dubai</div>
-                            <span class="project-scope">Supply Scope</span>
-                        </div>
-                    </div>
-
+                <div class="catalogue-grid fade-up" id="projects-grid">
+                    <!-- Project cards dynamically injected here -->
                 </div>
 
                 <!-- Stats -->
@@ -329,9 +231,232 @@
         </div>
     </footer>
 
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal-overlay" data-lenis-prevent>
+        <div class="product-modal-content" data-lenis-prevent>
+            <button id="project-modal-close" class="modal-close-btn" aria-label="Close modal"><i
+                    data-lucide="x"></i></button>
+            <div class="modal-grid">
+                <div class="modal-image-col">
+                    <img id="project-modal-img" src="" alt="Project view">
+                    <button id="project-modal-prev-btn" class="modal-slider-btn" aria-label="Previous view"><i
+                            data-lucide="chevron-left"></i></button>
+                    <button id="project-modal-next-btn" class="modal-slider-btn" aria-label="Next view"><i
+                            data-lucide="chevron-right"></i></button>
+                    <div id="project-modal-slider-dots" class="modal-slider-dots"></div>
+                    <div id="project-modal-badge" class="modal-badge"></div>
+                </div>
+                <div class="modal-info-col" data-lenis-prevent>
+                    <h2 id="project-modal-title" class="modal-title"></h2>
+                    <p id="project-modal-desc" class="modal-desc"></p>
+
+                    <div class="modal-section">
+                        <h3>Project Details</h3>
+                        <ul id="project-modal-specs" class="modal-specs-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
     <script>
         lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectsData = [
+                {
+                    name: 'Al Habtoor City Tower',
+                    desc: '86-Storey Residential Tower — Al Habtoor City, Business Bay, Dubai.',
+                    location: 'Business Bay, Dubai',
+                    scope: 'HVAC & Plumbing Supply',
+                    images: ['assets/al habtoor city tower.jpg']
+                },
+                {
+                    name: 'Address Grand Downtown',
+                    desc: 'Address Grand Downtown is a 55-storey residential building under development in Downtown Dubai, Dubai.',
+                    location: 'Downtown Dubai, Dubai',
+                    scope: 'Supply Scope',
+                    images: ['assets/address grand downtown.jpg']
+                },
+                {
+                    name: 'Damac Islands Bora Bora Villas & Townhouses',
+                    desc: '846 townhouses / 100 villas in Bora Bora cluster at Damac Islands — master development, Dubai.',
+                    location: 'Dubai, UAE',
+                    scope: 'Supply Scope',
+                    images: ['assets/Damac Islands Bora Bora Villas & Townhouses.jpg']
+                },
+                {
+                    name: 'Masaar 2',
+                    desc: 'Masaar 02 Villas & Townhouses — Phase 01 — Arada.',
+                    location: 'Sharjah, UAE',
+                    scope: 'Supply Scope',
+                    images: ['assets/Masaar 2.jpg']
+                },
+                {
+                    name: 'Avant Garde Residences',
+                    desc: 'Avant Garde Residences by Skyline — G+5P+18 residential development, Jumeirah Village Circle, Dubai, UAE — Skyline Developers Real Estate LLC.',
+                    location: 'Jumeirah Village Circle, Dubai',
+                    scope: 'Supply Scope',
+                    images: ['assets/Avant Garde Residences.jpg']
+                },
+                {
+                    name: 'LIV Lux',
+                    desc: 'LIV Lux Tower, Plot No: 392-0288, Dubai Marina, Dubai, UAE — M/S. LIV Developers.',
+                    location: 'Dubai Marina, Dubai',
+                    scope: 'Supply Scope',
+                    images: ['assets/LIV Lux.jpg']
+                }
+            ];
+
+            const projectsGrid = document.getElementById('projects-grid');
+            const getBgStyle = (src) => `--product-bg-image: url('${src}');`;
+
+            if (projectsGrid) {
+                let gridHTML = '';
+                projectsData.forEach((item, index) => {
+                    const imgSrc = (item.images && item.images.length > 0) ? item.images[0] : '';
+
+                    gridHTML += `
+                        <div class="catalogue-card project-item" data-index="${index}">
+                            <div class="catalogue-image" style="${getBgStyle(imgSrc)}">
+                                <img src="${imgSrc}" alt="${item.name}" loading="lazy">
+                                <div class="catalogue-badge">${item.scope}</div>
+                            </div>
+                            <div class="catalogue-content">
+                                <div class="project-location-mini"><i data-lucide="map-pin"></i> ${item.location}</div>
+                                <h3>${item.name}</h3>
+                                <p style="margin-bottom: 0;">${item.desc}</p>
+                                <a href="javascript:void(0)" class="btn-primary-outline catalogue-btn view-project-btn" style="margin-top: 1.5rem;">View Project Details <i data-lucide="arrow-right"></i></a>
+                            </div>
+                        </div>
+                    `;
+                });
+                projectsGrid.innerHTML = gridHTML;
+                lucide.createIcons();
+            }
+
+            // Project Modal Logic
+            const modal = document.getElementById('project-modal');
+            const modalClose = document.getElementById('project-modal-close');
+            const modalPrevBtn = document.getElementById('project-modal-prev-btn');
+            const modalNextBtn = document.getElementById('project-modal-next-btn');
+            const modalSliderDots = document.getElementById('project-modal-slider-dots');
+            const modalImg = document.getElementById('project-modal-img');
+
+            let currentImages = [];
+            let currentImageIndex = 0;
+
+            const updateSlider = () => {
+                if (!currentImages || currentImages.length === 0) return;
+                const activeImage = currentImages[currentImageIndex];
+                if (modalImg) modalImg.src = activeImage;
+
+                const modalImageCol = modalImg ? modalImg.closest('.modal-image-col') : null;
+                if (modalImageCol) {
+                    modalImageCol.style.setProperty('--product-bg-image', `url('${activeImage}')`);
+                }
+
+                const hasMultiple = currentImages.length > 1;
+                if (modalPrevBtn) modalPrevBtn.style.display = hasMultiple ? 'flex' : 'none';
+                if (modalNextBtn) modalNextBtn.style.display = hasMultiple ? 'flex' : 'none';
+
+                if (modalSliderDots) {
+                    if (!hasMultiple) {
+                        modalSliderDots.style.display = 'none';
+                    } else {
+                        modalSliderDots.style.display = 'flex';
+                        let dotsHTML = '';
+                        currentImages.forEach((_, idx) => {
+                            dotsHTML += `<div class="modal-dot ${idx === currentImageIndex ? 'active' : ''}" data-idx="${idx}"></div>`;
+                        });
+                        modalSliderDots.innerHTML = dotsHTML;
+
+                        modalSliderDots.querySelectorAll('.modal-dot').forEach(dot => {
+                            dot.addEventListener('click', (e) => {
+                                currentImageIndex = parseInt(e.target.getAttribute('data-idx'));
+                                updateSlider();
+                            });
+                        });
+                    }
+                }
+            };
+
+            if (modalPrevBtn && modalNextBtn) {
+                modalPrevBtn.addEventListener('click', () => {
+                    if (currentImages.length > 1) {
+                        currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+                        updateSlider();
+                    }
+                });
+                modalNextBtn.addEventListener('click', () => {
+                    if (currentImages.length > 1) {
+                        currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+                        updateSlider();
+                    }
+                });
+            }
+
+            const openProjectModal = (item) => {
+                if (!modal) return;
+
+                document.getElementById('project-modal-title').textContent = item.name;
+                document.getElementById('project-modal-desc').textContent = item.desc;
+
+                currentImages = (item.images && item.images.length > 0) ? item.images : [];
+                currentImageIndex = 0;
+                updateSlider();
+
+                const badge = document.getElementById('project-modal-badge');
+                if (badge) {
+                    badge.style.display = 'inline-block';
+                    badge.textContent = item.scope;
+                }
+
+                const specsHTML = `
+                    <li><span>Location:</span> ${item.location}</li>
+                    <li><span>Scope:</span> ${item.scope}</li>
+                `;
+                document.getElementById('project-modal-specs').innerHTML = specsHTML;
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                lucide.createIcons();
+            };
+
+            const closeProjectModal = () => {
+                if (modal) modal.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            document.querySelectorAll('.project-item').forEach(card => {
+                const btn = card.querySelector('.view-project-btn');
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        const index = card.getAttribute('data-index');
+                        openProjectModal(projectsData[index]);
+                    });
+                }
+            });
+
+            if (modalClose) modalClose.addEventListener('click', closeProjectModal);
+
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeProjectModal();
+                });
+                const pContent = modal.querySelector('.product-modal-content');
+                if (pContent) {
+                    pContent.addEventListener('wheel', (e) => {
+                        e.stopPropagation();
+                    }, { passive: true });
+                }
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeProjectModal();
+            });
+        });
     </script>
 </body>
 
