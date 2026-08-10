@@ -412,10 +412,6 @@ body:hover .cursor-dot {
 .about-page .nav-link,
 .products-page .nav-link,
 .projects-page .nav-link,
-.contact-page .nav-link,
-.terms-page .nav-link,
-.privacy-page .nav-link,
-.initiate-project-page .nav-link,
 .brands-page .nav-link {
     color: #ffffff;
 }
@@ -692,6 +688,7 @@ body:hover .cursor-dot {
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     text-transform: uppercase;
     color: var(--text-main);
+    margin-bottom: 1.75rem;
 }
 
 /* About Section */
@@ -728,8 +725,12 @@ body:hover .cursor-dot {
 .about-text {
     font-size: 1.15rem;
     color: var(--text-muted);
-    margin-bottom: 3rem;
+    margin-bottom: 1.25rem;
     font-weight: 400;
+}
+
+.about-text:last-of-type {
+    margin-bottom: 0;
 }
 
 /* 3D PERSPECTIVE GRIDS FOR BLOCKS */
@@ -1638,6 +1639,7 @@ body:hover .cursor-dot {
         padding: 0.65rem 0.5rem;
         width: 100%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        color: var(--text-main) !important;
     }
 
     .nav-links.active .nav-phone-badge,
