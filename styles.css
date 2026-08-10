@@ -267,9 +267,9 @@ body:hover .cursor-dot {
     z-index: 1000;
     padding: 0.85rem 1.75rem;
     border-radius: 20px;
-    background: #ffffff;
+    background: transparent;
     border: none;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    box-shadow: none;
     transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, top 0.3s ease, padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -282,8 +282,8 @@ body:hover .cursor-dot {
 .navbar.scrolled {
     top: 0.6rem;
     padding: 0.65rem 1.75rem;
-    background: #ffffff;
-    box-shadow: 0 10px 34px rgba(0, 0, 0, 0.09);
+    background: transparent;
+    box-shadow: none;
 }
 
 .nav-container {
