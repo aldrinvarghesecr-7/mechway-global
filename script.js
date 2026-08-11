@@ -59,32 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Navbar scroll effect - hides when scrolling down, reveals when scrolling up
+    // 3. Navbar - always fixed and visible; only toggles compact "scrolled" padding
     const navbar = document.getElementById('navbar');
     if (navbar) {
-        let lastScroll = 0;
-
         const handleNavbarScroll = (scrollPos) => {
-            const scrollDelta = scrollPos - lastScroll;
-
-            // Always show navbar near the top of the page
-            if (scrollPos <= 40) {
-                navbar.classList.remove('nav-hidden');
-            } else if (scrollDelta > 5) {
-                // Scrolling down -> hide
-                navbar.classList.add('nav-hidden');
-            } else if (scrollDelta < -5) {
-                // Scrolling up -> reveal
-                navbar.classList.remove('nav-hidden');
-            }
-
             if (scrollPos > 15) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-
-            lastScroll = scrollPos;
         };
 
         lenis.on('scroll', (e) => {
@@ -661,6 +644,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        if (navbar) navbar.classList.add('nav-hidden');
         lenis.stop();
         lucide.createIcons();
     };
@@ -668,6 +652,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeProductModal = () => {
         if (modal) modal.classList.remove('active');
         document.body.style.overflow = '';
+        if (navbar) navbar.classList.remove('nav-hidden');
         lenis.start();
     };
 
@@ -741,6 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         brandProductsModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        if (navbar) navbar.classList.add('nav-hidden');
         lenis.stop();
         lucide.createIcons();
     };
@@ -748,6 +734,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBrandProductsModal = () => {
         if (brandProductsModal) brandProductsModal.classList.remove('active');
         document.body.style.overflow = '';
+        if (navbar) navbar.classList.remove('nav-hidden');
         lenis.start();
     };
 

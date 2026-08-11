@@ -267,14 +267,13 @@ body:hover .cursor-dot {
     z-index: 1000;
     padding: 0.85rem 1.75rem;
     border-radius: 20px;
-    background: transparent;
+    background: #ffffff;
     border: none;
-    box-shadow: none;
-    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, top 0.3s ease, padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: opacity 0.4s ease, top 0.3s ease, padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar.nav-hidden {
-    transform: translate(-50%, -170%);
     opacity: 0;
     pointer-events: none;
 }
@@ -282,8 +281,8 @@ body:hover .cursor-dot {
 .navbar.scrolled {
     top: 0.6rem;
     padding: 0.65rem 1.75rem;
-    background: transparent;
-    box-shadow: none;
+    background: #ffffff;
+    box-shadow: 0 10px 34px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -406,24 +405,6 @@ body:hover .cursor-dot {
 
 .nav-link:hover::before {
     width: 100%;
-}
-
-/* White nav links on every page except index */
-.about-page .nav-link,
-.products-page .nav-link,
-.projects-page .nav-link,
-.terms-page .nav-link,
-.initiate-project-page .nav-link,
-.contact-page .nav-link,
-.brands-page .nav-link {
-    color: #ffffff;
-}
-
-.about-page .nav-link:hover,
-.products-page .nav-link:hover,
-.projects-page .nav-link:hover,
-.brands-page .nav-link:hover {
-    color: var(--primary-red);
 }
 
 .mobile-menu-btn {
