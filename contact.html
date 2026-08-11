@@ -233,114 +233,156 @@
         </section>
 
         <!-- Contact Section -->
+        <!-- Contact Section -->
         <section class="contact-section">
             <div class="container contact-layout">
-                <div class="contact-info fade-up">
+
+                <!-- LEFT COLUMN -->
+                <div class="contact-left fade-up">
+
+                    <!-- Address -->
                     <div class="locations">
                         <div class="location-card">
-                            <h3><i data-lucide="building"></i> UAE Headquarters</h3>
-                            <p>P.O.Box 33647,Dubai,UAE</p>
+                            <h3>
+                                <i data-lucide="building"></i>
+                                UAE Headquarters
+                            </h3>
+
+                            <p>P.O.Box 33647, Dubai, UAE</p>
                             <p>Operating Hours: Mon-Fri, 9:00 AM - 6:00 PM</p>
-                            <div class="map-placeholder">
-                                [Map Integration Placeholder]
-                            </div>
                         </div>
                     </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <form id="contact-form">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">
+                                Send a Message
+                            </h3>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" name="fullName" placeholder="John Doe" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Organization</label>
+                                    <input type="text" name="organization" placeholder="Company Ltd.">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Corporate Email</label>
+                                    <input type="email" name="email" placeholder="john@company.com" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Direct Line</label>
+                                    <input type="tel" name="phone" placeholder="+971 5X XXX XXXX">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input type="text" name="subject" placeholder="How can we help?">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea name="message"
+                                    placeholder="Tell us what you need, and our team will get back to you shortly."
+                                    rows="5"></textarea>
+                            </div>
+
+                            <div class="form-group"
+                                style="display: flex; align-items: flex-start; gap: 0.8rem; margin: 2rem 0;">
+
+                                <input type="checkbox" id="privacy-consent" required
+                                    style="margin-top: 0.3rem; cursor: pointer; width: auto;">
+
+                                <label for="privacy-consent"
+                                    style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; cursor: pointer;">
+
+                                    I consent to having Mechway Global collect my details to respond to my inquiry.
+                                    I have read and agree to the
+                                    <a href="privacy.html" style="color: var(--primary-red); text-decoration: none;">
+                                        Privacy Policy
+                                    </a>.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width: 100%;">
+                                Send Message
+                            </button>
+
+                            <p id="contact-form-note"
+                                style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; text-align: center; display: none;">
+
+                                Your email app should now be open with this message ready to send.
+                                If nothing opened, please email us directly at
+                                <a href="mailto:sales@mechwayglobal.com" style="color: var(--primary-red);">
+                                    sales@mechwayglobal.com
+                                </a>.
+                            </p>
+                        </form>
+                    </div>
+
                 </div>
 
+
+                <!-- RIGHT COLUMN -->
                 <div class="contact-info fade-up" style="margin-top: 1rem;">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-main);">Direct Channels</h3>
+
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-main);">
+                        Direct Channels
+                    </h3>
+
                     <div class="direct-channels">
+
                         <a href="mailto:sales@mechwayglobal.com" class="channel">
-                            <div class="channel-icon"><i data-lucide="mail"></i></div>
+                            <div class="channel-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+
                             <div class="channel-info">
                                 <h4>General Enquiries</h4>
                                 <p>sales@mechwayglobal.com</p>
                             </div>
                         </a>
+
                         <a href="tel:+97142692277" class="channel">
-                            <div class="channel-icon"><i data-lucide="phone"></i></div>
+                            <div class="channel-icon">
+                                <i data-lucide="phone"></i>
+                            </div>
+
                             <div class="channel-info">
                                 <h4>Landline</h4>
                                 <p>+971 4 2692277</p>
                             </div>
                         </a>
-                        <a href="https://wa.me/+971 0508789506" target="_blank" class="channel">
-                            <div class="channel-icon" style="background: #25D366;"><i data-lucide="message-circle"></i>
+
+                        <a href="https://wa.me/971508789506" target="_blank" class="channel">
+
+                            <div class="channel-icon" style="background: #25D366;">
+                                <i data-lucide="message-circle"></i>
                             </div>
+
                             <div class="channel-info">
                                 <h4>WhatsApp Business</h4>
                                 <p>Quick Response</p>
                             </div>
                         </a>
+
                     </div>
+
                 </div>
 
-                <div class="contact-form fade-up">
-                    <form id="contact-form">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">Send a Message</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label
-                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Full
-                                    Name</label>
-                                <input type="text" name="fullName" placeholder="John Doe" required>
-                            </div>
-                            <div class="form-group">
-                                <label
-                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Organization</label>
-                                <input type="text" name="organization" placeholder="Company Ltd.">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label
-                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Corporate
-                                    Email</label>
-                                <input type="email" name="email" placeholder="john@company.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label
-                                    style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Direct
-                                    Line</label>
-                                <input type="tel" name="phone" placeholder="+971 5X XXX XXXX">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label
-                                style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Subject</label>
-                            <input type="text" name="subject" placeholder="How can we help?">
-                        </div>
-                        <div class="form-group">
-                            <label
-                                style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Message</label>
-                            <textarea name="message"
-                                placeholder="Tell us what you need, and our team will get back to you shortly."
-                                rows="5"></textarea>
-                        </div>
-                        <div class="form-group"
-                            style="display: flex; align-items: flex-start; gap: 0.8rem; margin: 2rem 0;">
-                            <input type="checkbox" id="privacy-consent" required
-                                style="margin-top: 0.3rem; cursor: pointer; width: auto;">
-                            <label for="privacy-consent"
-                                style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; cursor: pointer;">
-                                I consent to having Mechway Global collect my details to respond to my inquiry. I have
-                                read and agree to the <a href="privacy.html"
-                                    style="color: var(--primary-red); text-decoration: none;">Privacy Policy</a>.
-                            </label>
-                        </div>
-                        <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
-                        <p id="contact-form-note"
-                            style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; text-align: center; display: none;">
-                            Your email app should now be open with this message ready to send. If nothing opened, please
-                            email us directly at
-                            <a href="mailto:sales@mechwayglobal.com"
-                                style="color: var(--primary-red);">sales@mechwayglobal.com</a>.
-                        </p>
-                    </form>
-                </div>
             </div>
         </section>
+
+
     </main>
 
     <footer class="footer" style="margin-top: 2rem; padding-top: 4rem; border-radius: 40px 40px 0 0;">
