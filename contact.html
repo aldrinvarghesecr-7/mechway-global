@@ -277,19 +277,19 @@
                 </div>
 
                 <div class="contact-form fade-up">
-                    <form>
+                    <form id="contact-form">
                         <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">Send a Message</h3>
                         <div class="form-row">
                             <div class="form-group">
                                 <label
                                     style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Full
                                     Name</label>
-                                <input type="text" placeholder="John Doe" required>
+                                <input type="text" name="fullName" placeholder="John Doe" required>
                             </div>
                             <div class="form-group">
                                 <label
                                     style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Organization</label>
-                                <input type="text" placeholder="Company Ltd.">
+                                <input type="text" name="organization" placeholder="Company Ltd.">
                             </div>
                         </div>
                         <div class="form-row">
@@ -297,24 +297,25 @@
                                 <label
                                     style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Corporate
                                     Email</label>
-                                <input type="email" placeholder="john@company.com" required>
+                                <input type="email" name="email" placeholder="john@company.com" required>
                             </div>
                             <div class="form-group">
                                 <label
                                     style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Direct
                                     Line</label>
-                                <input type="tel" placeholder="+971 5X XXX XXXX">
+                                <input type="tel" name="phone" placeholder="+971 5X XXX XXXX">
                             </div>
                         </div>
                         <div class="form-group">
                             <label
                                 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Subject</label>
-                            <input type="text" placeholder="How can we help?">
+                            <input type="text" name="subject" placeholder="How can we help?">
                         </div>
                         <div class="form-group">
                             <label
                                 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Message</label>
-                            <textarea placeholder="Tell us what you need, and our team will get back to you shortly."
+                            <textarea name="message"
+                                placeholder="Tell us what you need, and our team will get back to you shortly."
                                 rows="5"></textarea>
                         </div>
                         <div class="form-group"
@@ -329,6 +330,13 @@
                             </label>
                         </div>
                         <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                        <p id="contact-form-note"
+                            style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; text-align: center; display: none;">
+                            Your email app should now be open with this message ready to send. If nothing opened, please
+                            email us directly at
+                            <a href="mailto:sales@mechwayglobal.com"
+                                style="color: var(--primary-red);">sales@mechwayglobal.com</a>.
+                        </p>
                     </form>
                 </div>
             </div>
@@ -393,6 +401,39 @@
     <script src="script.js"></script>
     <script>
         lucide.createIcons();
+
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const fullName = contactForm.fullName.value.trim();
+                const organization = contactForm.organization.value.trim();
+                const email = contactForm.email.value.trim();
+                const phone = contactForm.phone.value.trim();
+                const subject = contactForm.subject.value.trim();
+                const message = contactForm.message.value.trim();
+
+                const emailSubject = subject ? `Website Enquiry: ${subject}` : 'Website Enquiry';
+
+                const bodyLines = [
+                    `Full Name: ${fullName}`,
+                    `Organization: ${organization || '-'}`,
+                    `Corporate Email: ${email}`,
+                    `Direct Line: ${phone || '-'}`,
+                    '',
+                    'Message:',
+                    message || '-'
+                ];
+
+                const mailtoLink = `mailto:sales@mechwayglobal.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+                window.location.href = mailtoLink;
+
+                const note = document.getElementById('contact-form-note');
+                if (note) note.style.display = 'block';
+            });
+        }
     </script>
 </body>
 

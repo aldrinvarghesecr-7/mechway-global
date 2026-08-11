@@ -263,20 +263,20 @@
                     </div>
                 </div>
                 <div class="contact-form fade-up">
-                    <form>
+                    <form id="rfq-form">
                         <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">RFQ Brief</h3>
                         <div class="form-row">
                             <div class="form-group">
                                 <label
                                     style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Project
                                     / RFQ Name</label>
-                                <input type="text" placeholder="Commercial Tower MEP Supply" required>
+                                <input type="text" name="rfqName" placeholder="Commercial Tower MEP Supply" required>
                             </div>
                             <div class="form-group">
                                 <label
                                     style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Company
                                     / Consultant / Client</label>
-                                <input type="text" placeholder="Company Ltd.">
+                                <input type="text" name="company" placeholder="Company Ltd.">
                             </div>
                         </div>
                         <div class="form-row">
@@ -284,13 +284,13 @@
                                 <label
                                     style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Preferred
                                     Brand(s)</label>
-                                <input type="text" placeholder="Giacomini, Wavin, Supreme">
+                                <input type="text" name="brands" placeholder="Giacomini, Wavin, Supreme">
                             </div>
                             <div class="form-group">
                                 <label
                                     style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Required
                                     Delivery Date</label>
-                                <input type="date">
+                                <input type="date" name="deliveryDate">
                             </div>
                         </div>
                         <div class="form-row">
@@ -298,26 +298,27 @@
                                 <label
                                     style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Quotation
                                     Email</label>
-                                <input type="email" placeholder="john@company.com" required>
+                                <input type="email" name="email" placeholder="john@company.com" required>
                             </div>
                             <div class="form-group">
                                 <label
                                     style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Quotation
                                     Phone</label>
-                                <input type="tel" placeholder="+971 5X XXX XXXX">
+                                <input type="tel" name="phone" placeholder="+971 5X XXX XXXX">
                             </div>
                         </div>
                         <div class="form-group">
                             <label
                                 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Trade
                                 / Product Category</label>
-                            <input type="text" placeholder="HVAC, Plumbing, Drainage, Valves, Infrastructure">
+                            <input type="text" name="category"
+                                placeholder="HVAC, Plumbing, Drainage, Valves, Infrastructure">
                         </div>
                         <div class="form-group">
                             <label
                                 style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; display: block; color: var(--text-main);">Scope
                                 / BOQ Details</label>
-                            <textarea
+                            <textarea name="scope"
                                 placeholder="Include product specifications, quantities, preferred brands, target delivery date, and any special requirements."
                                 rows="5"></textarea>
                         </div>
@@ -329,8 +330,13 @@
                                 <div class="file-upload-btn">
                                     <i data-lucide="upload-cloud"></i> Click to browse or drag and drop RFQ files
                                 </div>
-                                <input type="file" multiple accept=".pdf,application/pdf,image/*,.doc,.docx,.xls,.xlsx">
+                                <input type="file" name="attachments" multiple
+                                    accept=".pdf,application/pdf,image/*,.doc,.docx,.xls,.xlsx">
                             </div>
+                            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem;">
+                                Note: files can't be attached automatically via email. Please attach them manually in
+                                the email that opens.
+                            </p>
                         </div>
                         <div class="form-group"
                             style="display: flex; align-items: flex-start; gap: 0.8rem; margin: 2rem 0;">
@@ -344,6 +350,13 @@
                             </label>
                         </div>
                         <button type="submit" class="btn-primary" style="width: 100%;">Submit RFQ Brief</button>
+                        <p id="rfq-form-note"
+                            style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; text-align: center; display: none;">
+                            Your email app should now be open with this RFQ ready to send. Please attach your files
+                            before sending. If nothing opened, please email us directly at
+                            <a href="mailto:sales@mechwayglobal.com"
+                                style="color: var(--primary-red);">sales@mechwayglobal.com</a>.
+                        </p>
                     </form>
                 </div>
             </div>
@@ -408,6 +421,46 @@
     <script src="script.js"></script>
     <script>
         lucide.createIcons();
+
+        const rfqForm = document.getElementById('rfq-form');
+        if (rfqForm) {
+            rfqForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const rfqName = rfqForm.rfqName.value.trim();
+                const company = rfqForm.company.value.trim();
+                const brands = rfqForm.brands.value.trim();
+                const deliveryDate = rfqForm.deliveryDate.value.trim();
+                const email = rfqForm.email.value.trim();
+                const phone = rfqForm.phone.value.trim();
+                const category = rfqForm.category.value.trim();
+                const scope = rfqForm.scope.value.trim();
+
+                const emailSubject = `RFQ Submission: ${rfqName || 'New Project'}`;
+
+                const bodyLines = [
+                    `Project / RFQ Name: ${rfqName}`,
+                    `Company / Consultant / Client: ${company || '-'}`,
+                    `Preferred Brand(s): ${brands || '-'}`,
+                    `Required Delivery Date: ${deliveryDate || '-'}`,
+                    `Quotation Email: ${email}`,
+                    `Quotation Phone: ${phone || '-'}`,
+                    `Trade / Product Category: ${category || '-'}`,
+                    '',
+                    'Scope / BOQ Details:',
+                    scope || '-',
+                    '',
+                    '(Note: please attach any RFQ files/drawings to this email before sending.)'
+                ];
+
+                const mailtoLink = `mailto:sales@mechwayglobal.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+
+                window.location.href = mailtoLink;
+
+                const note = document.getElementById('rfq-form-note');
+                if (note) note.style.display = 'block';
+            });
+        }
     </script>
 </body>
 
