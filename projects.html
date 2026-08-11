@@ -41,7 +41,7 @@
 
         .stat-number {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.35rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--text-muted);
             line-height: 1.25;
@@ -50,7 +50,7 @@
         }
 
         .stat-label {
-            font-size: 0.95rem;
+            font-size: 1.35rem;
             color: var(--primary-red);
             margin-top: 0.5rem;
         }
@@ -157,8 +157,8 @@
                         <div class="stat-label">Trusted Manufacturers</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">DEPENDABLE DELIVERY</div>
-                        <div class="stat-label">Committed to Project Timelines</div>
+                        <div class="stat-number">Committed to Project Timelines</div>
+                        <div class="stat-label">DEPENDABLE DELIVERY</div>
                     </div>
                 </div>
             </div>
@@ -266,56 +266,56 @@
                     name: 'Al Habtoor City Tower',
                     desc: '86-Storey Residential Tower — Al Habtoor City, Business Bay, Dubai.',
                     location: 'Business Bay, Dubai',
-                    scope: 'HVAC & Plumbing Supply',
+                    scope: 'Low Noise Pipes and Fittings',
                     images: ['assets/al habtoor city tower.jpg']
                 },
                 {
                     name: 'Address Grand Downtown',
                     desc: 'Address Grand Downtown is a 55-storey residential building under development in Downtown Dubai, Dubai.',
                     location: 'Downtown Dubai, Dubai',
-                    scope: 'UPVC & Low Noise Drainage System',
+                    scope: 'UPVC & Low Noise Pipes and Fittings',
                     images: ['assets/address grand downtown.jpg']
                 },
                 {
                     name: 'Damac Islands Bora Bora Villas & Townhouses',
                     desc: '846 townhouses / 100 villas in Bora Bora cluster at Damac Islands — master development, Dubai.',
                     location: 'Dubai, UAE',
-                    scope: ' UPVC Drainage System & HDPE',
+                    scope: 'UPVC & HDPE Pipes and Fittings',
                     images: ['assets/Damac Islands Bora Bora Villas & Townhouses.jpg']
                 },
                 {
                     name: 'Masaar 2',
                     desc: 'Masaar 02 Villas & Townhouses — Phase 01 — Arada.',
                     location: 'Sharjah, UAE',
-                    scope: 'Duct ',
+                    scope: 'Duct Pipes ',
                     images: ['assets/Masaar 2.jpg']
                 },
                 {
                     name: 'Avant Garde Residences',
                     desc: 'Avant Garde Residences by Skyline — G+5P+18 residential development, Jumeirah Village Circle, Dubai, UAE — Skyline Developers Real Estate LLC.',
                     location: 'Jumeirah Village Circle, Dubai',
-                    scope: 'Low Noise',
+                    scope: 'Low Noise Pipes and Fittings',
                     images: ['assets/Avant Garde Residences.jpg']
                 },
                 {
                     name: 'LIV Lux',
                     desc: 'LIV Lux Tower, Plot No: 392-0288, Dubai Marina, Dubai, UAE — M/S. LIV Developers.',
                     location: 'Dubai Marina, Dubai',
-                    scope: 'Low Noise',
+                    scope: 'Low Noise Pipes and Fittings',
                     images: ['assets/LIV Lux.jpg']
                 },
                 {
                     name: 'Address The Bay',
                     desc: 'ADDRESS THE BAY-EMAAR BEACHFRONT, DUBAI - EMAAR DEVELOPMENT PJSC.',
                     location: 'Emaar Beachfront, Dubai',
-                    scope: 'Low Noise',
+                    scope: 'Low Noise Pipes and Fittings',
                     images: ['assets/address the bay.png']
                 },
                 {
                     name: 'Avonlea by Emaar',
                     desc: 'AVONLEA  ON  PLOT  NO.  B7.01.06   AT RASHID  YACHTS - EMMAR.',
                     location: 'Emaar Beachfront, Dubai',
-                    scope: 'Low Noise',
+                    scope: 'Low Noise Pipes and Fittings',
                     images: ['assets/avenola.png']
                 },
                 {
@@ -329,14 +329,14 @@
                     name: 'Armani Beach Residences',
                     desc: 'Armani Beach Residences, Palm Jumeirah - M/S. Arada Developments LLC.',
                     location: 'Palm Jumeirah, Dubai',
-                    scope: 'UPVC Drainage System & HDPE',
+                    scope: 'UPVC & HDPE Pipes and Fittings',
                     images: ['assets/armani.png']
                 },
                 {
                     name: 'Ellington Views II',
                     desc: 'ELLINGTON VIEWS, PLOT A1 & PLOT A2, AL HAMRA, RAS AL KHAIMAH, UAE - M/S ELLINGTON PROPERTIES.',
                     location: 'Ras Al Khaimah, UAE',
-                    scope: 'Duct & UPVC Drainage pipes',
+                    scope: 'Duct Pipes & UPVC Drainage pipes',
                     images: ['assets/ellington.png']
                 }
             ];
@@ -448,6 +448,7 @@
                 const specsHTML = `
                     <li><span>Location:</span> ${item.location}</li>
                     <li><span>Scope:</span> ${item.scope}</li>
+                    <li><span>Application:</span> Drainage</li>
                 `;
                 document.getElementById('project-modal-specs').innerHTML = specsHTML;
 
